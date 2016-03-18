@@ -1,6 +1,94 @@
 
 body{
-  background-color: red;
+  background-color: white;
 }
-/*ma bag si eu in seama la voi !!!!!*/
---am facut si eu o modificare
+#main{
+ width: 960px;
+ border: solid 1px gray;
+ margin: 0 auto;
+
+  }
+#personaldate{
+  position: relative;
+  display: block;
+  height: auto;
+  overflow:hidden;
+}
+.prezentation{
+  width: 98%;
+  border: solid 1px gray;
+  height: 70px;
+  position: relative;
+  margin-left: 0.9%;
+  height: auto;
+  overflow: hidden;
+}
+#edit1{
+  height: 35px;
+  width: 35px;
+  background-color: #ADADAD;
+  border-radius: 5px;
+  border-color: grey;
+  position: absolute;
+  left: 895px;
+  top: 9px;
+  z-index: 99;
+}
+#edit1 img {
+  position: absolute;
+  left:5px;
+  top:5px;
+}
+#edit1:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+#de_editat{
+  position:relative;
+}
+#save1{
+  height: 35px;
+  width: 75px;
+  border:solid gray 1px;
+  border-radius: 5px;
+  background-color: #ADADAD;
+  position :absolute;
+  left: 870px;
+  top: 17px;
+}
+.savetext{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+#save1:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+.micsoreaza{
+animation: out 1s linear 1;
+-webkit-animation:out 1s linear 1 forwards;
+}
+@keyframes out{
+  0% {height:300px;}
+  100%{height:0px;}
+
+}
+@-webkit-keyframes out{
+  0% {height:300px;}
+  100%{height:0px;}
+}
+.mareste{
+  animation: back 1s linear 1;
+  -webkit-animation:back 1s linear 1 forwards;
+
+}
+@keyframes back{
+  0% {height:0px;}
+  100%{height:300px;}
+
+}
+@-webkit-keyframes back{
+  0%  {height:0px;}
+  100%{height:300px;}
+}
