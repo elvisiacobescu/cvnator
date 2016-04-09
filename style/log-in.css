@@ -1,0 +1,25 @@
+body{
+  background-image: url(/cvnator/img/handsake-background.jpg);
+}
+.white-opacity{
+background-color: white;
+opacity: 0.8;
+width: 100%;
+height: 100%;position: absolute;
+left:0;
+top:0;
+z-index: -1;
+  }
+
+.content{
+  z-index: 100;
+}
+.log-in{
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+.baground-log{
+  background-color: rgba(161, 9, 189, 0.35);
+}

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head><title>Formular Web</title></head>
+<head><title>Login page</title>
+  <link href="style/log-in.css" rel="stylesheet" type="text/css" >
+</head>
+
 <body>
-<a>Ar trebuie sa ne inregistram</a>
-<form action="afiseaza.php" method="post"> 
+  <div class="white-opacity">
+  </div>
+  <div class="content">
+<div Id="head" class="head" style="height:30px;background-color:red">
+  <span><img src="img/edit_ico.png" alt="logo"height="25" width="25" /></span>
+</div >
+<div class="baground-log">
+<div class="log-in">
+<form action="afiseaza.php" method="post">
 
    <p>Numele: <input type="text" name="nume" size="20"
         placeholder="Numele d-voastra" />
       Parola: <input type="text" name="parola" size="20"
    	    placeholder="Parola d-voastra" /> </p>
-   <p><input type="submit" value="Trimite" 
+   <p><input type="submit" value="Trimite"
         title="Apasati butonul pentru a expedia datele spre server" /> </p>
-</form> 
+</form>
+<div id="registeer">Register</div>
+</div>
+</div>
+</div>
 </body>
 </html>
