@@ -54,6 +54,10 @@ while ($inreg = $rez->fetch_assoc()) {
 	{
 		$ok=1;
 		echo ("<p>!!! Bine ai venit, v-ati logat cu succes <em>" . $_REQUEST["nume"] . "</em>.</p>");
+		
+			
+			setcookie ($_REQUEST["nume"],$_REQUEST["parola"],time()+4000);
+			
 		header("Location: cv.html");
 	}
 	
