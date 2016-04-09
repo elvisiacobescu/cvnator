@@ -54,6 +54,7 @@ while ($inreg = $rez->fetch_assoc()) {
 	{
 		$ok=1;
 		echo ("<p>!!! Bine ai venit, v-ati logat cu succes <em>" . $_REQUEST["nume"] . "</em>.</p>");
+		header("Location: cv.html");
 	}
 	
 }
