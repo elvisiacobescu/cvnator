@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS cvnator; 
 CREATE DATABASE cvnator; 
 USE cvnator;
@@ -12,8 +11,6 @@ CREATE TABLE user_data(
    PRIMARY KEY ( user_id )
 )ENGINE=INNODB;
 
-CREATE UNIQUE INDEX user_data_index ON user_data (email,parola);
-
 CREATE TABLE educatie(
 	user_id INT NOT NULL,
 	entry_id INT NOT NULL,
@@ -26,9 +23,6 @@ CREATE TABLE educatie(
 	PRIMARY KEY (user_id,entry_id)
 )ENGINE=INNODB;
 
-CREATE UNIQUE INDEX educatie_index ON educatie (user_id, entry_id);
-
-
 CREATE TABLE permis(
 	user_id INT NOT NULL,
 	entry_id INT NOT NULL,
@@ -36,7 +30,6 @@ CREATE TABLE permis(
 	FOREIGN KEY (user_id) REFERENCES user_data(user_id) ON DELETE CASCADE,
 	PRIMARY KEY (user_id,entry_id)
 )ENGINE=INNODB;
-CREATE UNIQUE INDEX permis_index ON permis (user_id, entry_id);
 
 CREATE TABLE date_personale(
 	user_id INT NOT NULL,
@@ -59,12 +52,6 @@ CREATE TABLE date_personale(
 	FOREIGN KEY (user_id) REFERENCES user_data(user_id) ON DELETE CASCADE
 )ENGINE=INNODB;
 
-CREATE UNIQUE INDEX date_personale_default_index ON date_personale (user_id);
-CREATE UNIQUE INDEX date_personale_email_index ON date_personale (email);
-CREATE UNIQUE INDEX date_personale_nr_telefon_index ON date_personale (nr_telefon);
-CREATE UNIQUE INDEX date_personale_nume_prenume_index ON date_personale (nume,prenume);
-
-
 CREATE TABLE limbi_straine(
 	user_id INT NOT NULL,
 	entry_id INT NOT NULL,
@@ -73,9 +60,6 @@ CREATE TABLE limbi_straine(
 	FOREIGN KEY (user_id) REFERENCES user_data(user_id) ON DELETE CASCADE,
 	PRIMARY KEY (user_id,entry_id)
 )ENGINE=INNODB;
-
-CREATE UNIQUE INDEX limbi_straine_index ON limbi_straine (user_id,entry_id);
-
 
 CREATE TABLE alt_info(
 	user_id INT NOT NULL,
@@ -88,9 +72,6 @@ CREATE TABLE alt_info(
 	PRIMARY KEY (user_id,entry_id)
 )ENGINE=INNODB;
 
-CREATE UNIQUE INDEX alt_info_index ON alt_info (user_id,entry_id);
-
-
 CREATE TABLE abilitati(
 	user_id INT NOT NULL,
 	entry_id INT NOT NULL,
@@ -98,9 +79,6 @@ CREATE TABLE abilitati(
 	FOREIGN KEY (user_id) REFERENCES user_data(user_id) ON DELETE CASCADE,
 	PRIMARY KEY (user_id,entry_id)
 )ENGINE=INNODB;
-
-CREATE UNIQUE INDEX abilitati_index ON abilitati (user_id,entry_id);
-
 
 CREATE TABLE experienta(
 	user_id INT NOT NULL,
@@ -114,5 +92,3 @@ CREATE TABLE experienta(
 	FOREIGN KEY (user_id) REFERENCES user_data(user_id) ON DELETE CASCADE,
 	PRIMARY KEY (user_id,entry_id)
 );
-
-CREATE UNIQUE INDEX experienta_index ON experienta (user_id,entry_id);
