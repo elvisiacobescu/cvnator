@@ -1,3 +1,8 @@
+--notes to self:
+--fa indecsi
+--triggere
+
+
 --READ:
 --Porneste: Apache & Mysql
 --Acceseaza cmd: faci cd pana in folderul bin din mysql, ex: C:\xampp\mysql\bin
@@ -5,15 +10,15 @@
 --In comanda de mai sus: root = utilizator(default) , daca ai parola, o scrii dupa -p sau o introduci(iti va cere) dupa ce introduci comanda precendenta
 --Acum in loc de CD ar trebui sa ai MariaDB.
 --Acum ar trebui sa poti rula fisierul sql ptr crearea bazei de date cu comanda urmatoare.
---    source C:/xampp/mysql/cnvator/test_create_db.sql;      
+--    source C:/xampp/mysql/cvnator/test_create_db.sql;      
 --cu calea respectiva.
 
-DROP DATABASE IF EXISTS cnvator; 
-CREATE DATABASE cnvator; 
-USE cnvator;
+DROP DATABASE IF EXISTS cvnator; 
+CREATE DATABASE cvnator; 
+USE cvnator;
 
 --privilegii
-GRANT ALL PRIVILEGES ON cnvator TO 'root'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON cvnator TO 'root'@'localhost' WITH GRANT OPTION;
 
 --Tabelul USER_DATA
 --Pk: user_id
