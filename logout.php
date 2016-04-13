@@ -1,6 +1,22 @@
 <?php
 	session_start();
-	unset($_SESSION["user_id"]);
-	unset($_SESSION["user_name"]);
-	header("Location:index.html");
+	
+	$_SESSION = array();
+	//Scoatem cookie-urile
+	if(isset($_COOKIE["cookie_user_id"]) && isset($_COOKIE["cookie_email"]) && isset($_COOKIE["cookie_parola"]) )
+	{
+		setcookie("cookie_user_id",'',strtotime( '2013-08-16' ), '/' );
+		setcookie("cookie_email",'',strtotime( '2013-08-16' ), '/' );
+		setcookie("cookie_parola",'',strtotime( '2013-08-16' ), '/' );
+	}
+	
+	session_destroy();
+	
+	if(isset($_SESSION['session_email']))
+	{}
+	else
+	{
+		header("location: login.php");
+		die();
+	}
 ?>
