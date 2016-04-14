@@ -7,15 +7,19 @@
     </style>
   </head>
   <body>
-    <div class="" style="height:50px; color:red; background-color:green;">
-      <?php
-        echo $_COOKIE["nume"];
-      ?>
+
+    <div class="" style="height:50px; color:white; background-color:#800072;">
+      <div id="logout" class="logout">
+      <span class="logout-img"><img src="img/door.png" width="25" height="25" alt="nu EXISTA IMAGINEA" /></span ><span class="logout-text">Logout</span>
+      </div>
+      <div id="previev" class="preview">
+        <span class="previev-img"><img src="img/ochi.png" width="25" height="25" alt="nu EXISTA IMAGINEA" /></span ><span class="preview-text">Previev</span>
+      </div>
     </div>
     <div id="main">
 
      <div id="personaldate">
-      <div id="prezent"class="prezentation">
+      <div id="prezent" class="prezentation">
         <div id="edit1">
           <img src="img/edit_ico.png" width="25" height="25" alt="nu EXISTA IMAGINEA" />
 
@@ -35,19 +39,20 @@
        </div>
       </div>
      </div>
-     <!-- <div id="studii">
-    <div id="addbutonschool">
+     <div id="studii">
+    <div id="addbutonschool" class="prezentation">
       <span>Add New</span><img src="img/edit_ico.png" width="25" height="25" alt="nu EXISTA IMAGINEA" />
     </div>
      </div>
 
-     <div id="experienta">
-    <div id="addbutonexperienta">
+     <div id="experienta" class="prezentation">
+    <div id="addbutonexperienta" >
       <span>Add New</span><img src="img/edit_ico.png" width="25" height="25" alt="nu EXISTA IMAGINEA" />
     </div>
-     </div> -->
+     </div>
 
    </div>
+   <altele>
    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
