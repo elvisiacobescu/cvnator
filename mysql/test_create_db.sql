@@ -56,6 +56,7 @@ CREATE TABLE date_personale(
 	post_dorit VARCHAR(100) NOT NULL,
 	relocare ENUM('Da','Nu'),
 	obiectiv VARCHAR(3000),
+	PRIMARY KEY (user_id),
 	FOREIGN KEY (user_id) REFERENCES user_data(user_id) ON DELETE CASCADE
 )ENGINE=INNODB;
 
