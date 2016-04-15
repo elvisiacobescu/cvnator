@@ -1,7 +1,9 @@
 body{
   background-image: url(/cvnator/img/handsake-background.jpg);
   background-size: 100% auto;
-background-repeat: no-repeat;
+/*background-repeat: no-repeat;*/
+margin: 0;
+padding: 0;
 }
 .white-opacity{
 background-color: white;
@@ -34,4 +36,31 @@ z-index: -1;
   font-size: 19pt;
 font-weight: bold;
 margin-left: 30%;
+}
+.login{
+  border-radius: 10px;
+      padding: 6px 21px;
+      background-color: #F1F4F1;
+      margin-left: 40%;
+      margin-bottom: 20px;
+}
+.buton-style{
+  background-color: #F1F4F1;
+width: 61px;
+padding: 4px;
+padding-left: 10px;
+border-radius: 10px;
+border: 2px solid;
+border-right-color: #898989;
+border-bottom-color: #898989;
+border-left-color: #DDDDDD;
+border-top-color: #DDDDDD;
+cursor: default;
+}
+
+.buton-position{
+  position: absolute;
+    margin-left: 50%;
+    margin-top: -66px;
+}
 }
