@@ -1,50 +1,221 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Raport Tehnic</title>
+    <link rel="stylesheet" href="scholarly.css">
+    <link rel="stylesheet" href="prism-coy.css">
+    <script src="prism.js" defer></script>
+  </head>
+  <body prefix="prefix">
+    <header>
+      <p class="title">Raport Tehnic</p>
+      <p class="subtitle">CVnator</p>
+    </header>
 
-<h1>Raport pentru componenta D</h1>
-<a>
-<p>In intervalul 14-25.03.2016 Elvis Iacobescu a realizat pagina cv.html continand informatiile personale din cv-ul clientului.
+<article id="what" typeof="schema:ScholarlyArticle" resource="#">
+      <section>
+        <ol>
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" typeof="schema:Person">
+              <span property="schema:givenName">Vitalie</span>
+              <span property="schema:familyName">Serdesniuc</span>
+            </a>              
+          </li>           
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" typeof="schema:Person">
+              <span property="schema:givenName">Daniel</span>
+              <span property="schema:familyName">Mateiciuc</span>
+            </a>              
+          </li>              
+          <li property="schema:author" typeof="sa:ContributorRole">
+            <a property="schema:author" typeof="schema:Person">
+              <span property="schema:givenName">Elvis</span>
+              <span property="schema:familyName">Iacobescu</span>
+            </a>              
+          </li>
+        </ol>
+      </section>
+
+
+<section typeof="sa:MaterialsAndMethods" id="workflow">
+    <h2> Workflow </h2>
+    <figure typeof="schema:Table" typeof="sa:MaterialsAndMethods">
+      <table>
+              <thead>
+                <tr>
+                  <td>Nr. Ordine</td>
+                  <td>Sarcina</td>
+                  <td>Deadline</td>
+                  <td>Responsabil</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Design-ul site-ului [ schite aspect & structura baze de date & comunicarea intre pagini ]</td>
+                  <td>23.03.2016</td>
+                  <td>Toata echipa</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Crearea unui Github pentru proiect </td>
+                  <td>23.03.2016</td>
+                  <td>Elvis Iacobescu</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Realizarea paginii de administrare a CV-ului [ cv.html ]</td>
+                  <td>26.03.2016</td>
+                  <td>Elvis Iacobescu</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Realizare login demo cu o baza de date provizorie</td>
+                  <td>28.03.2016</td>
+                  <td>Vitalie Serdesniuc</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Crearea fisierelor HTML, CSS, JS pentru pagina de login </td>
+                  <td>07.04.2016</td>
+                  <td>Elvis Iacobescu</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Realizare script creare baza de date [ tabele, indecsi ]</td>
+                  <td>07.04.2016</td>
+                  <td>Daniel Mateiciuc</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Refacerea loginului demo cu baza de date actuala<br>Stilizarea paginii de login<br>Realizarea conexiunilor intre paginile existente</td>
+                  <td>09.04.2016</td>
+                  <td>Toata echipa</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Creare UML pentru baza de date</td>
+                  <td>09.04.2016</td>
+                  <td>Daniel Mateiciuc</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Creare diagrame Use - Case</td>
+                  <td>10.04.2016</td>
+                  <td>Elvis Iacobescu</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Documentarea si realizarea teste asupra fisierelor PHP folosind sesiuni si cookie-uri</td>
+                  <td>12.04.2016</td>
+                  <td>Vitalie Serdesniuc</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>Realizarea fisierelor PHP & JS implicate in login cu sesiuni si cookie-uri</td>
+                  <td>13.03.2016</td>
+                  <td>Daniel Mateiciuc</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>Realizarea Scholary HTML</td>
+                  <td>14.04.2016</td>
+                  <td>Daniel Mateiciuc, Vitalie Serdesniuc</td>
+                </tr>
+                <tr>
+                  <td>13+</td>
+                  <td>In continuare...</td>
+                  <td>15.04.2016+</td>
+                  <td>Toata echipa</td>    
+                </table>
+</section>
+<h2>Serverul de baze de date utilizat</h2>
+
+        Pentru a reține toți utilizatorii și datele asociate acestora va fi nevoie de o bază de date <strong>MySQL</strong>:
+        
+        <p>
+        <ul>
+        <li>Tabela <b>user_data</b>: este folosita pentru operatiile de <code>login</code> / <code>inregistrare</code>.</li>
+        
+        <li>Tabela <b>date_personale</b>: contine datele personale ale contului care vor fi introduse si in CV, <code>date comune CV-urilor</code> de orice tip.</li>
+        
+        <li>Tabela <b>educatie</b>: contine datele din categoria <code>Educatie</code>. Are cheia primara formata din: <code>user_id</code> si <code>entry_id</code>, cel din urma fiind folosita pentru distingerea CV-urilor create de acelasi utilizator.</li>
+        <li>Tabela <b>experienta</b>: contine datele din categoria <code>Experienta</code>. Are cheia primara formata din: <code>user_id</code> si <code>entry_id</code>, cel din urma fiind folosita pentru distingerea CV-urilor create de acelasi utilizator.</li>
+         <li>Tabela <b>abilitati</b>: contine datele din categoria <code>Abilitati</code>.</li>
+         <li>Tabela <b>limbi_straine</b>: contine datele din categoria <code>Limbi straine</code>.</li>
+         <li>Tabela <b>alt_info</b>: contine experienta in domeniu a fiecarui utilizator sub forma de internship-uri / stagii de practica.</li>
+         <li>Tabela <b>permis</b>: are cheia primara formata din: <code>user_id</code> si <code>entry_id</code>, cel din urma fiind folosita pentru distingerea permisurilor de conducere detinute de acelasi utilizator.</li>
+        </ul>
+
+
+
+
+</figure>
+          <figure typeof="sa:Image">
+            <img src="img/Componenta D - Uml + Relatii Pk-Fk.jpg" width="644" height="668">
+            <figcaption>
+              <i>UML baza de date</i>
+            </figcaption>
+          </figure>
 </p>
-<p>La data 26.03.2016 intrunirea cu echipa si stabilirea, in comun, a structurei bazei de date folosite de aplicatie si realizarea schitelor cu arhitectura paginilor web.
-</p>
-<p>
-Tot in aceeasi zi am realizat un proiect in GITHUB unde am lucrat ulterior. Instalarea, testarea si sincronizarea XAMPP-ului la toti membrii echipei.
- </p>
- <p>La data 28.03.2016 Vitalie Serdesniuc a realizat un login demo dintre pagina de start si cu o baza de date provizorie.
-</p>
-  <a>
-<p>In zilele 01-07.04.2016 Elvis Iacobescu a realizat fisierele html si css reprezentand prima pagina web care ofera posibilitatea logarii clientului. </p>
-</a>
-<p>
-In intervalul 04-07.04.2016 Daniel Mateiciuc a realizat Baza de Date.
- </p>
- <p>
-La data de 09.04.2016 a avut loc a doua intrunire cu echipa unde am o varianta demo a loginului. Am importat Baza de Date create de Daniel Mateiciuc.
-Am realizat prima interconectare dintre pagina de logare si baza de date. Stilizarea paginii de start.
- </p>
- 
- 
- <p>
- In perioada 10-12.04.2016 Vitalie Serdesniuc documentarea si realizarea teste asupra paginilor de php folosind session-uri si cookie-uri
- </p>
- <p>
- In perioada 12-14.04.2016 Daniel Mateiciuc a realizat conectrea paginilor PHP cu pagina de login , prin session-uri si cookie-uri. Tot atunci a realizat diagramele de componente
- </p>
- <p>
- In data de 12.04.2016 Elvis Iacobescu a realizat diagramele use case.
- </p>
- 
- <p>
- La data de 12.04.2016 Vitalie Serdesniuc upladarea pe serverul fenrrir .
- </p>
- 
-  <p>
- La data de 14.04.2016 Vitalie Serdesniuc realizarea raportului de taskuri .
- </p>
- </a>
 
-
-
-</body>
-</html>
+<h2>Diagramele Use - Case</h2>
+<figure typeof="sa:Image">
+            <img src="img/cvrequest-diagram.jpg" width="644" height="668">
+            <figcaption>
+              <i>Diagrama pentru request</i>
+            </figcaption>
+          </figure>
+<figure typeof="sa:Image">
+            <img src="img/save diagram.jpg" width="644" height="668">
+            <figcaption>
+              <i>Diagrama pentru salvarea datelor din formular</i>
+            </figcaption>
+          </figure>
+<figure typeof="sa:Image">
+            <img src="img/edit butons.jpg" width="644" height="668">
+            <figcaption>
+              <i>Diagrama pentru editarea datelor din formular</i>
+            </figcaption>
+          </figure>
+<figure typeof="sa:Image">
+            <img src="img/delogare diagrama.jpg" width="644" height="668">
+            <figcaption>
+              <i>Diagrama pentru delogare</i>
+            </figcaption>
+          </figure>
+<h2>Wireframing</h2>
+<figure typeof="sa:Image">
+            <img src="img/Page-7-Image-7.jpg" width="644" height="668">
+            <figcaption>
+              <i>Schita pagina de logare</i>
+            </figcaption>
+          </figure> 
+<figure typeof="sa:Image">
+            <img src="img/Page-9-Image-9.jpg" width="644" height="668">
+            <figcaption>
+              <i>Schita pagina de inregistrare</i>
+            </figcaption>
+          </figure> 
+<figure typeof="sa:Image">
+            <img src="img/Page-21-Image-21.jpg" width="644" height="668">
+            <figcaption>
+              <i>Schita pagina de modificare a CV-ului</i>
+            </figcaption>
+          </figure>
+<figure typeof="sa:Image">
+            <img src="img/Page-11-Image-11.jpg" width="644" height="668">
+            <figcaption>
+              <i>Schita pagina de profil</i>
+            </figcaption>
+          </figure> 
+<figure typeof="sa:Image">
+            <img src="img/Page-13-Image-13.jpg" width="644" height="668">
+          </figure> 
+<figure typeof="sa:Image">
+            <img src="img/Page-15-Image-15.jpg" width="644" height="668">
+          </figure> 
+           
+      
