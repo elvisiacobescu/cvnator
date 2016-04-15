@@ -34,9 +34,9 @@
 			if ($result = mysqli_query($database,$query))
 			{
     				while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
-    			    			$bd_user_id = $row[user_id];
-								$bd_email = $row[email];
-								$bd_parola = $row[parola];
+    			    			$bd_user_id = $row['user_id'];
+								$bd_email = $row['email'];
+								$bd_parola = $row['parola'];
    						}
     				//$result->close();
 			}
@@ -101,9 +101,9 @@
 
 				<!--Verificam lungimea parolei:-->
 				if(n_parola < 4 ) {_("status").innerHTML = "Parola prea mica. Parola trebuie sa aiba cel putin 4 caractere.";}
-				else
+			else
 					if(n_parola > 20 ) {_("status").innerHTML = "Parola prea mare. Parola trebuie sa aiba cel mult 20 de caractere.";}
-				var ajax = ajaxObj("POST","login.php");
+			var ajax = ajaxObj("POST","index.php");
 				ajax.onreadystatechange = function()
 				{
 					if(ajaxReturn(ajax) == true )
@@ -138,18 +138,19 @@
 	<!-- action="login.php"  method="post" -->
 <form id="loginform" >
 <div class="logopozition2"><img src="img/logocvnator.png" alt="logo" /></div>
-   <p><span class="textitineration">Numele:</span> <input class="cell-format" type="text" name="nume" size="20"
+   <p><span class="textitineration">Numele:</span> <input class="cell-format" type="text" name="email" id="email" size="20"
         placeholder="Numele d-voastra" /><br>
-      <span class="textitineration">Parola:</span> <input class="cell-format" style="margin-left: 10px;" type="text" name="parola" size="20"
+      <span class="textitineration">Parola:</span> <input class="cell-format" style="margin-left: 10px;" type="text" id="parola" name="parola" size="20"
    	    placeholder="Parola d-voastra" /> </p>
    <!-- <p> -->
      <!-- <input class="login" type="submit" value="LogIn"
         title="Apasati butonul pentru a expedia datele spre server" /> </p> -->
 <!-- <button id="buton_login" onclick="login()" value="Trimite">Logare</button> -->
 					<button id="buton_login"  class="login"  onclick="login()" value="Trimite" >Logare</button>
+                    
 </form>
 <div id="registeer" class="buton-style buton-position">Register</div>
-
+<p hidden id="status"></p>
 </div>
 </div>
 </div>
