@@ -18,6 +18,8 @@ z-index: -1;
 .content{
   z-index: 100;
 }
+.logopozition2{    margin-left: 32%;}
+.logopozition{    margin-left: 25%;}
 .log-in{
     margin: 0 auto;
     width: 50%;
