@@ -16,7 +16,7 @@
 		//Ne-am conectat la BD.
 		$email = mysqli_real_escape_string($database,$_POST['email']);
 		$parola = mysqli_real_escape_string($database,$_POST['parola']);
-		
+
 		if($email == "" || $parola == "")
 		{
 			echo("eroare_date");
@@ -31,7 +31,7 @@
 			//Parola trebuie criptata? N-o bagam in query, verificam in php.
 			//Scoatem user_id &parola din BD.
 			$query = "SELECT * FROM user_data WHERE email = '$email' AND parola = '$parola'";
-			if ($result = mysqli_query($database,$query)) 
+			if ($result = mysqli_query($database,$query))
 			{
     				while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
     			    			$bd_user_id = $row[user_id];
@@ -44,9 +44,9 @@
 			{
 				die("Eroare la interogare");
 			}
-			
-			
-			
+
+
+
 			if( $parola != $bd_parola )
 			{
 				echo("eroare_date");
@@ -57,14 +57,14 @@
 				$_SESSION['session_user_id'] = $bd_user_id;
 				$_SESSION['session_email'] = $bd_email;
 				$_SESSION['session_parola'] = $bd_parola;
-				
+
 				setcookie("cookie_user_id",$bd_user_id, time()+3600*24,"/");
 				setcookie("cookie_email",$bd_email, time()+3600*24,"/");
 				setcookie("cookie_parola",$bd_parola, time()+3600*24,"/");
-				
+
 				die();
 			}
-			
+
 		}
 		die();
 	}
@@ -86,9 +86,9 @@
 		{
 			var em = _("email").value;
 			var pass = _("parola").value;
-			
+
 			<!--Verificam daca nu a introdus datele de autentif:-->
-			
+
 			if( em == "" || pass == "" )
 			{
 				_("status").innerHTML = "Ai uitat sa introduci <u>toate</u> datele de autentificare.";
@@ -98,10 +98,10 @@
 				//_("buton_login").style.display = "none"; ignoraaaaa
 				_("status").innerHTML = "Asteptati...";
 				var n_parola = pass.length;
-				
+
 				<!--Verificam lungimea parolei:-->
 				if(n_parola < 4 ) {_("status").innerHTML = "Parola prea mica. Parola trebuie sa aiba cel putin 4 caractere.";}
-				else 
+				else
 					if(n_parola > 20 ) {_("status").innerHTML = "Parola prea mare. Parola trebuie sa aiba cel mult 20 de caractere.";}
 				var ajax = ajaxObj("POST","login.php");
 				ajax.onreadystatechange = function()
@@ -122,11 +122,39 @@
 				ajax.send("email="+em+"&parola="+pass);
 			}
 		}
-		
+
 	</script>
 </head>
-
 <body>
+  <div class="white-opacity">
+
+  </div>
+  <div class="content">
+<div Id="head" class="head" style="height:30px; background-color:#800072">
+  <span class="logopozition"><img src="img/logocvnator.png" alt="logo" height="25" width="53" /></span>
+</div>
+<div class="baground-log">
+<div class="log-in">
+	<!-- action="login.php"  method="post" -->
+<form id="loginform" >
+<div class="logopozition2"><img src="img/logocvnator.png" alt="logo" /></div>
+   <p><span class="textitineration">Numele:</span> <input class="cell-format" type="text" name="nume" size="20"
+        placeholder="Numele d-voastra" /><br>
+      <span class="textitineration">Parola:</span> <input class="cell-format" style="margin-left: 10px;" type="text" name="parola" size="20"
+   	    placeholder="Parola d-voastra" /> </p>
+   <!-- <p> -->
+     <!-- <input class="login" type="submit" value="LogIn"
+        title="Apasati butonul pentru a expedia datele spre server" /> </p> -->
+<!-- <button id="buton_login" onclick="login()" value="Trimite">Logare</button> -->
+					<button id="buton_login"  class="login"  onclick="login()" value="Trimite" >Logare</button>
+</form>
+<div id="registeer" class="buton-style buton-position">Register</div>
+
+</div>
+</div>
+</div>
+</body>
+<!-- <body>
  	 <div class="white-opacity"></div>
  	 <div class="content">
 		<div Id="head" class="head" style="height:30px;background-color:red">
@@ -137,17 +165,17 @@
 			<form id="loginform">
 				<p>
                 <span class="textitineration">Email-ul:</span> <input class="cell-format" onfocus="emptyElement('status')" type="text" id="email" size="20" placeholder="Email-ul d-voastra" /></br>
-      			<span class="textitineration">Parola:</span> <input class="cell-format" onfocus="emptyElement('status')" style="margin-left: 10px;" type="text" id="parola" size="20" placeholder="Parola d-voastra" /> 
+      			<span class="textitineration">Parola:</span> <input class="cell-format" onfocus="emptyElement('status')" style="margin-left: 10px;" type="text" id="parola" size="20" placeholder="Parola d-voastra" />
                 </p>
-   				<button id="buton_login" onclick="login()" value="Trimite">Logare</button> 
+   				<button id="buton_login" onclick="login()" value="Trimite">Logare</button>
                 <!--<input type="submit" value="Trimite" title="Apasati butonul pentru a expedia datele spre server" onclick="this.style.display='none'"/>-->
-                
+
                 <!--Aici vom afisa erorileee:-->
-                <p id="status"></p>
-			</form>
+                <!-- <p id="status"></p> -->
+			<!-- </form> -->
 			<!--<div id="register">Register</div>-->
-		</div>
-</div>
-</div>
-</body>
+		<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </body> -->
 </html>
