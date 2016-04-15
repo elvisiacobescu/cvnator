@@ -91,10 +91,10 @@ animation: out 1s linear 1;
   100%{height:0px;}
 
 }
-@-webkit-keyframes out{
+/*@-webkit-keyframes out{
   0% {height:300px;}
   100%{height:0px;}
-}
+}*/
 .mareste{
   animation: back 1s linear 1;
   -webkit-animation:back 1s linear 1 forwards;
@@ -106,10 +106,10 @@ animation: out 1s linear 1;
   100%{height:300px;}
 
 }
-@-webkit-keyframes back{
+/*@-webkit-keyframes back{
   0%  {height:0px;}
   100%{height:300px;}
-}
+}*/
 
 .preview{
   position: relative;
