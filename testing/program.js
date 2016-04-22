@@ -11,10 +11,11 @@ var car ={
 var jsonstring=jstringifai(car);
 
 function jstringifai(a){
-var stringg='{'+'"'+"type"+'"'+":"+'"'+ a.type+'"'+','+'"'+" model"+'"'+":" +'"'+a.model + '"' + ',' + '"' + "color" + '"' + ":" ;
+var stringg='{'+'"'+"type"+'"'+":"+'"'+ a.type+'"'+','+'"'+"model"+'"'+":" +'"'+a.model + '"' + ',' + '"' + "color" + '"' + ":" ;
 stringg=stringg + '"'+ a.color +'"' +'}';
   return stringg;
 }
+//face din tr-un json un obiect pe cre pot eu sa il manipulez
 function jsparser(text){
   obj = JSON.parse(text);
   document.writeln(obj.type);
@@ -45,16 +46,17 @@ function jsparser(text){
        hr.send();
       //   document.writeln( "intra aici");
        hr.onreadystatechange = function()
-   {
+     {
         if(hr.readyState == 4 && hr.status == 200)
      {
-          //face parsarea aici :)
+
+         //face primirea de date de la server  :)
           var test=hr.responseText;
-          document.getElementById("severrespoce").innerHTML= test;
-          //nu fasce parsarea cum trebuie da o eruare si nu afiseaza aici 
-          obj = JSON.parse(test);
-          document.getElementById("severrespoce").innerHTML=obj.type;
-        // document.writeln( hr.responseText);
+        //  jsparser(test);
+         document.getElementById("severrespoce").innerHTML= test;
+         //nu fasce parsarea cum trebuie da o eruare si nu afiseaza aici
+
+         // document.writeln( hr.responseText);
      }
     }
   }
