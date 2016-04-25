@@ -1,4 +1,23 @@
-window.onload = function () {}
+window.onload = function () {
+
+
+  var jsonstring=JSON.stringify(price);
+  //--aici trebuie sa facem legatura cu back endul si sa aducem datele
+  var hr=new XMLHttpRequest();
+  var url="php/getuserindex.php";
+  hr.open("GET",url,true);
+  hr.send();
+  hr.onreadystatechange = function()
+  {
+      if(hr.readyState == 4 && hr.status == 200)
+      {
+        //face primirea de date de la server
+        var responce=hr.responseText;
+
+        document.getElementById('nume-utilizator-helo').innerHTML = "huelo"+ responce;      }
+    }
+}
+
   //functioneaza o singura data
 document.getElementById("edit1").addEventListener("click",function (){
 document.getElementById("prezent").className+=" micsoreaza";
