@@ -11,8 +11,10 @@ var car ={
 var jsonstring=jstringifai(car);
 
 function jstringifai(a){
-var stringg='{'+'"'+"type"+'"'+":"+'"'+ a.type+'"'+','+'"'+"model"+'"'+":" +'"'+a.model + '"' + ',' + '"' + "color" + '"' + ":" ;
-stringg=stringg + '"'+ a.color +'"' +'}';
+var string=
+
+// var stringg='{'+'"'+"type"+'"'+":"+'"'+ a.type+'"'+','+'"'+"model"+'"'+":" +'"'+a.model + '"' + ',' + '"' + "color" + '"' + ":" ;
+// stringg=stringg + '"'+ a.color +'"' +'}';
   return stringg;
 }
 //face din tr-un json un obiect pe cre pot eu sa il manipulez
