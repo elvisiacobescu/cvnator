@@ -13,12 +13,11 @@ var name='';
       if(hr.readyState == 4 && hr.status == 200)
       {
         //face primirea de date de la server
-        var responce=hr.responseText;
-        iduser=respoce;
+        var responce =  hr.responseText;
+        iduser=responce;
         document.getElementById('nume-utilizator-helo').innerHTML = "helo"+ responce;  }
     }
 
-  var start = function(){
     var idusers={
       "iduser" : iduser
     }
@@ -38,7 +37,7 @@ var name='';
           document.getElementById('nume-utilizator-helo').innerHTML = "helo"+ responce;  }
       }
 
-  }
+      
 }
 
   //functioneaza o singura data
