@@ -1,7 +1,8 @@
 window.onload = function () {
+var iduser='';
+var name='';
 
-
-  var jsonstring=JSON.stringify(price);
+  //var jsonstring=JSON.stringify(price);
   //--aici trebuie sa facem legatura cu back endul si sa aducem datele
   var hr=new XMLHttpRequest();
   var url="php/getuserindex.php";
@@ -13,9 +14,31 @@ window.onload = function () {
       {
         //face primirea de date de la server
         var responce=hr.responseText;
-
-        document.getElementById('nume-utilizator-helo').innerHTML = "huelo"+ responce;      }
+        iduser=respoce;
+        document.getElementById('nume-utilizator-helo').innerHTML = "helo"+ responce;  }
     }
+
+  var start = function(){
+    var idusers={
+      "iduser" : iduser
+    }
+    var jsonstring=JSON.stringify(idusers);
+    //--aici trebuie sa facem legatura cu back endul si sa aducem datele
+    var hr=new XMLHttpRequest();
+    var url="php/getusername.php?obj="+jsonstring;
+    hr.open("GET",url,true);
+    hr.send();
+    hr.onreadystatechange = function()
+    {
+        if(hr.readyState == 4 && hr.status == 200)
+        {
+          //face primirea de date de la server
+          var responce=hr.responseText;
+
+          document.getElementById('nume-utilizator-helo').innerHTML = "helo"+ responce;  }
+      }
+
+  }
 }
 
   //functioneaza o singura data

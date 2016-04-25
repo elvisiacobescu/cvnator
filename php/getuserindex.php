@@ -1,7 +1,5 @@
 
 <?PHP
-		$variabila="1234556";
-		echo $variabila;
-		
-
+		$variabilaa =$_COOKIE['cookie_user_id'];
+		echo $variabilaa;
 ?>
