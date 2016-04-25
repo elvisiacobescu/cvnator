@@ -1,44 +1,4 @@
-window.onload = function () {
-var iduser='';
-var name='';
 
-  //var jsonstring=JSON.stringify(price);
-  //--aici trebuie sa facem legatura cu back endul si sa aducem datele
-  var hr=new XMLHttpRequest();
-  var url="php/getuserindex.php";
-  hr.open("GET",url,true);
-  hr.send();
-  hr.onreadystatechange = function()
-  {
-      if(hr.readyState == 4 && hr.status == 200)
-      {
-        //face primirea de date de la server
-        var responce =  hr.responseText;
-        iduser=responce;
-        document.getElementById('nume-utilizator-helo').innerHTML = "helo"+ responce;  }
-    }
-
-    var idusers={
-      "iduser" : iduser
-    }
-    var jsonstring=JSON.stringify(idusers);
-    //--aici trebuie sa facem legatura cu back endul si sa aducem datele
-    var hr=new XMLHttpRequest();
-    var url="php/getusername.php?obj="+jsonstring;
-    hr.open("GET",url,true);
-    hr.send();
-    hr.onreadystatechange = function()
-    {
-        if(hr.readyState == 4 && hr.status == 200)
-        {
-          //face primirea de date de la server
-          var responce=hr.responseText;
-
-          document.getElementById('nume-utilizator-helo').innerHTML = "helo"+ responce;  }
-      }
-
-      
-}
 
   //functioneaza o singura data
 document.getElementById("edit1").addEventListener("click",function (){
@@ -101,3 +61,57 @@ document.getElementById("save1").addEventListener("click", function (){
 // //trebuie facuta aploudul unei poze
 // }
 // )
+window.onload = function () {
+  var iduser="";
+  var name='';
+  var responce='';
+  //var jsonstring=JSON.stringify(price);
+  //--aici trebuie sa facem legatura cu back endul si sa aducem datele
+  //var auto_refresh = setInterval(function() { asckprice(); }, 1000);
+  function asckprice(){
+  var hr1=new XMLHttpRequest();
+  var url="php/getuserindex.php";
+  hr1.open("GET",url,true);
+  hr1.send();
+  hr1.onreadystatechange = function()
+  {    var afis='';
+      if(hr1.readyState == 4 && hr1.status == 200)
+      {
+        //face primirea de date de la server
+        responce = hr1.responseText;
+        iduser = responce;
+        afis = responce;
+        document.getElementById('sunt-prost-tinema-minte').innerHTML +=  iduser;
+      }
+     document.getElementById('nume-utilizator-helo').innerHTML +=  afis;
+    }
+  }
+  function asckname(){
+      // document.getElementById('nume-utilizator-helo').innerHTML +=  iduser;
+      //iduser = document.getElementById('sunt-prost-tinema-minte').innerhtml;
+        document.getElementById('nume-utilizator-helo').innerHTML +=  iduser ;
+    var idusers={
+      "iduser" : iduser
+    }
+    var jsonstring=JSON.stringify(idusers);
+    //--aici trebuie sa facem legatura cu back endul si sa aducem datele
+    var hr=new XMLHttpRequest();
+    var url="php/getusername.php?obj="+jsonstring;
+    hr.open("GET",url,true);
+    hr.send();
+    hr.onreadystatechange = function()
+    {
+        if(hr.readyState == 4 && hr.status == 200)
+        {
+          //face primirea de date de la server
+          var responce=hr.responseText;
+
+          document.getElementById('nume-utilizator-helo').innerHTML += "helo"+ responce;
+          }
+      }
+
+   }
+   asckprice();
+   asckname();
+
+}
