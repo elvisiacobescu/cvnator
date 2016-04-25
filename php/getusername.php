@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $json = json_decode($obj, true);// decode the JSON into an associative array
 //echo '<pre>' . print_r($json, true) . '</pre>';
 // echo 'what ever '.$obj;
-$idUser=$json['iduser'];
+$iduser=$json['iduser'];
 
 
 $query = sprintf("SELECT email FROM user_data
