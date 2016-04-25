@@ -17,11 +17,11 @@ if ($conn->connect_error) {
 $json = json_decode($obj, true);// decode the JSON into an associative array
 //echo '<pre>' . print_r($json, true) . '</pre>';
 // echo 'what ever '.$obj;
-$idUser=$json['idUser'];
+$idUser=$json['iduser'];
 
 
 $query = sprintf("SELECT email FROM user_data
-    WHERE user_id=". "'".$idUser."'");
+    WHERE user_id=". "'".$iduser."'");
 $rezult=$conn-> query($query);
 if ($rezult->num_rows>0){
 while($row = $rezult->fetch_assoc()) {
