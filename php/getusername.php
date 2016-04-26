@@ -1,6 +1,8 @@
 <?php
 
 $obj = $_GET['obj'];
+$obj =$_COOKIE['cookie_user_id'];
+$obj = trim(preg_replace('/\s\s+/', ' ', $obj));
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,22 +16,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 //else echo "Connected successfully";
-echo $obj;
-$json = json_decode($obj, true);// decode the JSON into an associative array
+//echo $obj;
+//$json = json_decode($obj, true);// decode the JSON into an associative array
 //echo '<pre>' . print_r($json, true) . '</pre>';
 // echo 'what ever '.$obj;
-$iduser=$json['iduser'];
+//$iduser=$json['iduser'];
 
 
 $query = sprintf("SELECT email FROM user_data
-    WHERE user_id=". "'".$iduser."'");
+    WHERE user_id=". "'".$obj."'");
 $rezult=$conn-> query($query);
 if ($rezult->num_rows>0){
 while($row = $rezult->fetch_assoc()) {
-    echo  $row["name"];
+    echo  $row["email"];
 }
 } else {
-echo "0 results";
+echo $obj;
 }
 
 ?>
