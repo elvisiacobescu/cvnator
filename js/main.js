@@ -7,15 +7,15 @@ document.getElementById("de_editat").innerHTML+="<form id='se_editeaza' action='
 document.getElementById("se_editeaza").innerHTML+="<fieldset id='iner_form'></fieldset>";
 document.getElementById("iner_form").innerhtml+="";
 document.getElementById("iner_form").innerHTML+="<legend>date personale:</legend>";
-document.getElementById("iner_form").innerHTML+="nume:<br><input name='nume' type='text' value='elvis2'/></br>";
-document.getElementById("iner_form").innerHTML+="prenume:<br><input type='text' value='iacobescu'/></br>";
-document.getElementById("iner_form").innerHTML+="varsta:<br><input type='number' value='5' min='5' max='102'/></br>";
-document.getElementById("iner_form").innerHTML+="sex: <br><input type='radio' name='sex' value='masculin' checked /> Masculin</br>"
-document.getElementById("iner_form").innerHTML+="<input type='radio' name='sex' value='feminin' checked/> Feminin</br>";
-document.getElementById("iner_form").innerHTML+="numartelefon: <br><input type='number' value='07' ></br>";
-document.getElementById("iner_form").innerHTML+="adresa:</br><input type='text' value='bla bla'></br>";
-document.getElementById("iner_form").innerHTML+="oras:</br><input type='text' value='bacau'></br>";
-document.getElementById("iner_form").innerHTML+="salariu dorit in euro:<br><input type='number' value=''></br>";
+document.getElementById("iner_form").innerHTML+="nume:<br><input class='celformat' name='nume' type='text' value='elvis2'/></br>";
+document.getElementById("iner_form").innerHTML+="prenume:<br><input class='celformat' type='text' value='iacobescu'/></br>";
+document.getElementById("iner_form").innerHTML+="<span>varsta:</span><input class='celformat' type='number' value='5' min='5' max='102'/></br>";
+document.getElementById("iner_form").innerHTML+="<span style='padding-right: 16px;'>sex:</span><select class='celformat' id='start'>   <option disabled selected value> -- M/F -- </option><select></br>"
+document.getElementById("iner_form").innerHTML+="";
+document.getElementById("iner_form").innerHTML+="numartelefon: <br><input class='celformat' type='number' value='07' ></br>";
+document.getElementById("iner_form").innerHTML+="adresa:</br><input class='celformat' type='text' value='bla bla'></br>";
+document.getElementById("iner_form").innerHTML+="oras:</br><input class='celformat' type='text' value='bacau'></br>";
+document.getElementById("iner_form").innerHTML+="salariu dorit in euro:<br><input class='celformat' type='number' value=''></br>";
 document.getElementById("iner_form").innerHTML+="";
 document.getElementById("iner_form").innerHTML+="<div id='save1'><span class='savetext'>SAVE</span></div>";
 oForm = document.forms[0];
@@ -32,7 +32,7 @@ oText.value=document.getElementById("acadres").innerHTML;
 oText = oForm.elements[8];
 oText.value=document.getElementById("acoras").innerHTML;
 oText = oForm.elements[9];
-oText.value=document.getElementById("acsalariu").innerHTML;
+//oText.value=document.getElementById("acsalariu").innerHTML;
 
  function load_js()
     {
@@ -66,9 +66,14 @@ document.getElementById("logout").addEventListener("click",function (){
         if(responce=="succes")
          {
           window.location = "http://localhost/cvnator/";
-
          }
          else document.getElementById('eror-respoce').innerHTML = " logout fail ";
        }else  document.getElementById('eror-respoce').innerHTML = " logout fail ";
   }
 });
+// <span style='margin: 10px 52px  10px 5px;'>Start:</span><select class='celformat' id='start'>
+//   <option disabled selected value> -- select a city -- </option>
+//   <option value='iasi'>Full-time</option>
+//   <option value='iasi'>Part-time</option>
+//   <option value='iasi'>Project-based</option>
+// </select></br>

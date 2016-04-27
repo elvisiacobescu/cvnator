@@ -13,7 +13,7 @@ document.getElementById('bookingsystem').innerHTML += "<form id='bookingform' ac
 document.getElementById('bookingform').innerHTML += "<span style='margin: 10px 43px 10px 5px;'>Name:</span><input class='celformat' name='name' type='text' value=''/></br>";
 document.getElementById('bookingform').innerHTML += "<span style='margin: 10px 51px  10px 5px;'>Date:</span><input class='celformat'type='date' data-date-inline-picker='true' /></br>";
 document.getElementById('bookingform').innerHTML += "<span style='margin: 10px 52px  10px 5px;'>Start:</span><select class='celformat' id='start'></select></br>";
-document.getElementById('start').innerHTML += " <option disabled selected value> -- select a city -- </option>";
+document.getElementById('start').innerHTML += "<option disabled selected value> -- select a city -- </option>";
 document.getElementById('start').innerHTML += "<option value='iasi'>Iasi</option>";
 document.getElementById('start').innerHTML += "<option value='bacau'>Bacau</option>";
 document.getElementById('start').innerHTML += "<option value='suceava'>Suceava</option>";
