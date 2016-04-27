@@ -1,0 +1,1 @@
+1 logout.php - anuleza sesiunea , invecheste cokieuri si trimite mesajul de succes dupa ce a facut aceste lucruri cu textu "succes" e foarte important sa fie textu carre lam pus intre ghilimele 

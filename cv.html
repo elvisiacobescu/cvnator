@@ -1,17 +1,3 @@
-<?php
-	include_once("php_files/check_status.php");
-    $email = "";
-
-    if(isset($_GET["email"])){
-		$email = $_GET['email'];
-	}
-    else
-    {
-    	header("location: index.php");
-    	die();
-	}
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +6,7 @@
     <link href="style/style-main.css" rel="stylesheet" type="text/css" >
     <script src = "php_files/js/aja.js"></script>
     <script src = "php_files/js/first.js"></script>
+		<script src = "/js/firstload.js"></script>
   </head>
   <body>
 <!-- <<<<<<< HEAD -->
@@ -28,7 +15,7 @@
 
     <div class="" style="height:50px; color:white; background-color:#800072;">
 	<spam id="nume-utilizator-helo"></spam>
-	<span id="sunt-prost-tinema-minte" style="opacity: 0;"></span>
+	<span id="eror-respoce" style="opacity: 1;"></span>
 			<div id="logout" class="logout">
 
       <span class="logout-img"><img src="img/door.png" width="25" height="25" alt="nu EXISTA IMAGINEA" /></span ><span class="logout-text">Logout</span>

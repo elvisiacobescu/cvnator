@@ -143,3 +143,6 @@ left: 29px;
     width: 83px;
     border-radius: 5px;
 }
+#logout{
+  cursor:pointer;
+}

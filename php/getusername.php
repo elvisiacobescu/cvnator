@@ -1,6 +1,6 @@
 <?php
 
-$obj = $_GET['obj'];
+//$obj = $_GET['obj'];
 $obj =$_COOKIE['cookie_user_id'];
 $obj = trim(preg_replace('/\s\s+/', ' ', $obj));
 $servername = "localhost";
