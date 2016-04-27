@@ -11,6 +11,7 @@
 	}
 	
 	session_destroy();
+	echo "succes";
 	
 	if(isset($_SESSION['session_email']))
 	{}
