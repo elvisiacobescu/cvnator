@@ -64,12 +64,13 @@ document.getElementById("logout").addEventListener("click",function (){
       {
         //face primirea de date de la server
         var responce=hr.responseText;
-        if(responce=="succes")
+       document.getElementById('eror-respoce').innerHTML += responce;
+         if(responce=="succes")
          {
           window.location = "http://localhost/cvnator/";
          }
-         else document.getElementById('eror-respoce').innerHTML = " logout fail ";
-       }else  document.getElementById('eror-respoce').innerHTML = " logout fail ";
+         else document.getElementById('eror-respoce').innerHTML += " logout fail ";
+       }
   }
 });
 // <span style='margin: 10px 52px  10px 5px;'>Start:</span><select class='celformat' id='start'>
