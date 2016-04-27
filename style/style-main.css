@@ -114,6 +114,8 @@ animation: out 1s linear 1;
 }
 .celformat{
   border-radius: 5px;
+  height: 20px;
+    margin: 3px 0px;
 }
 @keyframes back{
   0% {height:0px;}

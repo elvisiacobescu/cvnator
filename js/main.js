@@ -10,7 +10,7 @@ document.getElementById("iner_form").innerHTML+="<legend>date personale:</legend
 document.getElementById("iner_form").innerHTML+="nume:<br><input class='celformat' name='nume' type='text' value='elvis2'/></br>";
 document.getElementById("iner_form").innerHTML+="prenume:<br><input class='celformat' type='text' value='iacobescu'/></br>";
 document.getElementById("iner_form").innerHTML+="<span>varsta:</span><input class='celformat' type='number' value='5' min='5' max='102'/></br>";
-document.getElementById("iner_form").innerHTML+="<span style='padding-right: 16px;'>sex:</span><select class='celformat' id='start'>   <option disabled selected value> -- M/F -- </option><select></br>"
+document.getElementById("iner_form").innerHTML+="<span style='padding-right: 16px;'>sex:</span><select class='celformat' id='start'><option disabled selected value> -- M/F -- </option><option>M</option><option >F</option><select></br>"
 document.getElementById("iner_form").innerHTML+="";
 document.getElementById("iner_form").innerHTML+="numartelefon: <br><input class='celformat' type='number' value='07' ></br>";
 document.getElementById("iner_form").innerHTML+="adresa:</br><input class='celformat' type='text' value='bla bla'></br>";
