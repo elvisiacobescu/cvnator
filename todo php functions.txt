@@ -1,1 +1,4 @@
-1 logout.php - anuleza sesiunea , invecheste cokieuri si trimite mesajul de succes dupa ce a facut aceste lucruri cu textu "succes" e foarte important sa fie textu carre lam pus intre ghilimele 
+1 logout.php - anuleza sesiunea , invecheste cokieuri si trimite mesajul de succes dupa ce a facut aceste lucruri cu textu "succes" e foarte important sa
+fie textu carre lam pus intre ghilimele NU SE TRIMITE NIMIC DE LA FRONT END
+2 personaldata.php - aduce toate datele din categoria date personale intrun json    NU SE TRIMITE NIMIC DE LA FRONT END
+3 experienta.php -aduce toate datele personale din categoria experienta intr-un json  NU SE TRIMITE NIMIC DE LA FRONT END
