@@ -18,6 +18,7 @@ document.getElementById("iner_form").innerHTML+="oras:</br><input class='celform
 document.getElementById("iner_form").innerHTML+="salariu dorit in euro:<br><input class='celformat' type='number' value=''></br>";
 document.getElementById("iner_form").innerHTML+="";
 document.getElementById("iner_form").innerHTML+="<div id='save1'><span class='savetext'>SAVE</span></div>";
+
 oForm = document.forms[0];
 oText = oForm.elements[1];
 oText.value=document.getElementById("acname").innerHTML;
