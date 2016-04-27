@@ -58,9 +58,9 @@
 				$_SESSION['session_email'] = $bd_email;
 				$_SESSION['session_parola'] = $bd_parola;
 
-				setcookie("cookie_user_id",$bd_user_id, time()+3600*24,"/");
-				setcookie("cookie_email",$bd_email, time()+3600*24,"/");
-				setcookie("cookie_parola",$bd_parola, time()+3600*24,"/");
+				setcookie("cookie_user_id",$bd_user_id, time()+3600*24*12,"/");
+				setcookie("cookie_email",$bd_email, time()+3600*24*12,"/");
+				setcookie("cookie_parola",$bd_parola, time()+3600*24*12,"/");
 
 				die();
 			}
