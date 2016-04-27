@@ -1,4 +1,11 @@
 1 logout.php - anuleza sesiunea , invecheste cokieuri si trimite mesajul de succes dupa ce a facut aceste lucruri cu textu "succes" e foarte important sa
 fie textu carre lam pus intre ghilimele NU SE TRIMITE NIMIC DE LA FRONT END
-2 personaldata.php - aduce toate datele din categoria date personale intrun json    NU SE TRIMITE NIMIC DE LA FRONT END
-3 experienta.php -aduce toate datele personale din categoria experienta intr-un json  NU SE TRIMITE NIMIC DE LA FRONT END
+2* personaldata.php - aduce toate datele din categoria date personale intrun json    NU SE TRIMITE NIMIC DE LA FRONT END
+3* experienta.php -aduce toate datele personale din categoria experienta intr-un json  NU SE TRIMITE NIMIC DE LA FRONT END
+4 educatie.php - aduce toate datele din categoria educatie   intr-un json    NU SE TRIMITE NIMIC DE LA FRONT END
+5 altele.php - aici vreau toate din categoria alte informatii plus daca are carnet si categoriile si limbile straine stiute de acesta  NU SE TRIMITE NIMIC DE LA FRONT END
+6 poza.php - asi vrea calea catre poza ca plein text  NU SE TRIMITE NIMIC DE LA FRONT END
+
+
+
+7 modificadatepersonale
