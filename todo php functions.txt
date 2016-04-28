@@ -9,3 +9,4 @@ fie textu carre lam pus intre ghilimele NU SE TRIMITE NIMIC DE LA FRONT END
 
 
 7 modificadatepersonale
+// astea s-au terminat
