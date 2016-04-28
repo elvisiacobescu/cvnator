@@ -40,8 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $parola = test_input($_POST["parola"]);
         
   }
-
-  if (($_POST["parola2"])!=($_POST["parola"])) {
+   
+    $parola2 =$_POST["parola2"];
+  if ($parola!=$parola) {
     $parola2Err = "a doua parola nu corespunde cu prima";
     echo $parola2Err; exit();
   }
@@ -68,7 +69,6 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 
 $getid=sprintf("SELECT * FROM user_data where email=".$email);
 $rezult= $conn ->query($getid);
-
 
 if ($rezult->num_rows>0){
   {$utexistent="Email deja folosit";
