@@ -10,3 +10,5 @@ fie textu carre lam pus intre ghilimele NU SE TRIMITE NIMIC DE LA FRONT END
 
 7 modificadatepersonale
 // astea s-au terminat
+8 creare unui fisier pe care sa il puneti intrun folder resurse care sa contina sv (eu apas pe buton si cer path catre fisier pdf care sa il
+dau sa il vada utilizatoru .trebuie creat si trimis pathu catre mine ca sa pot sa il dau catre vizualizare :))
