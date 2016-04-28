@@ -1,52 +1,52 @@
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $parolaErr = $parola2Err = "";
+$name = $email = $parola = $parola2  = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
+    echo $nameErr; exit();
   } else {
     $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed"; 
+      echo $nameErr; exit();
     }
   }
   
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
+    echo $emailErr; exit();
   } else {
     $email = test_input($_POST["email"]);
     // check if e-mail address is well-formed
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format"; 
+      echo $emailErr; exit();
     }
   }
     
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL"; 
-    }    
+  if (empty($_POST["parola"])) {
+    $parolaErr ="parola necompletata";
+  } else 
+      if(strlen($_POST["parola"])<5){
+        $parolaErr ="parola prea scurta";
+        echo $parolaErr; exit();
+      }
+        else
+    $parola = test_input($_POST["parola"]);
+        
   }
 
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
+  if (($_POST["parola2"])!=($_POST["parola"])) {
+    $parola2Err = "a doua parola nu corespunde cu prima";
+    echo $parola2Err; exit();
   }
 
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
+
 
 function test_input($data) {
   $data = trim($data);
@@ -55,14 +55,50 @@ function test_input($data) {
   return $data;
 }
 
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
+//
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cvnator";
+
+//conect to the data baze
+
+
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+$getid=sprintf("SELECT * FROM user_data where email=".$email);
+$rezult= $conn ->query($getid);
+
+
+if ($rezult->num_rows>0){
+  {$utexistent="Email deja folosit";
+  echo $utexistent;
+  exit();
+  }
+
+  //aici ar putea fi problema la valoarea result
+  $getid=sprintf("SELECT max(user_id) FROM user_data ");
+$rezult= $conn ->query($getid);
+$id_user= $rezult+1;
+//inseram utilizator nou
+$getid=sprintf("INSERT INTO user_id values (".$id_user.",".$email.",".$parola.")");
+
+
+if ($conn ->query($getid) != TRUE) {
+    echo "eroare la inserare";
+  }
+  else {
+        $_SESSION['session_user_id'] = $id_user;
+        $_SESSION['session_email'] = $email;
+        $_SESSION['session_parola'] = $parola;
+
+        setcookie("cookie_user_id",$id_user, time()+3600*24*12,"/");
+        setcookie("cookie_email",$email, time()+3600*24*12,"/");
+        setcookie("cookie_parola",$parola, time()+3600*24*12,"/");
+
+          echo "inregistrare reusita";
+        
+  }
+}
+
 ?>
