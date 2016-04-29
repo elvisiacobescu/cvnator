@@ -149,7 +149,7 @@
 					<button id="buton_login"  class="login"  onclick="login()" value="Trimite" >Logare</button>
                     
 </form>
-<div id="registeer" class="buton-style buton-position">Register</div>
+<div id="registeer" class="buton-style buton-position" onclick="location.href='register.html';">Register</div>
 <p hidden id="status"></p>
 </div>
 </div>
