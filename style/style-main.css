@@ -54,9 +54,8 @@ body{
   border-radius: 5px;
   border-color: grey;
   position: absolute;
-  left: 895px;
-  top: 9px;
   z-index: 99;
+  margin: 0% 0% 0% 60%;
 }
 #edit1 img {
   position: absolute;
@@ -167,4 +166,68 @@ left: 29px;
 }
 .header{
   height:50px; color:white; background-color:#800072;
+}
+.titlu-general{
+  color:blue;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 15px;
+  font-family: inherit;
+}
+.school-ad-new{
+      border: solid 1px gray;
+      width: 99px;
+      position: relative;
+      height: 30px;
+      float: right;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 7px;
+      display: inline;
+      margin-right: 15%;
+      margin-bottom: 15px;
+      background-color: #ADADAD;
+
+}
+
+.school-ad-new:hover{
+ background-color: gray;
+ cursor: pointer;
+}
+.prezentation-educatie{
+  width: 98%;
+  border: solid 1px gray;
+  height: 150px;
+  position: relative;
+  margin-left: 0.9%;
+  overflow: hidden;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.time{
+  color: #B3A7A7;
+font-weight: bold;
+opacity: 0.7;
+font-size: 39px;
+}
+ .edit_buton_style{
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  border: solid 1px gray;
+  background-color: #ADADAD;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 99;
+  margin: 0% 0% 0% 60%;
+}
+
+  .edit_buton_style:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+.text-margin{
+  margin-left: 15px;
 }

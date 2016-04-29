@@ -76,13 +76,13 @@ window.onload = function () {
         var oras= re[i].oras;
         var profil= re[i].profil;
           // console.log(start);
-        document.getElementById('studii').innerHTML += "<div id='personal-"+i+"' class='prezentation'><div>";
-        document.getElementById('personal-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' /></div>";
-        document.getElementById('personal-'+i).innerHTML +="<div class'time'><span>date:</span><span id='data-stat-"+i+"''>"+start+"</span>  -  <spanid='data-stop-"+i+"''>"+stop+"</span> </br>";
-        document.getElementById('personal-'+i).innerHTML +="<span>nume-institutie:</span><span id='institutie-"+i+"''>"+institutie+"</span> </br>";
-        document.getElementById('personal-'+i).innerHTML +="<span>oras:</span><span id='oras-"+i+"''>"+oras+"</span></br>";
-        document.getElementById('personal-'+i).innerHTML +="<span>Specialitate:</span><span id='specialitate-"+i+"''>"+profil+"</span></br>";
-        document.getElementById('personal-'+i).innerHTML +="<spanc class='bold-prezentationtext'>Diploma obtinuta:</span><span id='data-stat-"+i+"''>"+profil+"</span></br>";
+        document.getElementById('studii').innerHTML += "<div id='personal-"+i+"' class='prezentation-educatie'><div>";
+        document.getElementById('personal-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style' /></div>";
+        document.getElementById('personal-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-"+i+"''class='time'>"+stop+"</span> </br>";
+        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Numele institutie:</span><span id='institutie-"+i+"''>"+institutie+"</span> </br>";
+        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>oras:</span><span id='oras-"+i+"''>"+oras+"</span></br>";
+        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Specialitate:</span><span id='specialitate-"+i+"''>"+profil+"</span></br>";
+        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Diploma obtinuta:</span><span id='data-stat-"+i+"''>"+re[i].diploma+"</span></br>";
         }
        }
    }
