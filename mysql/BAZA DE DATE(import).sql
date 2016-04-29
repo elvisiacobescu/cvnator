@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Apr 2016 la 20:52
+-- Generation Time: 29 Apr 2016 la 14:56
 -- Versiune server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -56,8 +56,8 @@ INSERT INTO `abilitati` (`user_id`, `entry_id`, `skill`) VALUES
 CREATE TABLE `alt_info` (
   `user_id` int(11) NOT NULL,
   `entry_id` int(11) NOT NULL,
-  `start` datetime NOT NULL,
-  `stop` varchar(100) NOT NULL,
+  `start` date NOT NULL,
+  `stop` date NOT NULL,
   `titlu` varchar(200) NOT NULL,
   `descriere` varchar(3000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -67,8 +67,8 @@ CREATE TABLE `alt_info` (
 --
 
 INSERT INTO `alt_info` (`user_id`, `entry_id`, `start`, `stop`, `titlu`, `descriere`) VALUES
-(2, 1, '2014-10-28 00:00:00', '2014-10-28', 'Managing a Mobile World - SCC Services', ''),
-(2, 2, '2016-03-03 00:00:00', 'Prezent', 'Training Android', 'Training Android pentru incepatori pe parcursul a 6 saptamani in cadrul FiiPractic');
+(2, 1, '2014-10-28', '2014-10-28', 'Managing a Mobile World - SCC Services', ''),
+(2, 2, '2016-03-03', '2016-05-03', 'Training Android', 'Training Android pentru incepatori pe parcursul a 6 saptamani in cadrul FiiPractic');
 
 -- --------------------------------------------------------
 
@@ -112,20 +112,21 @@ INSERT INTO `date_personale` (`user_id`, `nume`, `prenume`, `sex`, `varsta`, `nr
 CREATE TABLE `educatie` (
   `user_id` int(11) NOT NULL,
   `entry_id` int(11) NOT NULL,
-  `start` datetime NOT NULL,
-  `stop` varchar(100) NOT NULL,
+  `start` date NOT NULL,
+  `stop` date NOT NULL,
   `nume_institutie` varchar(100) NOT NULL,
   `oras` varchar(30) NOT NULL,
-  `profil` varchar(50) NOT NULL
+  `profil` varchar(50) NOT NULL,
+  `diploma` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Salvarea datelor din tabel `educatie`
 --
 
-INSERT INTO `educatie` (`user_id`, `entry_id`, `start`, `stop`, `nume_institutie`, `oras`, `profil`) VALUES
-(2, 1, '2010-09-15 00:00:00', '2014-06-01', 'Colegiul Tehnic "Latcu-Voda"', 'Siret', 'Matematica - Informatica'),
-(2, 2, '2014-10-01 00:00:00', 'Prezent', 'Facultatea de informatica UAIC', 'Iasi', 'Informatica');
+INSERT INTO `educatie` (`user_id`, `entry_id`, `start`, `stop`, `nume_institutie`, `oras`, `profil`, `diploma`) VALUES
+(2, 1, '2010-09-15', '2014-06-01', 'Colegiul Tehnic "Latcu-Voda"', 'Siret', 'Matematica - Informatica', ''),
+(2, 2, '2014-10-01', '2017-06-01', 'Facultatea de informatica UAIC', 'Iasi', 'Informatica', '');
 
 -- --------------------------------------------------------
 
@@ -136,8 +137,8 @@ INSERT INTO `educatie` (`user_id`, `entry_id`, `start`, `stop`, `nume_institutie
 CREATE TABLE `experienta` (
   `user_id` int(11) NOT NULL,
   `entry_id` int(11) NOT NULL,
-  `start` datetime NOT NULL,
-  `stop` varchar(100) NOT NULL,
+  `start` date NOT NULL,
+  `stop` date NOT NULL,
   `nume_companie` varchar(100) NOT NULL,
   `domeniu` varchar(50) NOT NULL,
   `departament` varchar(50) NOT NULL,
@@ -149,7 +150,7 @@ CREATE TABLE `experienta` (
 --
 
 INSERT INTO `experienta` (`user_id`, `entry_id`, `start`, `stop`, `nume_companie`, `domeniu`, `departament`, `descrierea_jobului`) VALUES
-(2, 1, '2015-08-23 00:00:00', '2015-10-01', 'Gfk Romania', 'Junior Programmer', 'IT', 'Working on Confirmit platform.\nMy main activity was creating questionnaires involving:\n- communicate with the database to carry out the tests\n- Javascript to communicate between pages / formatting more complex page\nlayout or question / retrieving responses and their management in future\nquestions (for example: a question whose answers are common with the\nanswers at a previous question)\n- HTML - CSS - VBScript\nAll these were used at Basic / Medium. The activity consisted mainly working\non the Confirmit platform.');
+(2, 1, '2015-08-23', '2015-10-01', 'Gfk Romania', 'Junior Programmer', 'IT', 'Working on Confirmit platform.\nMy main activity was creating questionnaires involving:\n- communicate with the database to carry out the tests\n- Javascript to communicate between pages / formatting more complex page\nlayout or question / retrieving responses and their management in future\nquestions (for example: a question whose answers are common with the\nanswers at a previous question)\n- HTML - CSS - VBScript\nAll these were used at Basic / Medium. The activity consisted mainly working\non the Confirmit platform.');
 
 -- --------------------------------------------------------
 
