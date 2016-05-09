@@ -171,32 +171,49 @@ $pdf->WriteHTML('<i>Prenume: </i>'); $pdf->Cell(190,5,$row["prenume"]);
    $pdf->WriteHTML('<i>Obiectiv: </i>'); $pdf->Cell(190,5,$row["obiectiv"]);
 
   $pdf->WriteHTML('<br>');
-  $arr = array('nume' => $row["nume"] ,'prenume' => $row["prenume"],'sex' => $row["sex"],'varsta' => $row["varsta"],'nr_telefon' => $row["nr_telefon"],'cale_poza' => $row["cale_poza"],'adresa' => $row["adresa"],'oras'
-  => $row["oras"],'salariu_dorit' => $row["salariu_dorit"],'tip_job' => $row["tip_job"],'nivel_cariera' => $row["nivel_cariera"],'domeniu' => $row["domeniu"],'post_dorit' => $row["post_dorit"],'relocare' => $row["relocare"],
-  'obiectiv' => $row["obiectiv"],'email' => $row["email"] );
+  
  }
 }
 
 //educatie
-
+$pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b> Educatie: </b>');
+$conn = new mysqli($servername, $username, $password,$dbname);
+$getid=sprintf("SELECT * FROM educatie where user_id=".$userid);
+$rezult= $conn ->query($getid);
+$ary=array();
+if ($rezult->num_rows>0){
+while($row = $rezult->fetch_assoc()) {
+	$pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<i>Institutia de invatamant : </i>'); $pdf->Cell(190,5,$row["nume_institutie"]);
+ $pdf->WriteHTML('<i> De la : </i>'); $pdf->Cell(190,5,$row["start"].' pana la: '.$row["stop"]);
+  $pdf->WriteHTML('<br>');
+   $pdf->WriteHTML('<i>Oras: </i>'); $pdf->Cell(190,5,$row["oras"]);
+   $pdf->WriteHTML('<br>');
+   $pdf->WriteHTML('<i>Profil: </i>'); $pdf->Cell(190,5,$row["profil"]);
+   $pdf->WriteHTML('<br>');
+   $pdf->WriteHTML('<i>Diploma: </i>'); $pdf->Cell(190,5,$row["diploma"]);
+   $pdf->WriteHTML('<br>');
+ }
+}
 
 //experienta
 $html='';
 $conn = new mysqli($servername, $username, $password,$dbname);
 $getid=sprintf("SELECT * FROM experienta where user_id=".$userid);
 $rezult= $conn ->query($getid);
- $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>');
-$pdf->WriteHTML('<b>Mai jos vor fi prezentate experientele: </b>');
+ $pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b>Experiente: </b>');
 $pdf->Cell(0,10,'',0,1);
 if ($rezult->num_rows>0){
   $nrexperiente=$rezult->num_rows;
 while($row = $rezult->fetch_assoc()) {
 
-$html=$html.($row["entry_id"].' <i>de la</i> : '.$row["start"].' <i>pana la</i> : '.$row["stop"].' <i>la compania</i> : '.$row["nume_companie"].' <i>in domeniul</i> : '.$row["domeniu"].' <i>departament</i> : '.$row["departament"].' <i>descrierea activitatii :</i> '.$row["descrierea_jobului"]);
-$pdf->WriteHTML($html);
-  $pdf->WriteHTML('<br>');
- }
+$html=$html.$row["entry_id"].' <i>de la</i> : '.$row["start"].' <i>pana la</i> : '.$row["stop"].' <i>la compania</i> : '.$row["nume_companie"].' <i>in domeniul</i> : '.$row["domeniu"].' <i>departament</i> : '.$row["departament"].' <i>descrierea activitatii :</i> '.$row["descrierea_jobului"];
 
+ }
+$pdf->WriteHTML($html);
+ 
 }
 
 
