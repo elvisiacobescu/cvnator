@@ -22,15 +22,15 @@
 			$sql = "SELECT max(user_id) FROM user_data LIMIT 1";
 			$query =  mysqli_query($database,$sql);
 			if (mysqli_num_rows($query) > 0) {
-				while($row = mysqli_fetch_assoc($result)) {
+				while($row = mysqli_fetch_assoc($query)) {
         			$id_user = $row["user_id"];
    			 		}
 			}
 			
 			$id_user = $id_user + 1;
 			$sql = "INSERT INTO user_data (user_id, email, parola) VALUES('$id_user','$em','$pass')";
-			$query = mysqli_query($db_conx, $sql); 
-			$uid = mysqli_insert_id($db_conx);
+			$query = mysqli_query($database, $sql); 
+			$uid = mysqli_insert_id($database);
 		}
 	}
 ?>

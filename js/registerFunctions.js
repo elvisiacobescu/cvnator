@@ -17,6 +17,7 @@ function signup(){
 		//posibil de sch fisierul
 		
 		ajax.onreadystatechange = function(){
+		  if(ajaxReturn(ajax) == true) {
 			if(ajax.responseText != "succes"){
 				status.innerHTML = ajax.responseText;
 				_("signupbtn").style.display = "block";
@@ -25,7 +26,8 @@ function signup(){
 				document.location = "index.php";
 			}
 		}
-		ajax.send("email="+em+"&p="+pass1);
+		}
+		ajax.send("em="+em+"&p="+pass1);
 	}
 }
 

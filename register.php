@@ -5,7 +5,6 @@
 		header("location: cv.html?email=".$_SESSION["session_email"]);
 		exit();
 	}
-
     include_once("php/verify_email.php");
     include_once("php/send_data.php");
 ?>
