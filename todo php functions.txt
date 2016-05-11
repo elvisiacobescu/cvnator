@@ -23,3 +23,5 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 16 limbi.php // facut
 17 abilitati.php // facut
 18
+//
+09 modifica personaldata, dar trebuie verificat daca functioneaza
