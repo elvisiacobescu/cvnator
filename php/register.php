@@ -1,21 +1,12 @@
 
 <?php
 // define variables and set to empty values
+function signup(){
 $nameErr = $emailErr = $parolaErr = $parola2Err = "";
 $name = $email = $parola = $parola2  = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-    echo $nameErr; exit();
-  } else {
-    $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed"; 
-      echo $nameErr; exit();
-    }
-  }
+ 
   
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
@@ -39,10 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         else
     $parola = test_input($_POST["parola"]);
         
-  }
+  
    
     $parola2 =$_POST["parola2"];
-  if ($parola!=$parola) {
+  if ($parola2!=$parola) {
     $parola2Err = "a doua parola nu corespunde cu prima";
     echo $parola2Err; exit();
   }
@@ -81,7 +72,7 @@ if ($rezult->num_rows>0){
 $rezult= $conn ->query($getid);
 $id_user= $rezult+1;
 //inseram utilizator nou
-$getid=sprintf("INSERT INTO user_id values (".$id_user.",".$email.",".$parola.")");
+$getid=sprintf("INSERT INTO user_data values (".$id_user.",".$email.",".$parola.")");
 
 
 if ($conn ->query($getid) != TRUE) {
@@ -99,6 +90,6 @@ if ($conn ->query($getid) != TRUE) {
           echo "inregistrare reusita";
         
   }
+}}
 }
-
 ?>
