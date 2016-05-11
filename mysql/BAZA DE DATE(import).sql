@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Apr 2016 la 14:56
+-- Generation Time: 11 Mai 2016 la 23:32
 -- Versiune server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -184,6 +184,15 @@ CREATE TABLE `permis` (
   `entry_id` int(11) NOT NULL,
   `categorie` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Salvarea datelor din tabel `permis`
+--
+
+INSERT INTO `permis` (`user_id`, `entry_id`, `categorie`) VALUES
+(2, 1, 'A'),
+(2, 2, 'TV'),
+(2, 3, 'C1');
 
 -- --------------------------------------------------------
 
