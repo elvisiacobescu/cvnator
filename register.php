@@ -1,17 +1,21 @@
 <?php
 	include_once("php_files/check_status.php");
-	// Acum trebuie sa verificam daca e logat.
 	if($user_check == true)
 	{
 		header("location: cv.html?email=".$_SESSION["session_email"]);
 		exit();
 	}
+    include_once("php/verify_email.php");
+    include_once("php/send_data.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Sign Up</title>
+<script src="php_files/js/aja.js"></script>
+<script src="php_files/js/first.js"></script>
+<script src="js/registerFunctions.js"></script>
 </head>
 <body>
 <div>
