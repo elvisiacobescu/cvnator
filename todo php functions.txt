@@ -13,12 +13,13 @@ fie textu carre lam pus intre ghilimele NU SE TRIMITE NIMIC DE LA FRONT END
 8 creare unui fisier pe care sa il puneti intrun folder resurse care sa contina sv (eu apas pe buton si cer path catre fisier pdf care sa il
 dau sa il vada utilizatoru .trebuie creat si trimis pathu catre mine ca sa pot sa il dau catre vizualizare :))
 9 modificadatepersonale aici e usor doar modifica cele existente. trimit json cu datele.
-10 modifica-experienta aici inafara de date mai trimit si index (aici trebuie sa fiti voi antena sa trimitteti la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu trebuie) la fel trimit unjson in care se afla si indexu .
+10 modifica-experienta aici inafara de date mai trimit si index (aici trebuie sa fiti voi antena sa trimitteti 
+la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu trebuie) la fel trimit unjson in care se afla si indexu .
 11 modifica-studiile la fel ca la experienta
 12 modifica-altele
 13 modifica-carnet json
 14 modifica-limbi (ca sa spun cum facem trebuie sa vad cum mi le dati in primu rand da in general cred ca vi le dau pe toate intr-un json)
-15 carnet.php
-16 limbi.php
-17
+15 carnet.php // e nevoie de modificat bd
+16 limbi.php // facut
+17 abilitati.php // facut
 18
