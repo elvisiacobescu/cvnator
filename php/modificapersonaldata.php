@@ -13,7 +13,7 @@ $getid=sprintf("UPDATE date_personale SET nume="." '".$json["nume"]."' "." AND p
 $rezult= $conn ->query($getid);
 
 
-if ($rezult->num_rows>0)
+if ($rezult->mysql_affected_rows()>0)
 
  echo 'succes';
 else echo 'eroare';
