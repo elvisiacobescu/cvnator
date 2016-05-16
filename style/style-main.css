@@ -195,7 +195,7 @@ left: 29px;
 .prezentation-educatie{
   width: 98%;
   border: solid 1px gray;
-  height: 150px;
+  /*height: 150px;*/
   position: relative;
   margin-left: 0.9%;
   overflow: hidden;
@@ -211,14 +211,15 @@ opacity: 0.7;
 font-size: 39px;
 }
  .edit_buton_style{
-  position: absolute;
+  position: relative;
   left: 5px;
-  top: 5px;
+  top: 35px;
   border: solid 1px gray;
   background-color: #ADADAD;
   padding: 5px;
   border-radius: 5px;
   z-index: 99;
+
   margin: 0% 0% 0% 60%;
 }
 
@@ -273,4 +274,28 @@ height: 15px;
 margin-left: 0%;
 margin-top: 15px;
 border-radius: 8px;
+  background-image: url(/cvnator/img/colord_bar.jpg);
+  background-size:contain;
+  overflow: hidden;
+}
+.white-bar{
+  position: relative;
+  float: right;
+  right: 0px;
+  top: 0px;
+  height: 15px;
+  background-color: white;
+
+}
+.bar_poz1{
+  width: 75%;
+}
+.bar_poz2{
+  width: 50%;
+}
+.bar_poz3{
+  width: 25%;
+}
+.bar_poz4{
+  width: 0%;
 }
