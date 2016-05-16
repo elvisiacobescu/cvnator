@@ -16,7 +16,7 @@ $ary=array();
 
 if ($rezult->num_rows>0){
 while($row = $rezult->fetch_assoc()) {
-  $arr = array('entry_id' => $row["entry_id"] ,'start' => $row["start"],'stop' => $row["stop"],'titlu' => $row["titlu"],'descriere' => $row["descriere"]);
+  $arr = array('categorie' => $row["categorie"] ,);
   array_push($ary,$arr);
  }
 }

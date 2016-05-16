@@ -146,7 +146,7 @@ window.onload = function () {
          document.getElementById('altele-'+i).innerHTML +="<div id='edit-altele-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('altele-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+" class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
          document.getElementById('altele-'+i).innerHTML   +="<span class='bold'>Denumirea:</span><span id='titlu-"+i+"' >"+titlu+"</span> </br>";
-         console.log(descriere);
+        //  console.log(descriere);
          document.getElementById('altele-'+i).innerHTML +="<span class='bold'>Descriere:</span><span id='Domeniu-"+i+"'>"+descriere+"</span></br>";
          document.getElementById('altele-'+i).innerHTML +="<div class='space'></div>";
        }
@@ -154,4 +154,93 @@ window.onload = function () {
     }
   }
   altele();
+  function skils(){
+  var hr=new XMLHttpRequest();
+  var url="php/abilitati.php";
+  hr.open("GET",url,true);
+  hr.send();
+  hr.onreadystatechange = function()
+  {
+      if(hr.readyState == 4 && hr.status == 200)
+      {
+         var responce=hr.responseText;
+         var re = JSON.parse(responce);
+         var count= Object.keys(re).length;//vede cate obiecte are
+           // console.log(start);
+         document.getElementById('skills').innerHTML += "<div id='skills1' class='prezentation'></div>";
+          document.getElementById('skills1').innerHTML += "<div  class='space'></div>";
+          for (var i =0; i<count;i++)
+            {
+                var skil= re[i].skill;
+                document.getElementById('skills1').innerHTML += "<div id='skill"+i+"' class='tag-skil'> "+skil+"<span id='dels"+i+"' class='delete'> X <span> </div>";
+            }
+            document.getElementById('skills1').innerHTML += "<div  class='clear space'></div>";
+        }
+    }
+  }
+
+skils();
+function permis(){
+var hr=new XMLHttpRequest();
+var url="php/permis.php";
+hr.open("GET",url,true);
+hr.send();
+hr.onreadystatechange = function()
+{
+    if(hr.readyState == 4 && hr.status == 200)
+    {
+       var responce=hr.responseText;
+       var re = JSON.parse(responce);
+       var count= Object.keys(re).length;//vede cate obiecte are
+         // console.log(start);
+         if(count!=0){
+       document.getElementById('permis').innerHTML += "<div id='permis1' class='prezentation'></div>";
+        document.getElementById('permis1').innerHTML += "<div  class='space'></div>";
+        for (var i=0; i<count;i++)
+          {
+              var skil= re[i].categorie;
+              document.getElementById('permis1').innerHTML += "<div id='permi"+i+"' class='tag-skil'> "+skil+"<span id='delp"+i+"' class='delete' onclick='deletepermis("+i+")' > X <span> </div>";
+          }
+          document.getElementById('permis1').innerHTML += "<div  class='clear space'></div>";
+      }
+      else{
+        document.getElementById('permis').innerHTML += "<div  class='space'></div>";
+        document.getElementById('permis').innerHTML += "<div id='permis1' class='prezentation'> nu are permis </div>";
+        document.getElementById('permis').innerHTML += "<div  class='space'></div>";
+      }
+    }
+
+  }
+}
+
+permis();
+
+function lenguge(){
+  var hr=new XMLHttpRequest();
+  var url="php/limbi.php";
+  hr.open("GET",url,true);
+  hr.send();
+  hr.onreadystatechange = function()
+  {
+      if(hr.readyState == 4 && hr.status == 200)
+      {
+         var responce=hr.responseText;
+         var re = JSON.parse(responce);
+         var count= Object.keys(re).length;//vede cate obiecte are
+         for (var i=0;i<count;i++){
+         var limba= re[i].limba;
+         var nivel= re[i].nivel;
+           // console.log(start);
+         document.getElementById('limbi').innerHTML += "<div id='limba-"+i+"' ></div>";
+         document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
+         document.getElementById('limba-'+i).innerHTML +="<div class='lenguge-name'>"+limba+"</div> </br>";
+         document.getElementById('limba-'+i).innerHTML +="<div class='lenguge-lvl'></div> </br>";
+         document.getElementById('limba-'+i).innerHTML +="<div class='space'></div>";
+       }
+        }
+    }
+
+}
+lenguge();
+
 }
