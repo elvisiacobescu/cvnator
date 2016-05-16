@@ -144,10 +144,11 @@ window.onload = function () {
          var stop= re[i].stop;
          var titlu= re[i].titlu;
          var descriere= re[i].descriere;
+         var id=re[i].entry_id;
 
            // console.log(start);
          document.getElementById('altele').innerHTML += "<div id='altele-"+i+"' class='prezentation'></div>";
-          document.getElementById('altele-'+i).innerHTML +="<div class='exit'></div>";
+          document.getElementById('altele-'+i).innerHTML +="<div class='exit' onclick='deletaltele("+i+","+id+")'></div>";
          document.getElementById('altele-'+i).innerHTML +="<div id='edit-altele-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('altele-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+" class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
          document.getElementById('altele-'+i).innerHTML   +="<span class='bold'>Denumirea:</span><span id='titlu-"+i+"' >"+titlu+"</span> </br>";

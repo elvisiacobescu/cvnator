@@ -156,6 +156,7 @@ function deletestudiu (i,id){
         {
           //face primirea de date de la server
           var rezultat = hr.responseText;
+          console.log(rezultat);
           if (rezultat=="Record deleted successfully"){
            console.log(rezultat);
            var element=document.getElementById("experienta-"+i);
@@ -166,7 +167,33 @@ function deletestudiu (i,id){
           }
         }
       }
-      var element=document.getElementById("experienta-"+i);
-      element.parentNode.removeChild(element);
 
     }
+    function deletaltele (i,id){
+      var delete1={"cat" : id};
+      var jsonstring=JSON.stringify(delete1);
+      var hr=new XMLHttpRequest();
+      var url="php/deletaltele.php?obj="+jsonstring;
+      hr.open("GET",url,true);
+      hr.send();
+      hr.onreadystatechange = function()
+      {
+          if(hr.readyState == 4 && hr.status == 200)
+          {
+            //face primirea de date de la server
+            var rezulta = hr.responseText;
+            if (rezulta=="Record deleted successfully"){
+             console.log(rezulta);
+             var element=document.getElementById('altele-'+i);
+             element.parentNode.removeChild(element);
+            }
+            else{
+              console.log(rezulta);
+            }
+          }
+        }
+  function modificaeducatie(i,id){
+    
+  }
+
+      }

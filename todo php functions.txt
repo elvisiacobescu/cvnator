@@ -42,7 +42,8 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
   *limbi
   *carnet              Done - am facut si phpul aici si queri sql
   *skils
-  *alte activitati
+  *alte activitati     Done
+  *experienta          Done
   *educatie            Done  - am facut si phpul aici si queri sql
 3 add
   *limbi
