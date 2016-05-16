@@ -103,19 +103,55 @@ window.onload = function () {
          for (var i=0;i<count;i++){
          var start= re[i].start;
          var stop= re[i].stop;
-         var institutie= re[i].nume_institutie;
-         var oras= re[i].oras;
-         var profil= re[i].profil;
+         var Numele_Companiei= re[i].Numele_Companiei;
+         var Domeniu= re[i].domeniu;
+         var Departament= re[i].departament;
+         var descriere= re[i].descrierea_jobului;
+
            // console.log(start);
-         document.getElementById('experienta').innerHTML += "<div id='experienta-"+i+"' class='prezentation'><div>";
-         document.getElementById('experienta-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' /></div>";
-         document.getElementById('experienta-'+i).innerHTML +="<div class'time'><span>date:</span><span id='data-stat-"+i+"''>"+start+"</span>  -  <spanid='data-stop-"+i+"''>"+stop+"</span> </br>";
-         document.getElementById('experienta-'+i).innerHTML +="<span>nume-institutie:</span><span id='institutie"+i+"''>"+institutie+"</span> </br>";
-         document.getElementById('experienta-'+i).innerHTML +="<span>oras:</span><span id='oras"+i+"''>"+oras+"</span></br>";
-         document.getElementById('experienta-'+i).innerHTML +="<span>Specialitate:</span><span id='data-stat-"+i+"''>"+profil+"</span></br>";
-         }
+         document.getElementById('experienta').innerHTML += "<div id='experienta-"+i+"' class='prezentation'></div>";
+         document.getElementById('experienta-'+i).innerHTML +="<div id='edit-experienta-"+i+"' class='edit-experienta'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
+         document.getElementById('experienta-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Numele Companiei:</span><span id='companie"+i+" >"+Numele_Companiei+"</span> </br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Domeniu:</span><span id='Domeniu"+i+"''>"+Domeniu+"</span></br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Departament:</span><span id='Departament"+i+"''>"+Departament+"</span></br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Descrierea-Jobului:</span><span id='descriere"+i+"''>"+descriere+"</span></br>";
+         document.getElementById('experienta-'+i).innerHTML +="<div class='space'></div>";
+       }
         }
     }
   }
   experienta();
+
+  function altele(){
+  var hr=new XMLHttpRequest();
+  var url="php/altele.php";
+  hr.open("GET",url,true);
+  hr.send();
+  hr.onreadystatechange = function()
+  {
+      if(hr.readyState == 4 && hr.status == 200)
+      {
+         var responce=hr.responseText;
+         var re = JSON.parse(responce);
+         var count= Object.keys(re).length;//vede cate obiecte are
+         for (var i=0;i<count;i++){
+         var start= re[i].start;
+         var stop= re[i].stop;
+         var titlu= re[i].titlu;
+         var descriere= re[i].descriere;
+
+           // console.log(start);
+         document.getElementById('altele').innerHTML += "<div id='altele-"+i+"' class='prezentation'></div>";
+         document.getElementById('altele-'+i).innerHTML +="<div id='edit-altele-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
+         document.getElementById('altele-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+" class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
+         document.getElementById('altele-'+i).innerHTML   +="<span class='bold'>Denumirea:</span><span id='titlu-"+i+"' >"+titlu+"</span> </br>";
+         console.log(descriere);
+         document.getElementById('altele-'+i).innerHTML +="<span class='bold'>Descriere:</span><span id='Domeniu-"+i+"'>"+descriere+"</span></br>";
+         document.getElementById('altele-'+i).innerHTML +="<div class='space'></div>";
+       }
+        }
+    }
+  }
+  altele();
 }

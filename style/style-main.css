@@ -36,7 +36,7 @@ body{
 .prezentation{
   width: 98%;
   border: solid 1px gray;
-  height: 380px;
+  /*height: 380px;*/
   position: relative;
   margin-left: 0.9%;
   overflow: hidden;
@@ -93,9 +93,10 @@ animation: out 1s linear 1;
 -webkit-animation:out 1s linear 1 forwards;
 }
 .sdate {
-    position: absolute;
-    top: 5px;
-    left: 174px;
+  position: relative;
+top: 5px;
+left: 25px;
+float: left;
 }
 @keyframes out{
   0% {height:380px;}
@@ -230,4 +231,16 @@ font-size: 39px;
 }
 .text-margin{
   margin-left: 15px;
+}
+.clear{
+  clear: both;
+}
+.picture{
+  position: relative;
+  float: left;
+  top: 5px;
+  left: 7px;
+}
+.edit-experienta{
+
 }
