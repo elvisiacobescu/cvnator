@@ -94,9 +94,8 @@ document.getElementById("logout").addEventListener("click",function (){
   }
 });
 
-function deletepermis(i){
-//to do----diliteaza din baza de date
-  var delete1={"categoria" : i+1};
+function deletepermis(i,id){
+  var delete1={"cat" : id};
   var jsonstring=JSON.stringify(delete1);
   var hr=new XMLHttpRequest();
   var url="php/deletepermis.php?obj="+jsonstring;
@@ -108,22 +107,66 @@ function deletepermis(i){
       {
         //face primirea de date de la server
         var rezultat = hr.responseText;
-        if (rezultat!="error"){
+        if (rezultat=="Record deleted successfully"){
          console.log(rezultat);
-      //de facut in continuare
+         var element=document.getElementById("permi"+i);
+         element.parentNode.removeChild(element);
+        }
+        else{
+          console.log(rezultat);
         }
       }
     }
-    var element=document.getElementById("permi"+i);
-    element.parentNode.removeChild(element);
-//console.log(sender);
+}
+function deletestudiu (i,id){
+  var delete1={"cat" : id};
+  var jsonstring=JSON.stringify(delete1);
+  var hr=new XMLHttpRequest();
+  var url="php/deletestudiu.php?obj="+jsonstring;
+  hr.open("GET",url,true);
+  hr.send();
+  hr.onreadystatechange = function()
+  {
+      if(hr.readyState == 4 && hr.status == 200)
+      {
+        //face primirea de date de la server
+        var rezultat = hr.responseText;
+        if (rezultat=="Record deleted successfully"){
+         console.log(rezultat);
+         var element=document.getElementById("personal-"+i);
+         element.parentNode.removeChild(element);
+        }
+        else{
+          console.log(rezultat);
+        }
+      }
+    }
   }
 
+  function deletexp (i,id){
+    var delete1={"cat" : id};
+    var jsonstring=JSON.stringify(delete1);
+    var hr=new XMLHttpRequest();
+    var url="php/deleteexp.php?obj="+jsonstring;
+    hr.open("GET",url,true);
+    hr.send();
+    hr.onreadystatechange = function()
+    {
+        if(hr.readyState == 4 && hr.status == 200)
+        {
+          //face primirea de date de la server
+          var rezultat = hr.responseText;
+          if (rezultat=="Record deleted successfully"){
+           console.log(rezultat);
+           var element=document.getElementById("experienta-"+i);
+           element.parentNode.removeChild(element);
+          }
+          else{
+            console.log(rezultat);
+          }
+        }
+      }
+      var element=document.getElementById("experienta-"+i);
+      element.parentNode.removeChild(element);
 
-
-// <span style='margin: 10px 52px  10px 5px;'>Start:</span><select class='celformat' id='start'>
-//   <option disabled selected value> -- select a city -- </option>
-//   <option value='iasi'>Full-time</option>
-//   <option value='iasi'>Part-time</option>
-//   <option value='iasi'>Project-based</option>
-// </select></br>
+    }

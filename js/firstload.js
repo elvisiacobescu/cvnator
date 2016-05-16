@@ -70,20 +70,22 @@ window.onload = function () {
         var re = JSON.parse(responce);
         var count= Object.keys(re).length;//vede cate obiecte are
         for (var i=0;i<count;i++){
-        var start= re[i].start;
-        var stop= re[i].stop;
-        var institutie= re[i].nume_institutie;
-        var oras= re[i].oras;
-        var profil= re[i].profil;
+          var start= re[i].start;
+          var stop= re[i].stop;
+          var institutie= re[i].nume_institutie;
+          var oras= re[i].oras;
+          var profil= re[i].profil;
+          var id=re[i].entry_id;
           // console.log(start);
-        document.getElementById('studii').innerHTML += "<div id='personal-"+i+"' class='prezentation-educatie'><div>";
-        document.getElementById('personal-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style' /></div>";
-        document.getElementById('personal-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-"+i+"''class='time'>"+stop+"</span> </br>";
-        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Numele institutie:</span><span id='institutie-"+i+"''>"+institutie+"</span> </br>";
-        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>oras:</span><span id='oras-"+i+"''>"+oras+"</span></br>";
-        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Specialitate:</span><span id='specialitate-"+i+"''>"+profil+"</span></br>";
-        document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Diploma obtinuta:</span><span id='data-stat-"+i+"''>"+re[i].diploma+"</span></br>";
-        document.getElementById('personal-'+i).innerHTML += "<div  class='space'></div>";
+          document.getElementById('studii').innerHTML += "<div id='personal-"+i+"' class='prezentation-educatie'><div>";
+          document.getElementById('personal-'+i).innerHTML +="<div class='exit' onclick='deletestudiu("+i+","+id+")'></div>";
+          document.getElementById('personal-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style' /></div>";
+          document.getElementById('personal-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-"+i+"''class='time'>"+stop+"</span> </br>";
+          document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Numele institutie:</span><span id='institutie-"+i+"''>"+institutie+"</span> </br>";
+          document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>oras:</span><span id='oras-"+i+"''>"+oras+"</span></br>";
+          document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Specialitate:</span><span id='specialitate-"+i+"''>"+profil+"</span></br>";
+          document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Diploma obtinuta:</span><span id='data-stat-"+i+"''>"+re[i].diploma+"</span></br>";
+          document.getElementById('personal-'+i).innerHTML += "<div  class='space'></div>";
         }
        }
    }
@@ -108,9 +110,10 @@ window.onload = function () {
          var Domeniu= re[i].domeniu;
          var Departament= re[i].departament;
          var descriere= re[i].descrierea_jobului;
-
+         var id=re[i].entry_id;
            // console.log(start);
          document.getElementById('experienta').innerHTML += "<div id='experienta-"+i+"' class='prezentation'></div>";
+         document.getElementById('experienta-'+i).innerHTML +="<div class='exit' onclick='deletexp("+i+","+id+")'></div>";
          document.getElementById('experienta-'+i).innerHTML +="<div id='edit-experienta-"+i+"' class='edit-experienta'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('experienta-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
          document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Numele Companiei:</span><span id='companie"+i+" >"+Numele_Companiei+"</span> </br>";
@@ -144,6 +147,7 @@ window.onload = function () {
 
            // console.log(start);
          document.getElementById('altele').innerHTML += "<div id='altele-"+i+"' class='prezentation'></div>";
+          document.getElementById('altele-'+i).innerHTML +="<div class='exit'></div>";
          document.getElementById('altele-'+i).innerHTML +="<div id='edit-altele-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('altele-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+" class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
          document.getElementById('altele-'+i).innerHTML   +="<span class='bold'>Denumirea:</span><span id='titlu-"+i+"' >"+titlu+"</span> </br>";
@@ -192,7 +196,8 @@ hr.onreadystatechange = function()
     {
        var responce=hr.responseText;
        var re = JSON.parse(responce);
-       var count= Object.keys(re).length;//vede cate obiecte are
+       var count= Object.keys(re).length;
+       //vede cate obiecte are
          // console.log(start);
          if(count!=0){
        document.getElementById('permis').innerHTML += "<div id='permis1' class='prezentation'></div>";
@@ -200,7 +205,8 @@ hr.onreadystatechange = function()
         for (var i=0; i<count;i++)
           {
               var skil= re[i].categorie;
-              document.getElementById('permis1').innerHTML += "<div id='permi"+i+"' class='tag-skil'> "+skil+"<span id='delp"+i+"' class='delete' onclick='deletepermis("+i+")' > X <span> </div>";
+              var id=re[i].id;
+              document.getElementById('permis1').innerHTML += "<div id='permi"+i+"' class='tag-skil'> "+skil+"<span id='delp"+i+"' class='delete' onclick='deletepermis("+i+","+id+")' > X <span> </div>";
           }
           document.getElementById('permis1').innerHTML += "<div  class='clear space'></div>";
       }
@@ -233,6 +239,7 @@ function lenguge(){
          var nivel= re[i].nivel;
            // console.log(start);
          document.getElementById('limbi').innerHTML += "<div id='limba-"+i+"'  ></div>";
+                 document.getElementById('limba-'+i).innerHTML +="<div class='exit' ></div>";
          document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('limba-'+i).innerHTML +="<div class='lenguge-name'>"+limba+"</div> </br>";
          document.getElementById('limba-'+i).innerHTML +="<div id='lenguge-lvl' class='lenguge-lvl'></div> </br>";

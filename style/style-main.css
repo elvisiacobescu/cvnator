@@ -209,18 +209,19 @@ left: 29px;
 font-weight: bold;
 opacity: 0.7;
 font-size: 39px;
+z-index: -1;
 }
  .edit_buton_style{
-  position: relative;
-  left: 5px;
-  top: 35px;
-  border: solid 1px gray;
-  background-color: #ADADAD;
-  padding: 5px;
-  border-radius: 5px;
-  z-index: 99;
-
-  margin: 0% 0% 0% 60%;
+   position: absolute;
+   left: 5px;
+   float: right;
+   top: 5px;
+   border: solid 1px gray;
+   background-color: #ADADAD;
+   padding: 5px;
+   border-radius: 5px;
+   z-index: 99;
+   margin: 0% 0% 0% 60%;
 }
 
   .edit_buton_style:hover{
@@ -271,7 +272,7 @@ font-size: 39px;
   border: 1px solid black;
 width: 80%;
 height: 15px;
-margin-left: 0%;
+margin-left: 10%;
 margin-top: 15px;
 border-radius: 8px;
   background-image: url(/cvnator/img/colord_bar.jpg);
@@ -298,4 +299,19 @@ border-radius: 8px;
 }
 .bar_poz4{
   width: 0%;
+}
+.exit{
+  position: relative;
+  right: 5px;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  float: right;
+  border-radius: 5px;
+  background-image: url(/cvnator/img/exit.jpg);
+  background-size: contain;
+  z-index: 1;
+}
+.exit:hover{
+   cursor: pointer;
 }

@@ -27,3 +27,39 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 09 modifica personaldata, dar trebuie verificat daca functioneaza
 
 18* deletepermis .... de facut stergerea acutuala a datelor din baza de date . am trimis in json doar a cata trebuie eliminata incepand de la 1 (trebuie citite din baza de date toate si vazut ce id are a x-lea element si sters elementu cu idiul respectiv)
+
+
+---to do elvis
+1 first loar
+  *limbi               Done
+  *carnet              Done
+  *skils               Done
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done
+  *inf                 Done
+2 delete
+  *limbi
+  *carnet              Done - am facut si phpul aici si queri sql
+  *skils
+  *alte activitati
+  *educatie            Done  - am facut si phpul aici si queri sql
+3 add
+  *limbi
+  *carnet
+  *skils
+  *alte activitati
+  *experienta
+  *educatie
+4 Edit/apdate
+  *limbi
+  *carnet
+  *skils
+  *alte activitati
+  *experienta
+  *educatie
+  *inf
+5 previev
+6 downloade
+7 mobile-respocive
+8 testing-overall
