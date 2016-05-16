@@ -129,7 +129,7 @@ $dbname = "cvnator";
 $nrexperiente="";
 $userid=$_COOKIE["cookie_user_id"];
 //personal data
-$pdf->WriteHTML('<b> Date Personale: </b>');
+$pdf->WriteHTML('<b> Informatii Personale: </b>');
 $conn = new mysqli($servername, $username, $password,$dbname);
 $getid=sprintf("SELECT * FROM date_personale where user_id=".$userid);
 $rezult= $conn ->query($getid);
@@ -156,16 +156,21 @@ $pdf->WriteHTML('<i>Prenume: </i>'); $pdf->Cell(190,5,$row["prenume"]);
    $pdf->WriteHTML('<br>');
    $pdf->WriteHTML('<i>Oras: </i>'); $pdf->Cell(190,5,$row["oras"]);
    $pdf->WriteHTML('<br>');
+      $pdf->WriteHTML('<br>');
+   $pdf->WriteHTML('<b> Informatii despre locul de munca dorit: </b>');
+   $pdf->WriteHTML('<br>');
+   $pdf->WriteHTML('<i>Post dorit: </i>'); $pdf->Cell(190,5,$row["post_dorit"]);
+   $pdf->WriteHTML('<br>');
+    $pdf->WriteHTML('<i>Domeniu: </i>'); $pdf->Cell(190,5,$row["domeniu"]);
+   $pdf->WriteHTML('<br>');
    $pdf->WriteHTML('<i>Salariul dorit: </i>'); $pdf->Cell(190,5,$row["salariu_dorit"]);
    $pdf->WriteHTML('<br>');
    $pdf->WriteHTML('<i>Tip job: </i>'); $pdf->Cell(190,5,$row["tip_job"]);
    $pdf->WriteHTML('<br>');
    $pdf->WriteHTML('<i>Nivel cariera: </i>'); $pdf->Cell(190,5,$row["nivel_cariera"]);
    $pdf->WriteHTML('<br>');
-   $pdf->WriteHTML('<i>Domeniu: </i>'); $pdf->Cell(190,5,$row["domeniu"]);
-   $pdf->WriteHTML('<br>');
-   $pdf->WriteHTML('<i>Post_dorit: </i>'); $pdf->Cell(190,5,$row["post_dorit"]);
-   $pdf->WriteHTML('<br>');
+  
+   
    $pdf->WriteHTML('<i>Relocare: </i>'); $pdf->Cell(190,5,$row["relocare"]);
    $pdf->WriteHTML('<br>');
    $pdf->WriteHTML('<i>Obiectiv: </i>'); $pdf->Cell(190,5,$row["obiectiv"]);
@@ -175,9 +180,43 @@ $pdf->WriteHTML('<i>Prenume: </i>'); $pdf->Cell(190,5,$row["prenume"]);
  }
 }
 
+//experienta
+$html='';
+$conn = new mysqli($servername, $username, $password,$dbname);
+$getid=sprintf("SELECT * FROM experienta where user_id=".$userid);
+$rezult= $conn ->query($getid);
+ $pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b>Experienta profesionala: </b>');
+$pdf->Cell(0,10,'',0,1);
+if ($rezult->num_rows>0){
+  $nrexperiente=$rezult->num_rows;
+while($row = $rezult->fetch_assoc()) {
+//
+$pdf->Cell(190,5,'De la: '.$row["start"].' pana la: '.$row["stop"]);
+ $pdf->WriteHTML('<i>Postul: </i>'); $pdf->Cell(190,5,$row["domeniu"]);
+   $pdf->WriteHTML('<br>');
+ $pdf->WriteHTML('<i>Nume companie: </i>'); $pdf->Cell(190,5,$row["nume_companie"]);
+  $pdf->WriteHTML('<br>');
+  
+   $pdf->WriteHTML('<i>Departament: </i>'); $pdf->Cell(190,5,$row["departament"]);
+   $pdf->WriteHTML('<br>');
+
+$html='<i>Descrierea activitatii :</i> '.$row["descrierea_jobului"];
+
+ }
+$pdf->WriteHTML($html);
+ $pdf->WriteHTML('<br>');
+
+ 
+}
+
+//end experienta
+
+
 //educatie
 $pdf->WriteHTML('<br>');
 $pdf->WriteHTML('<b> Educatie: </b>');
+    $pdf->WriteHTML('<br>');
 $conn = new mysqli($servername, $username, $password,$dbname);
 $getid=sprintf("SELECT * FROM educatie where user_id=".$userid);
 $rezult= $conn ->query($getid);
@@ -197,28 +236,69 @@ $pdf->WriteHTML('<i>Institutia de invatamant : </i>'); $pdf->Cell(190,5,$row["nu
  }
 }
 
-//experienta
-$html='';
-$conn = new mysqli($servername, $username, $password,$dbname);
-$getid=sprintf("SELECT * FROM experienta where user_id=".$userid);
+//abiliati
+$pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b> Abilitati: </b>');
+    $pdf->WriteHTML('<br>');
+$getid=sprintf("SELECT * FROM abilitati where user_id=".$userid);
 $rezult= $conn ->query($getid);
- $pdf->WriteHTML('<br>');
-$pdf->WriteHTML('<b>Experiente: </b>');
-$pdf->Cell(0,10,'',0,1);
 if ($rezult->num_rows>0){
-  $nrexperiente=$rezult->num_rows;
 while($row = $rezult->fetch_assoc()) {
 
-$html=$html.$row["entry_id"].' <i>de la</i> : '.$row["start"].' <i>pana la</i> : '.$row["stop"].' <i>la compania</i> : '.$row["nume_companie"].' <i>in domeniul</i> : '.$row["domeniu"].' <i>departament</i> : '.$row["departament"].' <i>descrierea activitatii :</i> '.$row["descrierea_jobului"];
+$pdf->Cell(190,5,$row["skill"]);
+	$pdf->WriteHTML('<br>');
+ }
+}
+//limbi straine
+$pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b>Limbi straine: </b>');
+    $pdf->WriteHTML('<br>');
+$getid=sprintf("SELECT * FROM limbi_straine where user_id=".$userid);
+$rezult= $conn ->query($getid);
+if ($rezult->num_rows>0){
+while($row = $rezult->fetch_assoc()) {
+
+	 $pdf->Cell(190,5,'Limba: '.$row["limba"].' - nivel: '.$row["nivel"]);
+   $pdf->WriteHTML('<br>');
+ }
+}
+//permis
+$pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b>Permis de conducere: </b>');
+    $pdf->WriteHTML('<br>');
+$getid=sprintf("SELECT * FROM permis where user_id=".$userid);
+$rezult= $conn ->query($getid);
+
+if ($rezult->num_rows>0){
+while($row = $rezult->fetch_assoc()) {
+
 
  }
-$pdf->WriteHTML($html);
- 
 }
+else $pdf->WriteHTML('<i>Nu exista informatii despre permis de conducere. </i>');
+//alt_info
+$pdf->WriteHTML('<br>');
+$pdf->WriteHTML('<b>Alte informatii: </b>');
+    $pdf->WriteHTML('<br>');
+$getid=sprintf("SELECT * FROM alt_info where user_id=".$userid);
+$rezult= $conn ->query($getid);
+
+if ($rezult->num_rows>0){
+while($row = $rezult->fetch_assoc()) {
+	$pdf->Cell(190,5,'De la: '.$row["start"].' pana la: '.$row["stop"]);
+	  $pdf->WriteHTML('<i>Titlu: </i>'); $pdf->Cell(190,5,$row["titlu"]);
+   $pdf->WriteHTML('<br>');
+   
+   $html='<i>Descriere:</i> '.$row["descriere"];
+
+ 
+$pdf->WriteHTML($html);
+ $pdf->WriteHTML('<br>');
+ $pdf->WriteHTML('<br>');
+}
+ }
 
 
-
-//altele
 
 $pdf->Output();
 ?>
