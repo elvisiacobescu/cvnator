@@ -30,7 +30,7 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 
 
 ---to do elvis
-1 first loar
+1 first loar           
   *limbi               Done
   *carnet              Done
   *skils               Done

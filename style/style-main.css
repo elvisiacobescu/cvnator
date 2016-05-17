@@ -315,3 +315,12 @@ border-radius: 8px;
 .exit:hover{
    cursor: pointer;
 }
+.exit .tooltip-content {
+  display: none;
+  position: absolute;
+  top: -38%;
+  right: 118%;
+}
+.exit:hover .tooltip-content {
+  display: block;
+}
