@@ -18,11 +18,10 @@ $sql=sprintf("UPDATE educatie SET start ="."'".$json["start"]."'".
 " , profil="."'".$json["profil"]."'".
 " , diploma="."'".$json["diploma"]."'".
 " where user_id=".$userid. " AND entry_id=".$json["entry_id"]);
-//$rezult= $conn ->query($getid);
 
 if ($conn->query($sql) === TRUE) {
 		echo "succes";
-//		echo "succes".$json["nume"];
+
 } else {
     echo "erruare: " . $conn->error;
 }
