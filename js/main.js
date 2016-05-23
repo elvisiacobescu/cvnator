@@ -126,7 +126,6 @@ var rez=0;
   }
  console.log(otext1);
   var jsonstring=JSON.stringify(infosend);
-   console.log(jsonstring);
   var hr=new XMLHttpRequest();
   var url="php/modificapersonaldata.php?obj="+jsonstring;
   hr.open("GET",url,true);
@@ -312,20 +311,67 @@ function deletestudiu (i,id){
       function modificaeducatie(i,id){
         document.getElementById('edit_total').className = "";
         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
-        document.getElementById('persona456723').innerHTML +="Start :</br><input class='celformat' type='date' data-date-inline-picker='false' /></br>";
-        document.getElementById('persona456723').innerHTML +="Finish :</br><input class='celformat' type='date' data-date-inline-picker='true' /></br>";
-        document.getElementById('persona456723').innerHTML +="Numele institutie:</br><input class='celformat' type='text' value=''></br>";
-        document.getElementById('persona456723').innerHTML +="Oras:</br><input class='celformat' type='text' value=''></br>";
-        document.getElementById('persona456723').innerHTML +="Specialitate:</br><input class='celformat' type='text' value=''></br>";
-        document.getElementById('persona456723').innerHTML +="Diploma obtinuta:</br><input class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="Start :</br><input id='persona4567231'  class='celformat' type='date' data-date-inline-picker='false' /></br>";
+        document.getElementById('persona456723').innerHTML +="Finish :</br><input id='persona4567232'  class='celformat' type='date' data-date-inline-picker='true' /></br>";
+        document.getElementById('persona456723').innerHTML +="Numele institutie:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="Oras:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="Specialitate:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="Diploma obtinuta:</br><input id='persona4567236'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveeducatie("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+        var texts=document.getElementById('persona4567231');
+        var prelude =document.getElementById("data-stat-"+i).innerHTML;
+        texts.value=document.getElementById("data-stat-"+i).innerHTML;
+         texts=document.getElementById('persona4567232');
+        texts.value=document.getElementById("data-stop-"+i).innerHTML;
+         texts=document.getElementById('persona4567233');
+        texts.value=document.getElementById("institutie-"+i).innerHTML;
+         texts=document.getElementById('persona4567234');
+        texts.value=document.getElementById("oras-"+i).innerHTML;
+         texts=document.getElementById('persona4567235');
+        texts.value=document.getElementById("specialitate-"+i).innerHTML;
+         texts=document.getElementById('persona4567236');
+        texts.value=document.getElementById("data-satus-"+i).innerHTML;
       }
+
       function saveeducatie(i,id){
-      var text1= document.forms[0].elements[1].value;
-      var text2= document.forms[0].elements[2].value;
-      var text3= document.forms[0].elements[3].value;
-      var text4= document.forms[0].elements[4].value;
-      var text5= document.forms[0].elements[5].value;
-      var text5= document.forms[0].elements[5].value;
+      var text1= document.getElementById('persona4567231').value;
+      var text2= document.getElementById('persona4567232').value;
+      var text3= document.getElementById('persona4567233').value;
+      var text4= document.getElementById('persona4567234').value;
+      var text5= document.getElementById('persona4567235').value;
+      // var text5= document.forms[0].elements[5].value;
+      var text6=document.getElementById('persona4567236').value;
       console.log(text5);
+      var infosend={
+        "start":text1,
+        "stop":text2,
+        "nume_institutie":text3,
+        "oras":text4,
+        "profil":text5,
+        "diploma":text6,
+        "entry_id":id
+      }
+      var jsonstring=JSON.stringify(infosend);
+    //  console.log(jsonstring);
+      var hr=new XMLHttpRequest();
+      var url="php/modificaeducatie.php?obj="+jsonstring;
+      hr.open("GET",url,true);
+      hr.send();
+      hr.onreadystatechange = function(){
+        if(hr.readyState == 4 && hr.status == 200)
+        {
+            var rezulta1t = hr.responseText;
+            if (rezulta1t=="succes"){
+            document.getElementById("data-stat-"+i).innerHTML=text1;
+            document.getElementById("data-stop-"+i).innerHTML=text2;
+            document.getElementById("institutie-"+i).innerHTML=text3;
+            document.getElementById("oras-"+i).innerHTML=text4;
+            document.getElementById("specialitate-"+i).innerHTML=text5;
+            document.getElementById("data-stat-"+i).innerHTML=text6;
+            var removeble =document.getElementById("persona456723");
+            removeble.parentNode.removeChild(removeble);
+            document.getElementById('edit_total').className = "invizible";
+            }
+          }
+        }
       }

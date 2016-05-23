@@ -84,7 +84,7 @@ window.onload = function () {
           document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Numele institutie:</span><span id='institutie-"+i+"''>"+institutie+"</span> </br>";
           document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>oras:</span><span id='oras-"+i+"''>"+oras+"</span></br>";
           document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Specialitate:</span><span id='specialitate-"+i+"''>"+profil+"</span></br>";
-          document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Diploma obtinuta:</span><span id='data-stat-"+i+"''>"+re[i].diploma+"</span></br>";
+          document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Diploma obtinuta:</span><span id='data-satus-"+i+"''>"+re[i].diploma+"</span></br>";
           document.getElementById('personal-'+i).innerHTML += "<div  class='space'></div>";
         }
        }
