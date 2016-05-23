@@ -14,7 +14,6 @@ $json = json_decode($obj, true);// decode the JSON into an associative array
 $sql=sprintf("UPDATE educatie SET start ="."'".$json["start"]."'".
 " , stop="."'".$json["stop"]."'".
 " , nume_institutie="."'".$json["nume_institutie"]."'".
-" , nr_telefon="."'".$json["nr_telefon"]."'".
 " , oras="."'".$json["oras"]."'".
 " , profil="."'".$json["profil"]."'".
 " , diploma="."'".$json["diploma"]."'".
