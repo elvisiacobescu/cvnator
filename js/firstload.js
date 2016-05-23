@@ -106,7 +106,7 @@ window.onload = function () {
          for (var i=0;i<count;i++){
          var start= re[i].start;
          var stop= re[i].stop;
-         var Numele_Companiei= re[i].Numele_Companiei;
+         var Numele_Companiei= re[i].nume_companie;
          var Domeniu= re[i].domeniu;
          var Departament= re[i].departament;
          var descriere= re[i].descrierea_jobului;
@@ -116,10 +116,11 @@ window.onload = function () {
          document.getElementById('experienta-'+i).innerHTML +="<div class='exit' onclick='deletexp("+i+","+id+")'><div class='tooltip-content'><p>Delete</p></div></div>";
          document.getElementById('experienta-'+i).innerHTML +="<div id='edit-experienta-"+i+"' class='edit-experienta'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('experienta-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
-         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Numele Companiei:</span><span id='companie"+i+" >"+Numele_Companiei+"</span> </br>";
-         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Domeniu:</span><span id='Domeniu"+i+"''>"+Domeniu+"</span></br>";
-         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Departament:</span><span id='Departament"+i+"''>"+Departament+"</span></br>";
-         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Descrierea-Jobului:</span><span id='descriere"+i+"''>"+descriere+"</span></br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Numele Companiei:</span> ";
+                  document.getElementById('experienta-'+i).innerHTML += "<span id='companie"+i+"'>"+Numele_Companiei+"</span> </br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Domeniu:</span><span id='Domeniu"+i+"'>"+Domeniu+"</span></br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Departament:</span><span id='Departament"+i+"'>"+Departament+"</span></br>";
+         document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Descrierea-Jobului:</span><span id='descriere"+i+"'>"+descriere+"</span></br>";
          document.getElementById('experienta-'+i).innerHTML +="<div class='space'></div>";
        }
         }
