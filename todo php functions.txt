@@ -39,27 +39,25 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
   *educatie            Done
   *inf                 Done
 2 delete----------------------------------------------------------------------------------------
-  *limbi
+  *limbi               Done
   *carnet              Done + am facut si phpul aici si queri sql
-  *skils
+  *skils               Done
   *alte activitati     Done
   *experienta          Done
   *educatie            Done  + am facut si phpul aici si queri sql
 3 add--------------------------------------------------------------------------------------------
-  *limbi
-  *carnet
-  *skils
-  *alte activitati    Done
-  *experienta         Done
-  *educatie           Done +php
+  *limbi               Done
+  *permis              Done
+  *skils               Done
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done +php
 4 Edit/apdate -----------------------------------------------------------------------------------
-  *limbi
-  *carnet
-  *skils
-  *alte activitati
-  *experienta        Done
-  *educatie          Done +revizuire si rescriere php si sql queri
-  *inf`              Done + php
+  *limbi               ----
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done +revizuire si rescriere php si sql queri
+  *inf`                Done + php
 5 previev
 6 downloade
 7 mobile-respocive

@@ -629,3 +629,163 @@ function deletestudiu (i,id){
          }
         }
       }
+
+     function deletelimba(i,id){
+       var delete1={"cat" : id};
+       var jsonstring=JSON.stringify(delete1);
+       var hr=new XMLHttpRequest();
+       var url="php/deletelimbi.php?obj="+jsonstring;
+       hr.open("GET",url,true);
+       hr.send();
+       hr.onreadystatechange = function()
+       {
+           if(hr.readyState == 4 && hr.status == 200)
+           {
+             //face primirea de date de la server
+             var rezultat = hr.responseText;
+             if (rezultat=="Record deleted successfully"){
+              console.log(rezultat);
+              var element=document.getElementById("limba-"+i);
+              element.parentNode.removeChild(element);
+             }
+             else{
+               console.log(rezultat);
+             }
+           }
+         }
+     }
+
+     function addnewelimbi(){
+       document.getElementById('edit_total').className = "";
+       document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
+       document.getElementById('persona456723').innerHTML +="Limba:<input id='persona4567231'  class='celformat' type='text' value=''></br>";
+       document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Nivel-Limba:</span><select class='celformat'  id='persona4567232'><option disabled selected value> -- LEVEL -- </option><option>Beginer</option><option >Mediu</option><option >Good</option><option >Greate</option><select></br>";
+       document.getElementById('persona456723').innerHTML +="<div class='save_buton'  onclick='saveexperienta()' ><span class='savetext'>SAVE</span></div>";
+     }
+     function saveexperienta(){
+       var text1= document.getElementById('persona4567231').value;
+       var text2= document.getElementById('persona4567232').value;
+         console.log(text2);
+       var val;
+       if(text2=="Beginer"){
+         val=1;
+       }else if(text2=="Mediu"){
+         val=2;
+       }
+       else if(text2=="Good"){
+         val=3;
+       }
+       else if(text2=="Greate"){
+         val=4;
+       }
+       var infosend={
+         "limba":text1,
+         "nivel":val
+       }
+       var jsonstring=JSON.stringify(infosend);
+        console.log(jsonstring);
+       var hr=new XMLHttpRequest();
+       var url="php/adaugalimbi.php?obj="+jsonstring;
+       hr.open("GET",url,true);
+       hr.send();
+       hr.onreadystatechange = function(){
+       if(hr.readyState == 4 && hr.status == 200)
+       {
+           var  rez = hr.responseText;
+           if ( rez=="succes"){
+           var removeble =document.getElementById("persona456723");
+           removeble.parentNode.removeChild(removeble);
+           document.getElementById('edit_total').className = "invizible";
+           location.reload();
+         }
+       }
+     }
+   }
+      function deleteskil(i,id){
+        var delete1={"cat" : id};
+        var jsonstring=JSON.stringify(delete1);
+        var hr=new XMLHttpRequest();
+        var url="php/deleteabilitati.php?obj="+jsonstring;
+        hr.open("GET",url,true);
+        hr.send();
+        hr.onreadystatechange = function()
+        {
+            if(hr.readyState == 4 && hr.status == 200)
+            {
+              //face primirea de date de la server
+              var rezultat = hr.responseText;
+              if (rezultat=="Record deleted successfully"){
+               console.log(rezultat);
+               var element=document.getElementById("skill"+i);
+               element.parentNode.removeChild(element);
+              }
+              else{
+                console.log(rezultat);
+              }
+            }
+          }
+      }
+      function addnewskils(){
+        document.getElementById('edit_total').className = "";
+        document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
+        document.getElementById('persona456723').innerHTML +="Limba:<input id='persona4567231'  class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveskills1()'><span class='savetext'>SAVE</span></div>";
+
+      }
+
+      function saveskills1(){
+        var text1= document.getElementById('persona4567231').value;
+        var infosend={
+          "skill":text1,}
+          var jsonstring=JSON.stringify(infosend);
+          var hr=new XMLHttpRequest();
+          var url="php/adaugaabilitati.php?obj="+jsonstring;
+          hr.open("GET",url,true);
+          hr.send();
+          hr.onreadystatechange = function(){
+            if(hr.readyState == 4 && hr.status == 200)
+            {
+                var rezulta1t = hr.responseText;
+                if (rezulta1t=="succes"){
+                var removeble =document.getElementById("persona456723");
+                removeble.parentNode.removeChild(removeble);
+                // console.log(rezultat);
+                document.getElementById('edit_total').className = "invizible";
+                   location.reload();
+                }
+              }
+            }
+      }
+    function addnewepermis(){
+
+      document.getElementById('edit_total').className = "";
+      document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
+      document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Categorie permis:</span><select class='celformat'  id='persona4567231'><option disabled selected value> -- CATEGORE-- </option><option>A1</option><option >A</option><option >B1</option><option >B</option><option >C1</option><option >C</option><option >D1</option><option >D</option><select></br>";
+      document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='savepermiss1()'><span class='savetext'>SAVE</span></div>";
+    }
+
+
+  function savepermiss1(){
+   var text1= document.getElementById('persona4567231').value;
+   var infosend={
+     "categorie":text1}
+     var jsonstring=JSON.stringify(infosend);
+     var hr=new XMLHttpRequest();
+     var url="php/adaugapermis.php?obj="+jsonstring;
+     hr.open("GET",url,true);
+     hr.send();
+     hr.onreadystatechange = function(){
+       if(hr.readyState == 4 && hr.status == 200)
+       {
+           var rezulta1t = hr.responseText;
+           if (rezulta1t=="succes"){
+           var removeble =document.getElementById("persona456723");
+           removeble.parentNode.removeChild(removeble);
+           // console.log(rezultat);
+           document.getElementById('edit_total').className = "invizible";
+              location.reload();
+           }
+         }
+       }
+
+ }

@@ -179,7 +179,8 @@ window.onload = function () {
           for (var i =0; i<count;i++)
             {
                 var skil= re[i].skill;
-                document.getElementById('skills1').innerHTML += "<div id='skill"+i+"' class='tag-skil'> "+skil+"<span id='dels"+i+"' class='delete'> X <span> </div>";
+                var id =re[i].entry_id;
+                document.getElementById('skills1').innerHTML += "<div id='skill"+i+"' class='tag-skil'   >"+skil+"<span id='dels"+i+"' class='delete' onclick='deleteskil("+i+","+id+")'> X <span> </div>";
             }
             document.getElementById('skills1').innerHTML += "<div  class='clear space'></div>";
         }
@@ -208,7 +209,7 @@ hr.onreadystatechange = function()
           {
               var skil= re[i].categorie;
               var id=re[i].id;
-              document.getElementById('permis1').innerHTML += "<div id='permi"+i+"' class='tag-skil'> "+skil+"<span id='delp"+i+"' class='delete' onclick='deletepermis("+i+","+id+")' > X <span> </div>";
+              document.getElementById('permis1').innerHTML += "<div id='permi"+i+"' class='tag-skil' > "+skil+"<span id='delp"+i+"' class='delete' onclick='deletepermis("+i+","+id+")' > X <span> </div>";
           }
           document.getElementById('permis1').innerHTML += "<div  class='clear space'></div>";
       }
@@ -239,17 +240,18 @@ function lenguge(){
          for (var i=0;i<count;i++){
          var limba= re[i].limba;
          var nivel= re[i].nivel;
+         var id=re[i].entry_id;
            // console.log(start);
          document.getElementById('limbi').innerHTML += "<div id='limba-"+i+"'  ></div>";
-                 document.getElementById('limba-'+i).innerHTML +="<div class='exit' ><div class='tooltip-content'><p>Delete</p></div></div>";
+                 document.getElementById('limba-'+i).innerHTML +="<div class='exit' onclick='deletelimba("+i+","+id+")'><div class='tooltip-content' ><p>Delete</p></div></div>";
          document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style2'/></div>";
          document.getElementById('limba-'+i).innerHTML +="<div class='lenguge-name'>"+limba+"</div> </br>";
-         document.getElementById('limba-'+i).innerHTML +="<div id='lenguge-lvl' class='lenguge-lvl'></div> </br>";
+         document.getElementById('limba-'+i).innerHTML +="<div id='lenguge-lvl"+i+"' class='lenguge-lvl'></div> </br>";
          document.getElementById('limba-'+i).innerHTML +="<div class='space'></div>";
-         if(nivel==1){document.getElementById('lenguge-lvl').innerHTML +="<div class='white-bar bar_poz1'> </div>";}
-         else if(nivel==2){document.getElementById('lenguge-lvl').innerHTML +="<div class='white-bar bar_poz2'> </div>";}
-         else if(nivel==3){document.getElementById('lenguge-lvl').innerHTML +="<div class='white-bar bar_poz3'> </div>";}
-         else if(nivel==4){document.getElementById('lenguge-lvl').innerHTML +="<div class='white-bar bar_poz4'> </div>";}
+         if(nivel==1){document.getElementById('lenguge-lvl'+i).innerHTML +="<div class='white-bar bar_poz1'> </div>";}
+         else if(nivel==2){document.getElementById('lenguge-lvl'+i).innerHTML +="<div class='white-bar bar_poz2'> </div>";}
+         else if(nivel==3){document.getElementById('lenguge-lvl'+i).innerHTML +="<div class='white-bar bar_poz3'> </div>";}
+         else if(nivel==4){document.getElementById('lenguge-lvl'+i).innerHTML +="<div class='white-bar bar_poz4'> </div>";}
        }
         }
     }
