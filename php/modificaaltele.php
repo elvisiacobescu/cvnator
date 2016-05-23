@@ -12,7 +12,7 @@ $userid=$_COOKIE["cookie_user_id"];
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 	$json = json_decode($obj, true);// decode the JSON into an associative array
-$sql=sprintf("UPDATE altele SET start="."'".$json["start"]."' "." , stop ="." '".$json["stop"]."' "." , titlu="." '".$json["titlu"]."' "." , descriere="." '".$json["descriere"]."' where user_id=".$userid." , entry_id=".$json["entry_id"]."' ");
+$sql=sprintf("UPDATE alt_info SET start="."'".$json["start"]."' "." , stop ="." '".$json["stop"]."' "." , titlu="." '".$json["titlu"]."' "." , descriere="." '".$json["descriere"]."' where user_id=".$userid." AND entry_id='".$json["entry_id"]."' ");
 $rezult= $conn ->query($sql);
 
 if ($conn->query($sql) === TRUE) {
