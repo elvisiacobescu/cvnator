@@ -230,6 +230,8 @@ function deletepermis(i,id){
       }
     }
 }
+
+
 function deletestudiu (i,id){
   var delete1={"cat" : id};
   var jsonstring=JSON.stringify(delete1);
@@ -387,7 +389,7 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveeducatie1()'><span class='savetext'>SAVE</span></div>";
       }
 
-    function saveeducatie1(){
+      function saveeducatie1(){
       var text1= document.getElementById('persona4567231').value;
       var text2= document.getElementById('persona4567232').value;
       var text3= document.getElementById('persona4567233').value;
@@ -404,7 +406,7 @@ function deletestudiu (i,id){
       }
       var jsonstring=JSON.stringify(infosend);
       var hr=new XMLHttpRequest();
-      var url="php/addeducatie.php?obj="+jsonstring;
+      var url="php/adaugaeducatie.php?obj="+jsonstring;
       hr.open("GET",url,true);
       hr.send();
       hr.onreadystatechange = function(){
@@ -414,6 +416,7 @@ function deletestudiu (i,id){
             if (rezulta1t=="succes"){
             var removeble =document.getElementById("persona456723");
             removeble.parentNode.removeChild(removeble);
+            // console.log(rezultat);
             document.getElementById('edit_total').className = "invizible";
                location.reload();
             }
@@ -421,6 +424,7 @@ function deletestudiu (i,id){
         }
 
        }
+
        function addnewexperienta(){
          document.getElementById('edit_total').className = "";
          document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -429,10 +433,10 @@ function deletestudiu (i,id){
          document.getElementById('persona456723').innerHTML +="Numele Companiei:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
          document.getElementById('persona456723').innerHTML +="Domeniu:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
          document.getElementById('persona456723').innerHTML +="Departament:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
-         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='oobiectiv' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
+         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567236' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
          document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta1()'><span class='savetext'>SAVE</span></div>";
        }
-        function saveeducatie1(){var text1= document.getElementById('persona4567231').value;
+       function saveexperienta1(){var text1= document.getElementById('persona4567231').value;
           var text2= document.getElementById('persona4567232').value;
           var text3= document.getElementById('persona4567233').value;
           var text4= document.getElementById('persona4567234').value;
@@ -441,26 +445,187 @@ function deletestudiu (i,id){
           var infosend={
             "start":text1,
             "stop":text2,
-            "nume_institutie":text3,
-            "oras":text4,
-            "profil":text5,
-            "diploma":text6,
+            "nume_companie":text3,
+            "domeniu":text4,
+            "departament":text5,
+            "descrierea_jobului":text6
           }
-          // var jsonstring=JSON.stringify(infosend);
-          // var hr=new XMLHttpRequest();
-          // var url="php/addeducatie.php?obj="+jsonstring;
-          // hr.open("GET",url,true);
-          // hr.send();
-          // hr.onreadystatechange = function(){
-          //   if(hr.readyState == 4 && hr.status == 200)
-          //   {
-          //       var rezulta1t = hr.responseText;
-          //       if (rezulta1t=="succes"){
-          //       var removeble =document.getElementById("persona456723");
-          //       removeble.parentNode.removeChild(removeble);
-          //       document.getElementById('edit_total').className = "invizible";
-                  //  location.reload();
-          //       }
-          //     }
-          //   }
+          var jsonstring=JSON.stringify(infosend);
+          var hr=new XMLHttpRequest();
+          var url="php/adaugaexperienta.php?obj="+jsonstring;
+          hr.open("GET",url,true);
+          hr.send();
+          hr.onreadystatechange = function(){
+            if(hr.readyState == 4 && hr.status == 200)
+            {
+                var rezulta1t = hr.responseText;
+                if (rezulta1t=="succes"){
+                var removeble =document.getElementById("persona456723");
+                removeble.parentNode.removeChild(removeble);
+                document.getElementById('edit_total').className = "invizible";
+                   location.reload();
+                }
+              }
+            }
         }
+       function modificexperienta(i ,id){
+         document.getElementById('edit_total').className = "";
+         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
+         document.getElementById('persona456723').innerHTML +="Start :</br><input id='persona4567231'  class='celformat' type='date' data-date-inline-picker='false' /></br>";
+         document.getElementById('persona456723').innerHTML +="Finish :</br><input id='persona4567232'  class='celformat' type='date' data-date-inline-picker='true' /></br>";
+         document.getElementById('persona456723').innerHTML +="Numele Companiei:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
+         document.getElementById('persona456723').innerHTML +="Domeniu:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
+         document.getElementById('persona456723').innerHTML +="Departament:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
+         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567236' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
+         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+         var texts=document.getElementById('persona4567231');
+         texts.value=document.getElementById("data-stat-expe-"+i).innerHTML;
+          texts=document.getElementById('persona4567232');
+         texts.value=document.getElementById("data-stop-expe-"+i).innerHTML;
+          texts=document.getElementById('persona4567233');
+         texts.value=document.getElementById("companie"+i).innerHTML;
+          texts=document.getElementById('persona4567234');
+         texts.value=document.getElementById("Domeniu"+i).innerHTML;
+          texts=document.getElementById('persona4567235');
+         texts.value=document.getElementById("Departament"+i).innerHTML;
+          texts=document.getElementById('persona4567236');
+         texts.innerHTML=document.getElementById("descriere "+i).innerHTML;
+       }
+      function saveexperienta (i ,id){
+        var text1= document.getElementById('persona4567231').value;
+        var text2= document.getElementById('persona4567232').value;
+        var text3= document.getElementById('persona4567233').value;
+        var text4= document.getElementById('persona4567234').value;
+        var text5= document.getElementById('persona4567235').value;
+        var text6=document.getElementById('persona4567236').value;
+        var infosend={
+          "start":text1,
+          "stop":text2,
+          "nume_companie":text3,
+          "domeniu":text4,
+          "departament":text5,
+          "descrierea_jobului":text6,
+          "entry_id":id
+        }
+
+        var jsonstring=JSON.stringify(infosend);
+      var hr=new XMLHttpRequest();
+      var url="php/modificaexperienta.php?obj="+jsonstring;
+      hr.open("GET",url,true);
+      hr.send();
+      hr.onreadystatechange = function(){
+        if(hr.readyState == 4 && hr.status == 200)
+        {
+            var rezulta1t = hr.responseText;
+            if (rezulta1t=="succes"){
+            document.getElementById("data-stat-expe-"+i).innerHTML=text1;
+            document.getElementById("data-stop-expe-"+i).innerHTML=text2;
+            document.getElementById("companie"+i).innerHTML=text3;
+            document.getElementById("Domeniu"+i).innerHTML=text4;
+            document.getElementById("Departament"+i).innerHTML=text5;
+            document.getElementById("descriere"+i).innerHTML=text6;
+            var removeble =document.getElementById("persona456723");
+            removeble.parentNode.removeChild(removeble);
+            document.getElementById('edit_total').className = "invizible";
+            }
+          }
+        }
+      }
+      function addnewalteactivitati(){
+        document.getElementById('edit_total').className = "";
+        document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
+        document.getElementById('persona456723').innerHTML +="Start :</br><input id='persona4567231'  class='celformat' type='date' data-date-inline-picker='false' /></br>";
+        document.getElementById('persona456723').innerHTML +="Finish :</br><input id='persona4567232'  class='celformat' type='date' data-date-inline-picker='true' /></br>";
+        document.getElementById('persona456723').innerHTML +="Denumirea:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567234' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
+        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='savealtele1()'><span class='savetext'>SAVE</span></div>";
+      }
+      function savealtele1(){
+              var text1= document.getElementById('persona4567231').value;
+              var text2= document.getElementById('persona4567232').value;
+              var text3= document.getElementById('persona4567233').value;
+              var text4= document.getElementById('persona4567234').value;
+              var infosend={
+                "start":text1,
+                "stop":text2,
+                "titlu":text3,
+                "descriere":text4,
+              }
+              var jsonstring=JSON.stringify(infosend);
+              var hr=new XMLHttpRequest();
+              var url="php/adaugaaltele.php?obj="+jsonstring;
+              hr.open("GET",url,true);
+              hr.send();
+              hr.onreadystatechange = function(){
+            if(hr.readyState == 4 && hr.status == 200)
+            {
+                var rezulta1t = hr.responseText;
+                if (rezulta1t=="succes"){
+                var removeble =document.getElementById("persona456723");
+                removeble.parentNode.removeChild(removeble);
+                document.getElementById('edit_total').className = "invizible";
+                   location.reload();
+                }
+              }
+            }
+
+      }
+
+      function modificaaltele(i,id){
+
+        document.getElementById('edit_total').className = "";
+        document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
+        document.getElementById('persona456723').innerHTML +="Start :</br><input id='persona4567231'  class='celformat' type='date' data-date-inline-picker='false' /></br>";
+        document.getElementById('persona456723').innerHTML +="Finish :</br><input id='persona4567232'  class='celformat' type='date' data-date-inline-picker='true' /></br>";
+        document.getElementById('persona456723').innerHTML +="Denumirea:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
+        document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567234' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
+        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+        var texts=document.getElementById('persona4567231');
+        texts.value=document.getElementById("data-stat-expes-"+i).innerHTML;
+         texts=document.getElementById('persona4567232');
+        texts.value=document.getElementById("data-stop-expes-"+i).innerHTML;
+         texts=document.getElementById('persona4567233');
+        texts.value=document.getElementById("titlu-"+i).innerHTML;
+         texts=document.getElementById('persona4567234');
+        texts.value=document.getElementById("Domeniu-"+i).innerHTML;
+
+      }
+      function saveexperienta(i,id){
+        var text1= document.getElementById('persona4567231').value;
+        var text2= document.getElementById('persona4567232').value;
+        var text3= document.getElementById('persona4567233').value;
+        var text4= document.getElementById('persona4567234').value;
+        var infosend={
+          "start":text1,
+          "stop":text2,
+          "titlu":text3,
+          "descriere":text4,
+          "entry_id":id
+        }
+
+        var jsonstring=JSON.stringify(infosend);
+        var hr=new XMLHttpRequest();
+        var url="php/modificaaltele.php?obj="+jsonstring;
+        hr.open("GET",url,true);
+        hr.send();
+        hr.onreadystatechange = function(){
+        if(hr.readyState == 4 && hr.status == 200)
+        {
+            var  rez = hr.responseText;
+            console.log(rez);
+            if ( rez=="reusit"){
+              console.log(rez);
+            document.getElementById("data-stat-expes-"+i).innerHTML=text1;
+            document.getElementById("data-stop-expes-"+i).innerHTML=text2;
+            document.getElementById("titlu-"+i).innerHTML=text3;
+            document.getElementById("Domeniu-"+i).innerHTML=text4;
+
+            var removeble =document.getElementById("persona456723");
+            removeble.parentNode.removeChild(removeble);
+            document.getElementById('edit_total').className = "invizible";
+          }else{
+          //  document.getElementById('edit_total').className = "invizible";
+          }
+         }
+        }
+      }

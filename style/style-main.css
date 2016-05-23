@@ -362,3 +362,20 @@ top: 17px;
   background-color: gray;
   cursor: pointer;
 }
+.edit_buton_style2{
+  position: relative;
+    left: -133px;
+  float: right;
+  top: 5px;
+  border: solid 1px gray;
+  background-color: #ADADAD;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 99;
+  margin: 0% 0% 0% 60%;
+}
+
+ .edit_buton_style2:hover{
+ background-color: gray;
+ cursor: pointer;
+}

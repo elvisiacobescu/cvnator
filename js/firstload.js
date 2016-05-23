@@ -114,7 +114,7 @@ window.onload = function () {
            // console.log(start);
          document.getElementById('experienta').innerHTML += "<div id='experienta-"+i+"' class='prezentation'></div>";
          document.getElementById('experienta-'+i).innerHTML +="<div class='exit' onclick='deletexp("+i+","+id+")'><div class='tooltip-content'><p>Delete</p></div></div>";
-         document.getElementById('experienta-'+i).innerHTML +="<div id='edit-experienta-"+i+"' class='edit-experienta'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
+         document.getElementById('experienta-'+i).innerHTML +="<div id='edit-experienta-"+i+"' class='edit-experienta' onclick='modificexperienta("+i+","+id+")'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
          document.getElementById('experienta-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
          document.getElementById('experienta-'+i).innerHTML +="<span class='bold'>Numele Companiei:</span> ";
                   document.getElementById('experienta-'+i).innerHTML += "<span id='companie"+i+"'>"+Numele_Companiei+"</span> </br>";
@@ -150,8 +150,8 @@ window.onload = function () {
            // console.log(start);
          document.getElementById('altele').innerHTML += "<div id='altele-"+i+"' class='prezentation'></div>";
           document.getElementById('altele-'+i).innerHTML +="<div class='exit' onclick='deletaltele("+i+","+id+")'><div class='tooltip-content'><p>Delete</p></div></div>";
-         document.getElementById('altele-'+i).innerHTML +="<div id='edit-altele-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
-         document.getElementById('altele-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expe-"+i+" class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expe-"+i+"''class='time'>"+stop+"</span> </br>";;
+         document.getElementById('altele-'+i).innerHTML +="<div id='edit-altele-"+i+"' class='edit-altele'  onclick='modificaaltele("+i+","+id+")'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
+         document.getElementById('altele-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-expes-"+i+"' class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-expes-"+i+"''class='time'>"+stop+"</span> </br>";;
          document.getElementById('altele-'+i).innerHTML   +="<span class='bold'>Denumirea:</span><span id='titlu-"+i+"' >"+titlu+"</span> </br>";
         //  console.log(descriere);
          document.getElementById('altele-'+i).innerHTML +="<span class='bold'>Descriere:</span><span id='Domeniu-"+i+"'>"+descriere+"</span></br>";
@@ -242,7 +242,7 @@ function lenguge(){
            // console.log(start);
          document.getElementById('limbi').innerHTML += "<div id='limba-"+i+"'  ></div>";
                  document.getElementById('limba-'+i).innerHTML +="<div class='exit' ><div class='tooltip-content'><p>Delete</p></div></div>";
-         document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style'/></div>";
+         document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style2'/></div>";
          document.getElementById('limba-'+i).innerHTML +="<div class='lenguge-name'>"+limba+"</div> </br>";
          document.getElementById('limba-'+i).innerHTML +="<div id='lenguge-lvl' class='lenguge-lvl'></div> </br>";
          document.getElementById('limba-'+i).innerHTML +="<div class='space'></div>";

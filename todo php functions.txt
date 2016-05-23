@@ -30,7 +30,7 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 
 
 ---to do elvis
-1 first loar
+1 first loar-------------------------------------------------------------------------------------
   *limbi               Done
   *carnet              Done
   *skils               Done
@@ -38,29 +38,30 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
   *experienta          Done
   *educatie            Done
   *inf                 Done
-2 delete
+2 delete----------------------------------------------------------------------------------------
   *limbi
-  *carnet              Done - am facut si phpul aici si queri sql
+  *carnet              Done + am facut si phpul aici si queri sql
   *skils
   *alte activitati     Done
   *experienta          Done
-  *educatie            Done  - am facut si phpul aici si queri sql
-3 add
+  *educatie            Done  + am facut si phpul aici si queri sql
+3 add--------------------------------------------------------------------------------------------
+  *limbi
+  *carnet
+  *skils
+  *alte activitati    Done
+  *experienta         Done
+  *educatie           Done +php
+4 Edit/apdate -----------------------------------------------------------------------------------
   *limbi
   *carnet
   *skils
   *alte activitati
-  *experienta
-  *educatie
-4 Edit/apdate         Done +revizuire si rescriere php si sql queri
-  *limbi
-  *carnet
-  *skils
-  *alte activitati
-  *experienta
-  *educatie
-  *inf`
+  *experienta        Done
+  *educatie          Done +revizuire si rescriere php si sql queri
+  *inf`              Done + php
 5 previev
 6 downloade
 7 mobile-respocive
 8 testing-overall
+9 sql injection prevention

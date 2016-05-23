@@ -16,11 +16,10 @@ $sql=sprintf("UPDATE alt_info SET start="."'".$json["start"]."' "." , stop ="." 
 $rezult= $conn ->query($sql);
 
 if ($conn->query($sql) === TRUE) {
-		echo "succes";
+		echo "reusit";
 
 } else {
     echo "erruare: " . $conn->error;
 }
 
 ?>
-
