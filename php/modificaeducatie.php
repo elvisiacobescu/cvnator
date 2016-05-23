@@ -11,7 +11,8 @@ $userid=$_COOKIE["cookie_user_id"];
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 $json = json_decode($obj, true);// decode the JSON into an associative array
-$sql=sprintf("UPDATE educatie SET start ="."'".$json["start"]."'".
+$sql=sprintf("UPDATE educatie SET 
+	start ="."'".$json["start"]."'".
 " , stop="."'".$json["stop"]."'".
 " , nume_institutie="."'".$json["nume_institutie"]."'".
 " , oras="."'".$json["oras"]."'".
