@@ -1,4 +1,5 @@
 <?php
+$obj = $_GET['obj'];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,14 +12,15 @@ $userid=$_COOKIE["cookie_user_id"];
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 	$json = json_decode($obj, true);// decode the JSON into an associative array
-$getid=sprintf("UPDATE altele SET start="." '".$json["start"]."' "." AND stop ="." '".$json["stop"]."' "." AND titlu="." '".$json["titlu"]."' "." AND descriere="." '".$json["descriere"]."' where user_id=".$userid." AND entry_id=".$json["entry_id"]."' ");
-$rezult= $conn ->query($getid);
+$sql=sprintf("UPDATE altele SET start="."'".$json["start"]."' "." , stop ="." '".$json["stop"]."' "." , titlu="." '".$json["titlu"]."' "." , descriere="." '".$json["descriere"]."' where user_id=".$userid." , entry_id=".$json["entry_id"]);
+$rezult= $conn ->query($sql);
 
-if ($rezult->mysql_affected_rows()>0)
+if ($conn->query($sql) === TRUE) {
+		echo "succes";
 
- echo 'succes';
-else echo 'eroare';
-
-
+} else {
+    echo "erruare: " . $conn->error;
+}
 
 ?>
+
