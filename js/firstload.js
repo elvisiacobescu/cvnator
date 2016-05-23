@@ -52,7 +52,7 @@ window.onload = function () {
          document.getElementById('acposturi').innerHTML = re.post_dorit;
          document.getElementById('acrelocare').innerHTML = re.relocare;
          document.getElementById('acobiectiv').innerHTML = re.obiectiv;
-
+         document.getElementById('actipjob').innerHTML = re.tip_job;
          }
      }
  }
@@ -79,7 +79,7 @@ window.onload = function () {
           // console.log(start);
           document.getElementById('studii').innerHTML += "<div id='personal-"+i+"' class='prezentation-educatie'><div>";
           document.getElementById('personal-'+i).innerHTML +="<div class='exit' onclick='deletestudiu("+i+","+id+")'><div class='tooltip-content'><p>Delete</p></div></div>";
-          document.getElementById('personal-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style' /></div>";
+          document.getElementById('personal-'+i).innerHTML +="<div id='edit-studii-"+i+"' class='edit-studii' onclick='modificaeducatie("+i+","+id+")'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style' /></div>";
           document.getElementById('personal-'+i).innerHTML +="<div class='time'><span>From:</span><span id='data-stat-"+i+"''class='time'>"+start+"</span><span class='time'>  -to- </span> <span id='data-stop-"+i+"''class='time'>"+stop+"</span> </br>";
           document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>Numele institutie:</span><span id='institutie-"+i+"''>"+institutie+"</span> </br>";
           document.getElementById('personal-'+i).innerHTML +="<span class='bold text-margin'>oras:</span><span id='oras-"+i+"''>"+oras+"</span></br>";

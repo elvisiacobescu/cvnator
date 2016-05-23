@@ -30,7 +30,7 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 
 
 ---to do elvis
-1 first loar           
+1 first loar
   *limbi               Done
   *carnet              Done
   *skils               Done
@@ -52,14 +52,14 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
   *alte activitati
   *experienta
   *educatie
-4 Edit/apdate
+4 Edit/apdate         Done +revizuire si rescriere php si sql queri
   *limbi
   *carnet
   *skils
   *alte activitati
   *experienta
   *educatie
-  *inf
+  *inf`
 5 previev
 6 downloade
 7 mobile-respocive
