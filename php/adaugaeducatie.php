@@ -43,7 +43,6 @@ $nume_institutie=$json["nume_institutie"];
 $oras=$json["oras"];
 $profil=$json["profil"];
 $diploma=$json["diploma"];
-ECHO ($entry_id);
 $sql=sprintf(
 	"INSERT INTO educatie 
 	(user_id,entry_id,start,stop,nume_institutie,oras,profil,diploma)
