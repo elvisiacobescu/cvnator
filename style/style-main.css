@@ -340,5 +340,25 @@ border-radius: 25px;
 margin: 120px auto;
 }
 .invizible{
-  display: none;
+  /*display: none;*/
+  opacity: 0.0001;
+  z-index: 0 !important;
+}
+.colosus1{
+  padding-top: 25px;
+  padding-left: 40px;
+}
+.save_buton{
+  height: 35px;
+width: 75px;
+border: solid gray 1px;
+border-radius: 5px;
+background-color: #ADADAD;
+position: absolute;
+left: 600px;
+top: 17px;
+}
+.save_buton:hover{
+  background-color: gray;
+  cursor: pointer;
 }
