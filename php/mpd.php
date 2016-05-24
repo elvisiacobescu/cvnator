@@ -39,19 +39,19 @@ if($row = $rezult->fetch_assoc()) {
 
 if ($conn->query($sql) === TRUE) {
 		echo "succes";
-//		
+//
 } else {
     echo "erruare: " . $conn->error;
 }
  	}
 
 
- 	////////// 
+ 	//////////
  	else {
  		//echo 'nu mai sunt, inseram ';
 $sql=sprintf(
-	"INSERT INTO date_personale 
-	(user_id,nume,prenume,sex,varsta,nr_telefon,email,cale_poza,adresa,oras,salariu_dorit,tip_job,nivel_cariera,domeniu,post_dorit,relocare,obiectiv)
+	"INSERT INTO date_personale
+	(user_id,nume,prenume,sex,varsta,nr_telefon,email,adresa,oras,salariu_dorit,tip_job,nivel_cariera,domeniu,post_dorit,relocare,obiectiv)
 VALUES (
 '".$userid."'"."
 ,"."'".$json["nume"]."'"."
@@ -60,7 +60,6 @@ VALUES (
 ,"."'".$json["varsta"]."'"."
 ,"."'".$json["nr_telefon"]."'"."
 ,'".$json["email"]."'"."
-,"."'".$json["cale_poza"]."'"."
 ,'".$json["adresa"]."'"."
 ,"."'".$json["oras"]."'"."
 ,"."'".$json["salariu_dorit"]."'"."
@@ -80,7 +79,7 @@ if ($conn->query($sql) === TRUE) {
 
  	}
 
- } 
+ }
  else echo 'nu gaseste nici un rezultat';
 }
 else 'nu este bun selectul';

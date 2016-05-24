@@ -127,7 +127,8 @@ var rez=0;
  console.log(otext1);
   var jsonstring=JSON.stringify(infosend);
   var hr=new XMLHttpRequest();
-  var url="php/modificapersonaldata.php?obj="+jsonstring;
+  var url="php/mpd.php?obj="+jsonstring;
+  // var url="php/modificapersonaldata.php?obj="+jsonstring;
   hr.open("GET",url,true);
   hr.send();
    hr.onreadystatechange = function(){

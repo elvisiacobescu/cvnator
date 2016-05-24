@@ -56,5 +56,6 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-
+header("Location:http://localhost/cvnator/cv.html");
+die();
 ?>

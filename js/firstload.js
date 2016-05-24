@@ -53,6 +53,7 @@ window.onload = function () {
          document.getElementById('acrelocare').innerHTML = re.relocare;
          document.getElementById('acobiectiv').innerHTML = re.obiectiv;
          document.getElementById('actipjob').innerHTML = re.tip_job;
+         document.getElementById('profile_picture').src=re.cale_poza;
          }
      }
  }
