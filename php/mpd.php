@@ -11,18 +11,44 @@ $json = json_decode($obj, true);// decode the JSON into an associative array
 
 $userid=$_COOKIE["cookie_user_id"];
 $conn = new mysqli($servername, $username, $password,$dbname);
-
-// inseram daca nu exista
-
 //verificam daca entry_id exista
 $getid=sprintf("SELECT count(user_id) as daca_sunt  FROM date_personale where user_id='".$userid."'");
 $rezult= $conn ->query($getid);
 
 if ($rezult->num_rows>0){ // daca sunt date
-if($row = $rezult->fetch_assoc()) {
- 	if($row["daca_sunt"]=0){
- 			//daca nu exista , inseram in baza de date
 
+if($row = $rezult->fetch_assoc()) {
+ 	if($row["daca_sunt"]>0){
+ 		//echo 'mai sunt, facem update';
+ 		$sql=sprintf("UPDATE date_personale SET nume="."'".$json["nume"]."'".
+" , prenume ="."'".$json["prenume"]."'".
+" , sex="."'".$json["sex"]."'".
+" , varsta="."'".$json["varsta"]."'".
+" , nr_telefon="."'".$json["nr_telefon"]."'".
+" , adresa="."'".$json["adresa"]."'".
+" , oras="."'".$json["oras"]."'".
+" , salariu_dorit="."'".$json["salariu_dorit"]."'".
+" , tip_job="."'".$json["tip_job"]."'".
+" , nivel_cariera="."'".$json["nivel_cariera"]."'".
+" , domeniu="."'".$json["domeniu"]."'".
+" , post_dorit="."'".$json["post_dorit"]."'".
+" , relocare="."'".$json["relocare"]."'".
+" , obiectiv="."'".$json["obiectiv"]."'".
+" , email="."'".$json["email"]."'".
+" where user_id=".$userid);
+
+if ($conn->query($sql) === TRUE) {
+		echo "succes";
+//		
+} else {
+    echo "erruare: " . $conn->error;
+}
+ 	}
+
+
+ 	////////// 
+ 	else {
+ 		//echo 'nu mai sunt, inseram ';
 $sql=sprintf(
 	"INSERT INTO date_personale 
 	(user_id,nume,prenume,sex,varsta,nr_telefon,email,cale_poza,adresa,oras,salariu_dorit,tip_job,nivel_cariera,domeniu,post_dorit,relocare,obiectiv)
@@ -52,40 +78,10 @@ if ($conn->query($sql) === TRUE) {
     echo "erruare: " . $conn->error;
 }
 
+ 	}
 
- }
- else 
-// daca exista, facem update
-{
-
-$sql=sprintf("UPDATE date_personale SET nume="."'".$json["nume"]."'".
-" , prenume ="."'".$json["prenume"]."'".
-" , sex="."'".$json["sex"]."'".
-" , varsta="."'".$json["varsta"]."'".
-" , nr_telefon="."'".$json["nr_telefon"]."'".
-" , adresa="."'".$json["adresa"]."'".
-" , oras="."'".$json["oras"]."'".
-" , salariu_dorit="."'".$json["salariu_dorit"]."'".
-" , tip_job="."'".$json["tip_job"]."'".
-" , nivel_cariera="."'".$json["nivel_cariera"]."'".
-" , domeniu="."'".$json["domeniu"]."'".
-" , post_dorit="."'".$json["post_dorit"]."'".
-" , relocare="."'".$json["relocare"]."'".
-" , obiectiv="."'".$json["obiectiv"]."'".
-" , email="."'".$json["email"]."'".
-" where user_id=".$userid);
+ } 
+ else echo 'nu gaseste nici un rezultat';
 }
-
-
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
-//		echo "succes".$json["nume"];
-} else {
-    echo "erruare: " . $conn->error;
-}
-
-
-	}
-}
-else echo 'eroare';
+else 'nu este bun selectul';
 ?>
