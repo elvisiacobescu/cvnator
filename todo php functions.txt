@@ -63,3 +63,6 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 7 mobile-respocive
 8 testing-overall
 9 sql injection prevention
+.....
++Un raport actualizat – adoptand formatul Scholarly HTML
++Ghidul de utilizare a aplicatiei dezvoltate – disponibil ca document HTML5. +Codul-sursa va fi comentat si modularizat
