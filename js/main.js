@@ -24,7 +24,7 @@ document.getElementById("iner_form").innerHTML+="<span style='padding-right: 16p
 document.getElementById("iner_form").innerHTML+="<textarea id='oobiectiv' rows='4' cols='50' name='comment'>Your ojectiv... </textarea> </br>";
 document.getElementById("iner_form").innerHTML+="<div id='save1'><span class='savetext'>SAVE</span></div>";
 document.getElementById("iner_form").innerHTML+="<span style='padding-right: 16px;'>Tipul jobului dorit:</span><select class='celformat' ><option disabled selected value> -- TIPUL -- </option><option>Full-time</option><option >Part-time</option><option >Sezonier</option><option >Temporar</option><option >Project-based</option><select></br>";
-oForm = document.forms[0];
+oForm = document.forms[1];
 oText = oForm.elements[1];
 var acnames=document.getElementById("acname");
 oText.value=acnames.innerHTML;
@@ -84,16 +84,16 @@ oText.value=actipjobs;
 
   document.getElementById("save1").addEventListener("click", function (){
 
-  var otext1= document.forms[0].elements[1].value;
-  var otext2= document.forms[0].elements[2].value;
-  var otext3= document.forms[0].elements[3].value;
-  var otext4= document.forms[0].elements[4].value;
-  var otext5= document.forms[0].elements[5].value;
-  var otext6= document.forms[0].elements[6].value;
-  var otext7= document.forms[0].elements[7].value;
-  var otext8= document.forms[0].elements[8].value;
-  var otext9= document.forms[0].elements[9].value;
-  var otext10= document.forms[0].elements[10].value;
+  var otext1= document.forms[1].elements[1].value;
+  var otext2= document.forms[1].elements[2].value;
+  var otext3= document.forms[1].elements[3].value;
+  var otext4= document.forms[1].elements[4].value;
+  var otext5= document.forms[1].elements[5].value;
+  var otext6= document.forms[1].elements[6].value;
+  var otext7= document.forms[1].elements[7].value;
+  var otext8= document.forms[1].elements[8].value;
+  var otext9= document.forms[1].elements[9].value;
+  var otext10= document.forms[1].elements[10].value;
 var rez=0;
   if(otext10=="Entry-level")
     rez="1";
@@ -101,11 +101,11 @@ var rez=0;
         rez="2";
         else if(otext10=="High-level")
             rez="3";
-  var otext11= document.forms[0].elements[11].value;
-  var otext12= document.forms[0].elements[12].value;
-  var otext13= document.forms[0].elements[13].value;
-  var otext14= document.forms[0].elements[14].value;
-  var otext15= document.forms[0].elements[15].value;
+  var otext11= document.forms[1].elements[11].value;
+  var otext12= document.forms[1].elements[12].value;
+  var otext13= document.forms[1].elements[13].value;
+  var otext14= document.forms[1].elements[14].value;
+  var otext15= document.forms[1].elements[15].value;
 
   var infosend={
     "nume": otext1,
