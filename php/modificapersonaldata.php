@@ -24,7 +24,7 @@ if($row = $rezult->fetch_assoc()) {
 $json = json_decode($obj, true);// decode the JSON into an associative array
 
 $sql=sprintf(
-	"INSERT INTO alt_info 
+	"INSERT INTO date_personale 
 	(user_id,nume,prenume,sex,varsta,nr_telefon,email,cale_poza,adresa,oras,salariu_dorit,tip_job,nivel_cariera,domeniu,post_dorit,relocare,obiectiv)
 VALUES (
 '".$userid."'"."
@@ -45,7 +45,12 @@ VALUES (
 ,"."'".$json["relocare"]."'"."
 ,"."'".$json["obiectiv"]."')"
 	);
-
+if ($conn->query($sql) === TRUE) {
+		echo "succes";
+//		echo "succes".$json["nume"];
+} else {
+    echo "erruare: " . $conn->error;
+}
 
 
  }
@@ -70,11 +75,8 @@ $sql=sprintf("UPDATE date_personale SET nume="."'".$json["nume"]."'".
 " , email="."'".$json["email"]."'".
 " where user_id=".$userid);
 }
-//$rezult= $conn ->query($getid);
 
 
-	}
-}
 if ($conn->query($sql) === TRUE) {
 		echo "succes";
 //		echo "succes".$json["nume"];
@@ -83,7 +85,8 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-
+	}
+}
 // echo "succes";
 //aici nu e bine deloc ce e comentat dedesupt
 // if ($rezult->mysql_affected_rows()>0)
