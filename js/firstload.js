@@ -244,8 +244,8 @@ function lenguge(){
            // console.log(start);
          document.getElementById('limbi').innerHTML += "<div id='limba-"+i+"'  ></div>";
                  document.getElementById('limba-'+i).innerHTML +="<div class='exit' onclick='deletelimba("+i+","+id+")'><div class='tooltip-content' ><p>Delete</p></div></div>";
-         document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style2'/></div>";
-         document.getElementById('limba-'+i).innerHTML +="<div class='lenguge-name'>"+limba+"</div> </br>";
+         document.getElementById('limba-'+i).innerHTML +="<div id='edit-limba-"+i+"' class='edit-altele' onclick='modificalimbi("+i+","+id+","+nivel+")'><img src='img/edit_ico.png' width='25' height='25' alt='nu EXISTA IMAGINEA' class=' edit_buton_style2'/></div>";
+         document.getElementById('limba-'+i).innerHTML +="<div id='lenguge-name"+i+"' class='lenguge-name'>"+limba+"</div> </br>";
          document.getElementById('limba-'+i).innerHTML +="<div id='lenguge-lvl"+i+"' class='lenguge-lvl'></div> </br>";
          document.getElementById('limba-'+i).innerHTML +="<div class='space'></div>";
          if(nivel==1){document.getElementById('lenguge-lvl'+i).innerHTML +="<div class='white-bar bar_poz1'> </div>";}

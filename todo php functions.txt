@@ -53,7 +53,7 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
   *experienta          Done
   *educatie            Done +php
 4 Edit/apdate -----------------------------------------------------------------------------------
-  *limbi               ----
+  *limbi               Done
   *alte activitati     Done
   *experienta          Done
   *educatie            Done +revizuire si rescriere php si sql queri
