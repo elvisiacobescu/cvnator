@@ -849,3 +849,9 @@ function deletestudiu (i,id){
    }
 
    }
+   function redirectpreviuvoluntariat(){
+     window.location="php/pdf/pdf2.php"
+   }
+   function redirectpreviujob(){
+     window.location="php/pdf/pdf.php"
+   }

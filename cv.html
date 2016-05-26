@@ -21,7 +21,8 @@
 </div>
 <div class="mein-content">
     <div class="header" >
-	<spam id="nume-utilizator-helo"></spam>
+      <div class="container">
+	<span id="nume-utilizator-helo"></span>
 	<span id="eror-respoce" style="opacity: 1;"></span>
 			<div id="logout" class="logout">
 
@@ -29,8 +30,20 @@
       </div>
       <div id="previev" class="preview">
         <span class="previev-img"><img src="img/ochi.png" width="25" height="25" alt="nu EXISTA IMAGINEA" /></span ><span class="preview-text">Previev</span>
+        <div class="job dropdaun" onclick='redirectpreviujob()'>
+          <span>
+          Job
+        </span>
+      </div>
+      <div class="voluntar dropdaun" onclick='redirectpreviuvoluntariat()'>
+         <span>
+           Voluntariat
+         </span>
+      </div>
       </div>
     </div>
+    </div>
+
     <div id="main">
 
      <div id="personaldate">
@@ -49,18 +62,18 @@
         <span class="phoras bold">Oras : </span><span id="acoras"></span><br>
         <span class="phsex bold">Sex : </span><span id="acsex"></span><br>
         <span class="phvarsta bold">Varsta : </span><span id="acvarsta"></span><br>
-        <span class="phsalariu bold">salariu dorit : </span><span id="acsalariu"></span><br>
+        <span class="phsalariu bold">Salariu dorit : </span><span id="acsalariu"></span><br>
         <span class="phnivel bold">Nivel-Cariera : </span><span id="acnivel"></span><br>
         <span class="pdomeniu bold">Domeniu-cautat : </span><span id="acadomeniu"></span><br>
         <span class="posturi bold">Pozitia-cautata : </span><span id="acposturi"></span><br>
         <span class="tipjob bold">tip-job : </span><span id="actipjob"></span><br>
         <span class="prelocare bold">Relocare : </span><span id="acrelocare"></span><br>
-        <span class="pobiectiv bold">obiectiv : </span><span id="acobiectiv"></span><br>
+        <span class="pobiectiv bold">Obiectiv : </span><span id="acobiectiv"></span><br>
 
-        <form action="php/upload.php" method="post" enctype="multipart/form-data">
+        <form action="php/upload.php" method="post" enctype="multipart/form-data" class="upload">
           Select image to upload:
-          <input type="file" name="fileToUpload" id="fileToUpload">
-          <input type="submit" value="Upload Image" name="submit">
+          <input type="file" name="fileToUpload" id="fileToUpload"><br>
+          <input type="submit" value="Upload Image" name="submit" class="upsub">
       </form>
 
        </div>
@@ -70,54 +83,45 @@
      </div>
      <div id="studii">
 
-      <span class='titlu-general'>Educatie:</span>  <div id="addbutonschool" class='school-ad-new' onclick='addneweducation()'> <span>Add New</span></div>
+      <span class='titlu-general'>Educatie:</span>  <div class='school-ad-new' onclick='addneweducation()'> <span>Add New</span></div>
      </div>
 
      <div id="experienta" >
 
     <div id="addbutonexperienta" >
-      <span class='titlu-general'>Experienta:</span>  <div id="addbutonexperienta" class='school-ad-new' onclick='addnewexperienta()'> <span>Add New</span></div>
+      <span class='titlu-general'>Experienta:</span>  <div  class='school-ad-new' onclick='addnewexperienta()'> <span>Add New</span></div>
     </div>
 
      </div>
      <div id="altele" >
 
     <div id="addbutonaltele" >
-      <span class='titlu-general'>Alte activitati:</span>  <div id="addbutonaltele" class='school-ad-new' onclick='addnewalteactivitati()'> <span>Add New</span></div>
+      <span class='titlu-general'>Alte activitati:</span>  <div  class='school-ad-new' onclick='addnewalteactivitati()'> <span>Add New</span></div>
     </div>
 
      </div>
      <div id="skills" >
 
     <div id="addbutonskills" >
-      <span class='titlu-general'>skills:</span>  <div id="addbutonskil" class='school-ad-new' onclick='addnewskils()'> <span>Add New</span></div>
+      <span class='titlu-general'>skills:</span>  <div  class='school-ad-new' onclick='addnewskils()'> <span>Add New</span></div>
     </div>
 
      </div>
-    <span class='titlu-general'>Permis:</span>  <div id="addbutonskil" class='school-ad-new' onclick='addnewepermis()'> <span>Add New</span></div>
+    <span class='titlu-general'>Permis:</span>  <div class='school-ad-new' onclick='addnewepermis()'> <span>Add New</span></div>
     <div id="permis" class="">
 
     </div>
 
    <div id="lenguge"  >
   <div id="addbutonlimba"  >
-    <span class='titlu-general'>Limbi:</span>  <div id="addbutonskil" class='school-ad-new' onclick='addnewelimbi()'> <span>Add New</span></div>
+    <span class='titlu-general'>Limbi:</span>  <div class='school-ad-new' onclick='addnewelimbi()'> <span>Add New</span></div>
    </div>
      <div class="prezentation" id="limbi">
       </div>
   </div>
-
-
 </div>
-
-
-<!-- <script>
-function deletepermis(sender){
-//  var tr = sender.parentNode.parentNode;
-console.log(sender);
-  }
-</script> -->
-   <script src = "js\firstload.js"></script>
+</div>
+   <script src = "js/firstload.js"></script>
    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

@@ -135,19 +135,13 @@
 </div>
 <div class="baground-log">
 <div class="log-in">
-	<!-- action="login.php"  method="post" -->
 <form id="loginform" >
 <div class="logopozition2"><img src="img/logocvnator.png" alt="logo" /></div>
    <p><span class="textitineration">Numele:</span> <input class="cell-format" type="text" name="email" id="email" size="20"
         placeholder="Numele d-voastra" /><br>
-      <span class="textitineration">Parola:</span> <input class="cell-format" style="margin-left: 10px;" type="text" id="parola" name="parola" size="20"
+      <span class="textitineration">Parola:</span> <input class="cell-format" type="password" style="margin-left: 10px;" type="text" id="parola" name="parola" size="20"
    	    placeholder="Parola d-voastra" /> </p>
-   <!-- <p> -->
-     <!-- <input class="login" type="submit" value="LogIn"
-        title="Apasati butonul pentru a expedia datele spre server" /> </p> -->
-<!-- <button id="buton_login" onclick="login()" value="Trimite">Logare</button> -->
 					<button id="buton_login"  class="login"  onclick="login()" value="Trimite" >Logare</button>
-                    
 </form>
 <div id="registeer" class="buton-style buton-position" onclick="location.href='register.php';">Register</div>
 <p hidden id="status"></p>
@@ -155,28 +149,4 @@
 </div>
 </div>
 </body>
-<!-- <body>
- 	 <div class="white-opacity"></div>
- 	 <div class="content">
-		<div Id="head" class="head" style="height:30px;background-color:red">
-  		<span><img src="img/edit_ico.png" alt="logo"height="25" width="25" /></span>
-	</div >
-	<div class="baground-log">
-		<div class="log-in">
-			<form id="loginform">
-				<p>
-                <span class="textitineration">Email-ul:</span> <input class="cell-format" onfocus="emptyElement('status')" type="text" id="email" size="20" placeholder="Email-ul d-voastra" /></br>
-      			<span class="textitineration">Parola:</span> <input class="cell-format" onfocus="emptyElement('status')" style="margin-left: 10px;" type="text" id="parola" size="20" placeholder="Parola d-voastra" />
-                </p>
-   				<button id="buton_login" onclick="login()" value="Trimite">Logare</button>
-                <!--<input type="submit" value="Trimite" title="Apasati butonul pentru a expedia datele spre server" onclick="this.style.display='none'"/>-->
-
-                <!--Aici vom afisa erorileee:-->
-                <!-- <p id="status"></p> -->
-			<!-- </form> -->
-			<!--<div id="register">Register</div>-->
-		<!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-<!-- </body> -->
 </html>

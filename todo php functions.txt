@@ -58,8 +58,10 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
   *experienta          Done
   *educatie            Done +revizuire si rescriere php si sql queri
   *inf`                Done + php
-5 previev
-6 downloade
-7 mobile-respocive
-8 testing-overall
-9 sql injection prevention
+5 previev              Done
+6 addimg               Done
+7 mobile-respocive     Done
+8 testing-overall      Am tested you all need to testit
+9 sql injection prevention  trebuie facut in back end
+10 validate  html        Done +am verificat si pt htmlul generat automat de js
+11  validate css         Done
