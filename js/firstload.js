@@ -1,4 +1,4 @@
-//DUPA CESA INCARCAT TOATA PAGINA APELEAZA CE
+//DUPA CESA INCARCAT TOATA PAGINA APELEAZA CEeste mai jos
 window.onload = function () {
  var mail='';
  var responce='';
@@ -20,7 +20,7 @@ window.onload = function () {
 
   asckname();
 
-//first load date personale ... mai trebuie poza :)
+//first load date personale
    function askpersonaldata(){
    var hr=new XMLHttpRequest();
    var url="php/personaldata.php";
@@ -57,7 +57,10 @@ window.onload = function () {
          }
      }
  }
+
  askpersonaldata();
+
+ //Se face incarcarea educatiei
  function educatie(){
  var hr=new XMLHttpRequest();
  var url="php/educatie.php";
@@ -91,7 +94,10 @@ window.onload = function () {
        }
    }
  }
+
   educatie();
+
+  //se face incarcarea experientei
   function experienta(){
   var hr=new XMLHttpRequest();
   var url="php/experienta.php";
@@ -127,8 +133,9 @@ window.onload = function () {
         }
     }
   }
-  experienta();
 
+  experienta();
+  // /se face incarcarea altor activitati /sau participarea la concursui sau seminarii etc
   function altele(){
   var hr=new XMLHttpRequest();
   var url="php/altele.php";
@@ -162,6 +169,7 @@ window.onload = function () {
     }
   }
   altele();
+  //aici se face incarcarea skilurilor
   function skils(){
   var hr=new XMLHttpRequest();
   var url="php/abilitati.php";
@@ -189,6 +197,7 @@ window.onload = function () {
   }
 
 skils();
+//aici se face incarcarea permisului
 function permis(){
 var hr=new XMLHttpRequest();
 var url="php/permis.php";
@@ -225,7 +234,7 @@ hr.onreadystatechange = function()
 }
 
 permis();
-
+//se face incarcare limbii
 function lenguge(){
   var hr=new XMLHttpRequest();
   var url="php/limbi.php";

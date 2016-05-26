@@ -1,4 +1,4 @@
-
+//se adauga campurile unui form care se ocupa cu editarea datelor personale cat si trimiterea datelor la servar ....Date le se autocompleteaza in form daca exista deja aduse din baza de date si puse in html
 document.getElementById("edit1").addEventListener("click",function (){
 document.getElementById("prezent").className+=" micsoreaza";
 document.getElementById("prezent").classList.remove('mareste');
@@ -72,7 +72,7 @@ var actipjobs=document.getElementById("actipjob").innerHTML;
 oText.value=actipjobs;
 //oText.value=document.getElementById("acsalariu").innerHTML;
 
-
+//se reincarca javascriptul ca sa poata fi refolosit butonul
  function load_js()
     {
        var head= document.getElementsByTagName('head')[0];
@@ -81,7 +81,7 @@ oText.value=actipjobs;
        script.src= 'js/main.js';
        head.appendChild(script);
     }
-
+ //butonul de salvare al datelor peronale-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   document.getElementById("save1").addEventListener("click", function (){
 
   var otext1= document.forms[1].elements[1].value;
@@ -124,7 +124,7 @@ var rez=0;
     "domeniu":otext11,
     "email":otext9
   }
- console.log(otext1);
+ // console.log(otext1);
   var jsonstring=JSON.stringify(infosend);
   var hr=new XMLHttpRequest();
   var url="php/mpd.php?obj="+jsonstring;
@@ -185,7 +185,7 @@ var rez=0;
    }
  });
 });
-
+//butonul de logout--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 document.getElementById("logout").addEventListener("click",function (){
   var hr=new XMLHttpRequest();
   var url="php/logout.php";
@@ -206,7 +206,7 @@ document.getElementById("logout").addEventListener("click",function (){
        }
   }
 });
-
+//butonul de stergere a permiselor-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function deletepermis(i,id){
   var delete1={"cat" : id};
   var jsonstring=JSON.stringify(delete1);
@@ -232,7 +232,7 @@ function deletepermis(i,id){
     }
 }
 
-
+//butonul de stergerea a studiilor -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function deletestudiu (i,id){
   var delete1={"cat" : id};
   var jsonstring=JSON.stringify(delete1);
@@ -257,7 +257,7 @@ function deletestudiu (i,id){
       }
     }
   }
-
+//butonul de stergere al experientei-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   function deletexp (i,id){
     var delete1={"cat" : id};
     var jsonstring=JSON.stringify(delete1);
@@ -284,6 +284,7 @@ function deletestudiu (i,id){
       }
 
     }
+    //butonul de stergere al altor activitati-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     function deletaltele (i,id){
       var delete1={"cat" : id};
       var jsonstring=JSON.stringify(delete1);
@@ -310,7 +311,7 @@ function deletestudiu (i,id){
 
 
       }
-
+//butonul de modificare al unei educatii precise date prin i fiind indexu de intrare in pagina si id locul din baza de date--------------------------------------------------------------------------------------------------------------------------------------
       function modificaeducatie(i,id){
         document.getElementById('edit_total').className = "";
         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -335,7 +336,7 @@ function deletestudiu (i,id){
          texts=document.getElementById('persona4567236');
         texts.value=document.getElementById("data-satus-"+i).innerHTML;
       }
-
+      //face salvarea propriuzisa a modificarii
       function saveeducatie(i,id){
       var text1= document.getElementById('persona4567231').value;
       var text2= document.getElementById('persona4567232').value;
@@ -378,6 +379,7 @@ function deletestudiu (i,id){
           }
         }
       }
+      //butonul de adaugare al unei noi educatii----------------------------------------------------------------------------------------------------------
       function addneweducation(){
         document.getElementById('edit_total').className = "";
         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -389,7 +391,7 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Diploma obtinuta:</br><input id='persona4567236'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveeducatie1()'><span class='savetext'>SAVE</span></div>";
       }
-
+      //face salvarea propriuzisa a modificarii
       function saveeducatie1(){
       var text1= document.getElementById('persona4567231').value;
       var text2= document.getElementById('persona4567232').value;
@@ -425,7 +427,7 @@ function deletestudiu (i,id){
         }
 
        }
-
+       //face adaugarea unei noi experiente---------------------------------------------------------------------------------------------------------------------
        function addnewexperienta(){
          document.getElementById('edit_total').className = "";
          document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -437,6 +439,7 @@ function deletestudiu (i,id){
          document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567236' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
          document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta1()'><span class='savetext'>SAVE</span></div>";
        }
+       //face salvarea propriuzisa a modificarii ----------------------------------------------------------------------------------------------------------------
        function saveexperienta1(){
          var text1= document.getElementById('persona4567231').value;
           var text2= document.getElementById('persona4567232').value;
@@ -470,6 +473,7 @@ function deletestudiu (i,id){
               }
             }
         }
+        //face modificare unei experiente precise prin cei 2 parametri i numaru de intrare in pagina si id numare de pozitie din baza de date ---------------------------
        function modificexperienta(i ,id){
          document.getElementById('edit_total').className = "";
          document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -493,6 +497,7 @@ function deletestudiu (i,id){
           texts=document.getElementById('persona4567236');
          texts.innerHTML=document.getElementById("descriere "+i).innerHTML;
        }
+       //face salvarea propriuzisa a modificarii
       function saveexperienta (i ,id){
         var text1= document.getElementById('persona4567231').value;
         var text2= document.getElementById('persona4567232').value;
@@ -533,6 +538,7 @@ function deletestudiu (i,id){
           }
         }
       }
+      //adauga o nou activitate-----------------------------------------------------------------------------------------------------------------------------------------------------------
       function addnewalteactivitati(){
         document.getElementById('edit_total').className = "";
         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -542,6 +548,7 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567234' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='savealtele1()'><span class='savetext'>SAVE</span></div>";
       }
+      //face salvarea propriuzisa adaugarii--------------------------------------------------------------------------------------------------------------------------------------
       function savealtele1(){
               var text1= document.getElementById('persona4567231').value;
               var text2= document.getElementById('persona4567232').value;
@@ -572,7 +579,7 @@ function deletestudiu (i,id){
             }
 
       }
-
+      //face modificarea unei activitati prin cei doi parametri --------------------------------------------------------------------------------------------------------------------------------------
       function modificaaltele(i,id){
 
         document.getElementById('edit_total').className = "";
@@ -592,6 +599,7 @@ function deletestudiu (i,id){
         texts.value=document.getElementById("Domeniu-"+i).innerHTML;
 
       }
+      //face salvarea propriuzisa a modificarii--------------------------------------------------------------------------------------------------------------------------------------
       function saveexperienta(i,id){
         var text1= document.getElementById('persona4567231').value;
         var text2= document.getElementById('persona4567232').value;
@@ -631,7 +639,7 @@ function deletestudiu (i,id){
          }
         }
       }
-
+     //face stergerea unei limbi--------------------------------------------------------------------------------------------------------------------------------------
      function deletelimba(i,id){
        var delete1={"cat" : id};
        var jsonstring=JSON.stringify(delete1);
@@ -643,7 +651,7 @@ function deletestudiu (i,id){
        {
            if(hr.readyState == 4 && hr.status == 200)
            {
-             //face primirea de date de la server
+             //face primirea de date de la server--------------------------------------------------------------------------------------------------------------------------------------
              var rezultat = hr.responseText;
              if (rezultat=="Record deleted successfully"){
               console.log(rezultat);
@@ -656,7 +664,7 @@ function deletestudiu (i,id){
            }
          }
      }
-
+     //face adaugarea unei limbi(formul)--------------------------------------------------------------------------------------------------------------------------------------
      function addnewelimbi(){
        document.getElementById('edit_total').className = "";
        document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -664,6 +672,7 @@ function deletestudiu (i,id){
        document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Nivel-Limba:</span><select class='celformat'  id='persona4567232'><option disabled selected value> -- LEVEL -- </option><option>Beginer</option><option >Mediu</option><option >Good</option><option >Greate</option><select></br>";
        document.getElementById('persona456723').innerHTML +="<div class='save_buton'  onclick='savelimba()' ><span class='savetext'>SAVE</span></div>";
      }
+     //face salvarea propriuzisa si adaugarea in pagina --------------------------------------------------------------------------------------------------------------------------------------
      function savelimba(){
        var text1= document.getElementById('persona4567231').value;
        var text2= document.getElementById('persona4567232').value;
@@ -703,6 +712,7 @@ function deletestudiu (i,id){
        }
      }
    }
+   //face stergerea unui skil--------------------------------------------------------------------------------------------------------------------------------------
       function deleteskil(i,id){
         var delete1={"cat" : id};
         var jsonstring=JSON.stringify(delete1);
@@ -727,6 +737,7 @@ function deletestudiu (i,id){
             }
           }
       }
+      //face adaugarea unui nou skil(form)--------------------------------------------------------------------------------------------------------------------------------------
       function addnewskils(){
         document.getElementById('edit_total').className = "";
         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -734,7 +745,7 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveskills1()'><span class='savetext'>SAVE</span></div>";
 
       }
-
+      //face salvarea noului skil
       function saveskills1(){
         var text1= document.getElementById('persona4567231').value;
         var infosend={
@@ -758,6 +769,7 @@ function deletestudiu (i,id){
               }
             }
       }
+      // /face adaugarea unui nou permis(form)--------------------------------------------------------------------------------------------------------------------------------------
     function addnewepermis(){
 
       document.getElementById('edit_total').className = "";
@@ -766,7 +778,7 @@ function deletestudiu (i,id){
       document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Categorie permis:</span><select class='celformat'  id='persona4567231'><option disabled selected value> -- CATEGORE-- </option><option>A1</option><option >A</option><option >B1</option><option >B</option><option >C1</option><option >C</option><option >D1</option><option >D</option><select></br>";
     }
 
-
+  //  salveaza permisul in baza de date
   function savepermiss1(){
    var text1= document.getElementById('persona4567231').value;
    var infosend={
@@ -791,7 +803,7 @@ function deletestudiu (i,id){
        }
 
  }
-
+    //face modificarea unei limbi specifice cu ajutorul lui i si al id si nivelul de limba (form)--------------------------------------------------------------------------------------------------------------------------------------
    function modificalimbi(i,id,nivel){
      document.getElementById('edit_total').className = "";
      document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
@@ -810,7 +822,7 @@ function deletestudiu (i,id){
 
 
    }
-
+//salveaza propriuzs modificare facuta--------------------------------------------------------------------------------------------------------------------------------------
    function savelimbi(i,id,nivel){
      var text1= document.getElementById('persona4567231').value;
      var text2= document.getElementById('persona4567232').value;
@@ -849,9 +861,11 @@ function deletestudiu (i,id){
    }
 
    }
+   //face previev pt cv voluntariat--------------------------------------------------------------------------------------------------------------------------------------
    function redirectpreviuvoluntariat(){
      window.location="php/pdf/pdf2.php"
    }
+   //face previev pt cv job--------------------------------------------------------------------------------------------------------------------------------------
    function redirectpreviujob(){
      window.location="php/pdf/pdf.php"
    }
