@@ -43,6 +43,7 @@ if ($uploadOk == 0) {
       $userid=$_COOKIE["cookie_user_id"];
       $conn = new mysqli($servername, $username, $password,$dbname);
       $path = "aploads/".$_FILES["fileToUpload"]["name"];
+
       $sql=sprintf("UPDATE date_personale SET cale_poza ='" . $path .  "' where user_id=".$userid);
       if ($conn->query($sql) === TRUE) {
         echo "    succes   " .$path;
