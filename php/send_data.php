@@ -40,7 +40,6 @@
 			setcookie("cookie_user_id",$id_user, time()+3600*24*12,"/");
 
 			header("location: cv.html?email=".$_SESSION["session_email"]);
-			header("location: index.php);
 			echo "Inregistrare efectuata cu succes!";
 			exit();
 		}
