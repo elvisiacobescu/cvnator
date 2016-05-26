@@ -48,6 +48,19 @@ VALUES (
 ,'".$categorie."')"
 	);
 
+// if($sql=$conn->prepare(
+// 	"INSERT INTO permis 
+// 	(user_id,entry_id,categorie)
+// VALUES (:user,:entri,:categorie)")
+// 	)
+// {
+// $sql->bindParam(':user', $userid);
+// $sql->bindParam(':entri', $entry_id);
+// $sql->bindParam(':categorie', $categorie);
+// $sql->execute();
+// echo 'succes';
+// }
+// else echo 'eroare';
 
 if ($conn->query($sql) === TRUE) {
 		echo "succes";

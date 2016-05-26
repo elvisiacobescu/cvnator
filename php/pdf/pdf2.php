@@ -129,6 +129,8 @@ $dbname = "cvnator";
 $nrexperiente="";
 $userid=$_COOKIE["cookie_user_id"];
 //personal data
+$pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>');
+  $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>');
 $pdf->WriteHTML('<b> Informatii Personale: </b>');
 $conn = new mysqli($servername, $username, $password,$dbname);
 $getid=sprintf("SELECT * FROM date_personale where user_id=".$userid);
@@ -137,7 +139,8 @@ $rezult= $conn ->query($getid);
 if ($rezult->num_rows>0){
 while($row = $rezult->fetch_assoc()) {
 
-   $pdf->WriteHTML('<img src="$row["cale_poza"]" alt="poza">');
+   $poza=$row["cale_poza"];
+   $pdf->Image($poza,10,40,50);
    $pdf->WriteHTML('<br>');
  $pdf->WriteHTML('<i>Nume: </i>'); $pdf->Cell(190,5,$row["nume"]);
   $pdf->WriteHTML('<br>');

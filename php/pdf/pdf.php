@@ -1,6 +1,7 @@
 <?php
 require('C:\xampp\htdocs\cvnator\php\pdf\fpdf.php');
 
+
 class PDF extends FPDF
 {
 	protected $B = 0;
@@ -17,7 +18,7 @@ function Header()
 	// Move to the right
 	$this->Cell(80);
 	// Title
-	$this->Cell(30,10,'Cv',1,0,'C');
+	$this->Cell(30,10,'Curriculum Vitae',10,0,'C');
 	// Line break
 	$this->Ln(20);
 }
@@ -118,8 +119,7 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 
 
-//for($i=1;$i<=40;$i++)
-//	$pdf->Cell(0,10,'Printing line number '.$i,0,1);
+
 
 //aici ne conectam la bd si afisam datele
 $servername = "localhost";
@@ -128,7 +128,10 @@ $password = "";
 $dbname = "cvnator";
 $nrexperiente="";
 $userid=$_COOKIE["cookie_user_id"];
+
 //personal data
+ $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>');
+  $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>'); $pdf->WriteHTML('<br>');
 $pdf->WriteHTML('<b> Informatii Personale: </b>');
 $conn = new mysqli($servername, $username, $password,$dbname);
 $getid=sprintf("SELECT * FROM date_personale where user_id=".$userid);
@@ -138,7 +141,13 @@ $rezult= $conn ->query($getid);
 if ($rezult->num_rows>0){
 while($row = $rezult->fetch_assoc()) {
 
-   $pdf->WriteHTML('<img src="$row["cale_poza"]" alt="poza">');
+ 	$poza=$row["cale_poza"];
+   $pdf->Image($poza,10,40,50);
+ 
+
+
+   //
+   
    $pdf->WriteHTML('<br>');
  $pdf->WriteHTML('<i>Nume: </i>'); $pdf->Cell(190,5,$row["nume"]);
   $pdf->WriteHTML('<br>');
