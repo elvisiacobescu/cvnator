@@ -1,5 +1,5 @@
 <?php
-$target_dir = "uploads/";
+$target_dir = "pdf/aploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -42,7 +42,7 @@ if ($uploadOk == 0) {
       $dbname = "cvnator";
       $userid=$_COOKIE["cookie_user_id"];
       $conn = new mysqli($servername, $username, $password,$dbname);
-      $path = "php/uploads/".$_FILES["fileToUpload"]["name"];
+      $path = "pdf/aploads/".$_FILES["fileToUpload"]["name"];
       $sql=sprintf("UPDATE date_personale SET cale_poza ='" . $path .  "' where user_id=".$userid);
       if ($conn->query($sql) === TRUE) {
         echo "    succes   " .$path;
