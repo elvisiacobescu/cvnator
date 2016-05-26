@@ -65,7 +65,7 @@ la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu
 9 sql injection prevention  trebuie facut in back end
 10 validate  html        Done +am verificat si pt htmlul generat automat de js
 11  validate css         Done
-
+12 coments
 
 +Un raport actualizat � adoptand formatul Scholarly HTML
 +Ghidul de utilizare a aplicatiei dezvoltate � disponibil ca document HTML5. +Codul-sursa va fi comentat si modularizat
