@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11 Mai 2016 la 23:32
+-- Generation Time: 25 Mai 2016 la 18:15
 -- Versiune server: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -101,7 +101,8 @@ CREATE TABLE `date_personale` (
 --
 
 INSERT INTO `date_personale` (`user_id`, `nume`, `prenume`, `sex`, `varsta`, `nr_telefon`, `email`, `cale_poza`, `adresa`, `oras`, `salariu_dorit`, `tip_job`, `nivel_cariera`, `domeniu`, `post_dorit`, `relocare`, `obiectiv`) VALUES
-(2, 'Mateiciuc', 'Daniel', 'M', 20, '0748492673', 'daniel@gmail.com', NULL, 'Str. Cucanilor nr.7', 'Iasi', 400, 'Full-time', 1, 'IT', 'Developer', 'Nu', 'Obiective::::');
+(2, 'Mateiciuc', 'Daniel', 'M', 20, '0748492673', 'daniel@gmail.com', NULL, 'Str. Cucanilor nr.7', 'Iasi', 400, 'Full-time', 1, 'IT', 'Developer', 'Nu', 'Obiective::::'),
+(6, 'Mateiciuc', 'Danie', 'M', 20, '0748492673', 'daniel@mail.com', 'dsada', 'dasdas', 'das', 1, 'Full-time', 1, 'dsad', 'dsdsad', NULL, 'asdasd');
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,6 @@ CREATE TABLE `educatie` (
 --
 
 INSERT INTO `educatie` (`user_id`, `entry_id`, `start`, `stop`, `nume_institutie`, `oras`, `profil`, `diploma`) VALUES
-(2, 1, '2010-09-15', '2014-06-01', 'Colegiul Tehnic "Latcu-Voda"', 'Siret', 'Matematica - Informatica', ''),
 (2, 2, '2014-10-01', '2017-06-01', 'Facultatea de informatica UAIC', 'Iasi', 'Informatica', '');
 
 -- --------------------------------------------------------
@@ -211,7 +211,12 @@ CREATE TABLE `user_data` (
 --
 
 INSERT INTO `user_data` (`user_id`, `email`, `parola`) VALUES
+(8, '123@a.com', '1'),
+(5, 'dada', 'da'),
 (2, 'daniel@gmail.com', 'daniel'),
+(6, 'daniel_m2007@yahoo.com', 'da'),
+(7, 'danny2007_daniel@yahoo.com', '1'),
+(4, 'ddda', 'ddda'),
 (3, 'elvis@gmail.com', 'elvis'),
 (1, 'vitalie@gmail.com', 'vitalie');
 
@@ -238,10 +243,8 @@ ALTER TABLE `alt_info`
 --
 ALTER TABLE `date_personale`
   ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `adresa` (`adresa`),
   ADD UNIQUE KEY `date_personale_default_index` (`user_id`),
   ADD UNIQUE KEY `date_personale_email_index` (`email`),
-  ADD UNIQUE KEY `date_personale_nr_telefon_index` (`nr_telefon`),
   ADD UNIQUE KEY `date_personale_nume_prenume_index` (`nume`,`prenume`),
   ADD UNIQUE KEY `cale_poza` (`cale_poza`);
 
@@ -289,7 +292,7 @@ ALTER TABLE `user_data`
 -- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Restrictii pentru tabele sterse
 --
