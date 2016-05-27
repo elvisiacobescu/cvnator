@@ -360,7 +360,7 @@ border: solid gray 1px;
 border-radius: 5px;
 background-color: #ADADAD;
 position: absolute;
-left: 300px;
+right:  17%;
 top: 17px;
 }
 .save_buton:hover{
@@ -421,6 +421,21 @@ top: 17px;
 }
 .upload{
   font-weight: bold;
+}
+.exit1{
+  position: absolute;
+  right: 2%;
+  top: 17px;
+  height: 30px;
+  width: 30px;
+  float: right;
+  border-radius: 5px;
+  background-image: url(/cvnator/img/exit.jpg);
+  background-size: contain;
+  z-index: 1;
+}
+.exit1:hover{
+   cursor: pointer;
 }
 @media screen and (max-width:1328px){
   .background-static{
