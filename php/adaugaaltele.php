@@ -41,24 +41,19 @@ $start=$json["start"];
 $stop=$json["stop"];
 $titlu=$json["titlu"];
 $descriere=$json["descriere"];
-$sql=sprintf(
+
+if($sql=$conn->prepare(
 	"INSERT INTO alt_info 
-	(user_id,entry_id,start,stop,titlu,descriere)
-VALUES (
-'".$userid."'"."
-,"."'".$entry_id."'"."
-,'".$start."'"."
-,"."'".$stop."'"."
-,"."'".$titlu."'"."
-,"."'".$descriere."')"
-	);
+ 	(user_id,entry_id,start,stop,titlu,descriere)
+ VALUES (?,?,?,?,?,?)")){
 
 
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
+	
+$sql->bind_param('iissss', $userid,$entry_id,$start,$stop,$titlu,$descriere);
+$sql->execute() ;
 
-} else {
-    echo "erruare: " . $conn->error;
-}
+echo 'succes';
+} 
+else echo 'eroare';
 
 ?>

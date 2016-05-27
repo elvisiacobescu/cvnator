@@ -43,26 +43,20 @@ $nume_companie=$json["nume_companie"];
 $domeniu=$json["domeniu"];
 $departament=$json["departament"];
 $descrierea_jobului=$json["descrierea_jobului"];
-$sql=sprintf(
+
+if($sql=$conn->prepare(
 	"INSERT INTO experienta 
 	(user_id,entry_id,start,stop,nume_companie,domeniu,departament,descrierea_jobului)
-VALUES (
-'".$userid."'"."
-,"."'".$entry_id."'"."
-,'".$start."'"."
-,"."'".$stop."'"."
-,"."'".$nume_companie."'"."
-,"."'".$domeniu."'"."
-,"."'".$departament."'"."
-,"."'".$descrierea_jobului."')"
-	);
+ VALUES (?,?,?,?,?,?,?,?)"))
+	{
+
+$sql->bind_param('iissssss', $userid,$entry_id,$start,$stop,$nume_companie,$domeniu,$departament,$descrierea_jobului);
+$sql->execute() ;
+
+echo 'succes';
+} 
+else echo 'eroare';
 
 
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
-
-} else {
-    echo "erruare: " . $conn->error;
-}
 
 ?>

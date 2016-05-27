@@ -39,21 +39,19 @@ if($row = $rezult->fetch_assoc()) {
 $json = json_decode($obj, true);// decode the JSON into an associative array
 $skill=$json["skill"];
 
-$sql=sprintf(
+
+
+if($sql=$conn->prepare(
 	"INSERT INTO abilitati 
-	(user_id,entry_id,skill)
-VALUES (
-'".$userid."'"."
-,"."'".$entry_id."'"."
-,'".$skill."')"
-	);
+ 	(user_id,entry_id,skill)
+ VALUES (?,?,?)")){
 
 
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
+	
+$sql->bind_param('iis', $userid,$entry_id,$skill);
+$sql->execute() ;
 
-} else {
-    echo "erruare: " . $conn->error;
-}
-
+echo 'succes';
+} 
+else echo 'eroare';
 ?>

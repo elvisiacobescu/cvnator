@@ -13,18 +13,21 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 	$json = json_decode($obj, true);// decode the JSON into an associative array
 
 
-$getid=sprintf("UPDATE abilitati SET 
-	skill ="."'".$json["skill"]."'".
-" where user_id=".$userid. " AND entry_id='".$json["entry_id"]."' ");
-$rezult= $conn ->query($getid);
 
+	$entry_id=$json["entry_id"];
+	$skill=$json["skill"];
+	if($sql=$conn->prepare(
+	"UPDATE abilitati SET  skill = ?
+  where user_id= ? AND entry_id= ? ")
+	)
+	{
 
-if ($conn->query($getid) === TRUE) {
-		echo "succes";
+$sql->bind_param('sii',$skill, $userid,$entry_id);
+$sql->execute() ;
 
-} else {
-    echo "erruare: " . $conn->error;
-}
+echo 'succes';
+} 
+else echo 'eroare';
 
 
 

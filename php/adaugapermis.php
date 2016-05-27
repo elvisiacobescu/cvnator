@@ -45,7 +45,7 @@ if($sql=$conn->prepare(
 VALUES (?,?,?)")){
 
 	
-$sql->bind_param('sss', $userid,$entry_id,$categorie);
+$sql->bind_param('iis', $userid,$entry_id,$categorie);
 $sql->execute() ;
 
 echo 'succes';

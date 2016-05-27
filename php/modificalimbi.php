@@ -11,16 +11,21 @@ $userid=$_COOKIE["cookie_user_id"];
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 $json = json_decode($obj, true);// decode the JSON into an associative array
-$sql=sprintf("UPDATE limbi_straine SET 
-	limba ="."'".$json["limba"]."'".
-" , nivel="."'".$json["nivel"]."'".
-" where user_id=".$userid. " AND entry_id='".$json["entry_id"]."' ");
 
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
 
-} else {
-    echo "erruare: " . $conn->error;
-}
+$limba=$json["limba"];
+$nivel=$json["nivel"];
+$entry_id=$json["entry_id"];
+	if($sql=$conn->prepare(
+	"UPDATE limbi_straine SET limba =? , nivel=? where user_id=? AND entry_id=? ")
+	)
+	{
+
+$sql->bind_param('siii',$limba,$nivel,$userid,$entry_id);
+$sql->execute() ;
+
+echo 'succes';
+} 
+else echo "erruare: " . $conn->error;
 
 ?>

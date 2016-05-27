@@ -39,22 +39,18 @@ if($row = $rezult->fetch_assoc()) {
 $json = json_decode($obj, true);// decode the JSON into an associative array
 $limba=$json["limba"];
 $nivel=$json["nivel"];
-$sql=sprintf(
+
+if($sql=$conn->prepare(
 	"INSERT INTO limbi_straine 
 	(user_id,entry_id,limba,nivel)
-VALUES (
-'".$userid."'"."
-,"."'".$entry_id."'"."
-,'".$limba."'"."
-,"."'".$nivel."')"
-	);
+VALUES (?,?,?,?)"))
+	{
 
+$sql->bind_param('iisi', $userid,$entry_id,$limba,$nivel);
+$sql->execute() ;
 
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
-
-} else {
-    echo "erruare: " . $conn->error;
-}
+echo 'succes';
+} 
+else echo 'eroare';
 
 ?>

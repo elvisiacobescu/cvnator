@@ -43,26 +43,18 @@ $nume_institutie=$json["nume_institutie"];
 $oras=$json["oras"];
 $profil=$json["profil"];
 $diploma=$json["diploma"];
-$sql=sprintf(
+if($sql=$conn->prepare(
 	"INSERT INTO educatie 
-	(user_id,entry_id,start,stop,nume_institutie,oras,profil,diploma)
-VALUES (
-'".$userid."'"."
-,"."'".$entry_id."'"."
-,'".$start."'"."
-,"."'".$stop."'"."
-,"."'".$nume_institutie."'"."
-,"."'".$oras."'"."
-,"."'".$profil."'"."
-,"."'".$diploma."')"
-	);
+ 	(user_id,entry_id,start,stop,nume_institutie,oras,profil,diploma)
+ VALUES (?,?,?,?,?,?,?,?)"))
+	{
 
+$sql->bind_param('iissssss', $userid,$entry_id,$start,$stop,$nume_institutie,$oras,$profil,$diploma);
+$sql->execute() ;
 
-if ($conn->query($sql) === TRUE) {
-		echo "succes";
+echo 'succes';
+} 
+else echo 'eroare';
 
-} else {
-    echo "erruare: " . $conn->error;
-}
 
 ?>
