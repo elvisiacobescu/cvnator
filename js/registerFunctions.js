@@ -3,7 +3,7 @@ function signup(){
 	var pass1 = _("pass1").value;
 	var pass2 = _("pass2").value;
 	var status = _("status");
-	
+
 	if(em == "" || pass1 == "" || pass2 == ""){
 		status.innerHTML = "Introduce-ti toate datele.";
 	}
@@ -15,7 +15,7 @@ function signup(){
 		status.innerHTML = 'Asteptati ...';
 		var ajax = ajaxObj("POST", "register.php");
 		//posibil de sch fisierul
-		
+
 		ajax.onreadystatechange = function(){
 		  if(ajaxReturn(ajax) == true) {
 			if(ajax.responseText != "succes"){
@@ -28,7 +28,10 @@ function signup(){
 		}
 		}
 		ajax.send("em="+em+"&p="+pass1);
+		location.reload();
+		//aici arr putea fi creata si linia de informatii personale din bd.
 	}
+
 }
 
 function emptyElement(x){
