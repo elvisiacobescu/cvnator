@@ -39,14 +39,17 @@ if($row = $rezult->fetch_assoc()) {
 $json = json_decode($obj, true);// decode the JSON into an associative array
 $categorie=$json["categorie"];
 
-$sql=$conn->prepare(
-	'INSERT INTO permis 
+if($sql=$conn->prepare(
+	"INSERT INTO permis 
 	(user_id,entry_id,categorie)
-VALUES (?,?,?)');
+VALUES (?,?,?)")){
+
 	
 $sql->bind_param('sss', $userid,$entry_id,$categorie);
 $sql->execute() ;
-echo 'succes';
 
+echo 'succes';
+} 
+else echo 'eroare';
 
 ?>
