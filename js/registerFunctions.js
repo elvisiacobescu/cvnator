@@ -29,7 +29,7 @@ function signup(){
 		}
 		ajax.send("em="+em+"&p="+pass1);
 		location.reload();
-		//aici arr putea fi creata si linia de informatii personale din bd.
+		//aici arr putea fi creata si linia de informatii personale din bd
 	}
 
 }
