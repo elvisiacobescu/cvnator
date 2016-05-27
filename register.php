@@ -19,13 +19,12 @@
 </head>
 <body>
 <div>
-  <h3>Sign Up Here</h3>
   <form name="signupform" id="signupform" onsubmit="return false;">
-    <div>Email Address:</div>
+    <div>Email:</div>
     <input id="email" type="text" onfocus="emptyElement('status')" onkeyup="restrict('email')" maxlength="88">
-    <div>Create Password:</div>
+    <div>Parola:</div>
     <input id="pass1" type="password" onfocus="emptyElement('status')" maxlength="16">
-    <div>Confirm Password:</div>
+    <div>Rescrie parola:</div>
     <input id="pass2" type="password" onfocus="emptyElement('status')" maxlength="16">
     <br>
     <button id="signupbtn" onclick="signup()">Create Account</button>
