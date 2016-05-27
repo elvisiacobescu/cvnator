@@ -490,6 +490,9 @@ width: 100px;
     height: 60px;
     width: 60px;
   }
+  #butoane{    position: relative;
+    left: 17px;
+    top: -17px;}
 }
 
 /*//////////////////////////////640/////////////////////////////////*/
@@ -511,4 +514,7 @@ width: 100px;
   .school-ad-new{font-size: 37px;width: 160px;height: 50px; margin-right: 2%; display: block; float: none;    margin-left: 10px;}
   .edit_buton_style2{ top: 7px;left: -15px;  height: 60px;width: 60px;}
   #edit1{margin: 57% 0% 0% 86%;}
+  #butoane{    position: relative;
+    left: 17px;
+    top: -17px;}
 }

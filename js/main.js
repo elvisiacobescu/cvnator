@@ -600,7 +600,7 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Denumirea:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567234' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
         document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
-        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveealtele("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
         document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
         var texts=document.getElementById('persona4567231');
         texts.value=document.getElementById("data-stat-expes-"+i).innerHTML;
@@ -613,7 +613,7 @@ function deletestudiu (i,id){
 
       }
       //face salvarea propriuzisa a modificarii--------------------------------------------------------------------------------------------------------------------------------------
-      function saveexperienta(i,id){
+      function saveealtele(i,id){
         var text1= document.getElementById('persona4567231').value;
         var text2= document.getElementById('persona4567232').value;
         var text3= document.getElementById('persona4567233').value;
