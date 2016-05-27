@@ -507,7 +507,7 @@ function deletestudiu (i,id){
          texts.innerHTML=document.getElementById("descriere "+i).innerHTML;
        }
        //face salvarea propriuzisa a modificarii
-      function saveexperienta (i ,id){
+      function saveexperienta(i ,id){
         var text1= document.getElementById('persona4567231').value;
         var text2= document.getElementById('persona4567232').value;
         var text3= document.getElementById('persona4567233').value;
