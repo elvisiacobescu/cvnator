@@ -313,7 +313,7 @@ border-radius: 8px;
   width: 30px;
   float: right;
   border-radius: 5px;
-  background-image: url(/cvnator/img/exit.jpg);
+  background-image: url(/cvnator/img/delete.png);
   background-size: contain;
   z-index: 1;
 }
@@ -355,13 +355,13 @@ margin: 120px auto;
 }
 .save_buton{
   height: 35px;
-width: 75px;
-border: solid gray 1px;
-border-radius: 5px;
-background-color: #ADADAD;
-position: absolute;
-right:  17%;
-top: 17px;
+  width: 75px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  background-color: #ADADAD;
+  position: relative;
+  right: 17%;
+  top: 17px;
 }
 .save_buton:hover{
   background-color: gray;
@@ -423,9 +423,10 @@ top: 17px;
   font-weight: bold;
 }
 .exit1{
-  position: absolute;
-  right: 2%;
-  top: 17px;
+  position: relative;
+  /* right: 2%; */
+  float: right!important;
+  top: -15px;
   height: 30px;
   width: 30px;
   float: right;
@@ -436,6 +437,14 @@ top: 17px;
 }
 .exit1:hover{
    cursor: pointer;
+}
+#butoane{
+position: absolute;
+right: 5%;
+top: 5px;
+width: 100px;
+}
+width: 100px;
 }
 @media screen and (max-width:1328px){
   .background-static{

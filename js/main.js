@@ -321,8 +321,9 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Oras:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Specialitate:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Diploma obtinuta:</br><input id='persona4567236'  class='celformat' type='text' value=''></br>";
-        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveeducatie("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
-        document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+        document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveeducatie("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+        document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
         var texts=document.getElementById('persona4567231');
         var prelude =document.getElementById("data-stat-"+i).innerHTML;
         texts.value=document.getElementById("data-stat-"+i).innerHTML;
@@ -390,8 +391,9 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Oras:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Specialitate:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Diploma obtinuta:</br><input id='persona4567236'  class='celformat' type='text' value=''></br>";
-        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveeducatie1()'><span class='savetext'>SAVE</span></div>";
-        document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+        document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveeducatie1()'><span class='savetext'>SAVE</span></div>";
+        document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
       }
       //face salvarea propriuzisa a modificarii
       function saveeducatie1(){
@@ -439,8 +441,9 @@ function deletestudiu (i,id){
          document.getElementById('persona456723').innerHTML +="Domeniu:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
          document.getElementById('persona456723').innerHTML +="Departament:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
          document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567236' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
-         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta1()'><span class='savetext'>SAVE</span></div>";
-         document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+         document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+         document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveexperienta1()'><span class='savetext'>SAVE</span></div>";
+         document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
 
        }
        //face salvarea propriuzisa a modificarii ----------------------------------------------------------------------------------------------------------------
@@ -487,8 +490,9 @@ function deletestudiu (i,id){
          document.getElementById('persona456723').innerHTML +="Domeniu:</br><input id='persona4567234'  class='celformat' type='text' value=''></br>";
          document.getElementById('persona456723').innerHTML +="Departament:</br><input id='persona4567235' class='celformat' type='text' value=''></br>";
          document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567236' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
-         document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
-         document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+         document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+         document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+         document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
          var texts=document.getElementById('persona4567231');
          texts.value=document.getElementById("data-stat-expe-"+i).innerHTML;
           texts=document.getElementById('persona4567232');
@@ -551,8 +555,9 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Finish :</br><input id='persona4567232'  class='celformat' type='date' data-date-inline-picker='true' /></br>";
         document.getElementById('persona456723').innerHTML +="Denumirea:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567234' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
-        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='savealtele1()'><span class='savetext'>SAVE</span></div>";
-        document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+        document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='savealtele1()'><span class='savetext'>SAVE</span></div>";
+        document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
       }
       //face salvarea propriuzisa adaugarii--------------------------------------------------------------------------------------------------------------------------------------
       function savealtele1(){
@@ -594,8 +599,9 @@ function deletestudiu (i,id){
         document.getElementById('persona456723').innerHTML +="Finish :</br><input id='persona4567232'  class='celformat' type='date' data-date-inline-picker='true' /></br>";
         document.getElementById('persona456723').innerHTML +="Denumirea:</br><input id='persona4567233'  class='celformat' type='text' value=''></br>";
         document.getElementById('persona456723').innerHTML +="Descrierea Jobului:</br><textarea id='persona4567234' rows='4' cols='50' name='comment'>Oscurta descriere a jobului </textarea> </br>";
-        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
-        document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+        document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveexperienta("+i+","+id+")'><span class='savetext'>SAVE</span></div>";
+        document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
         var texts=document.getElementById('persona4567231');
         texts.value=document.getElementById("data-stat-expes-"+i).innerHTML;
          texts=document.getElementById('persona4567232');
@@ -677,8 +683,9 @@ function deletestudiu (i,id){
        document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
        document.getElementById('persona456723').innerHTML +="Limba:<input id='persona4567231'  class='celformat' type='text' value=''></br>";
        document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Nivel-Limba:</span><select class='celformat'  id='persona4567232'><option disabled selected value> -- LEVEL -- </option><option>Beginer</option><option >Mediu</option><option >Good</option><option >Greate</option><select></br>";
-       document.getElementById('persona456723').innerHTML +="<div class='save_buton'  onclick='savelimba()' ><span class='savetext'>SAVE</span></div>";
-       document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+       document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+       document.getElementById('butoane').innerHTML +="<div class='save_buton'  onclick='savelimba()' ><span class='savetext'>SAVE</span></div>";
+       document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
      }
      //face salvarea propriuzisa si adaugarea in pagina --------------------------------------------------------------------------------------------------------------------------------------
      function savelimba(){
@@ -750,8 +757,9 @@ function deletestudiu (i,id){
         document.getElementById('edit_total').className = "";
         document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
         document.getElementById('persona456723').innerHTML +="skill:<input id='persona4567231'  class='celformat' type='text' value=''></br>";
-        document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='saveskills1()'><span class='savetext'>SAVE</span></div>";
-        document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+        document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+        document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='saveskills1()'><span class='savetext'>SAVE</span></div>";
+        document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
 
       }
       //face salvarea noului skil
@@ -783,9 +791,10 @@ function deletestudiu (i,id){
 
       document.getElementById('edit_total').className = "";
       document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
-      document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='savepermiss1()'><span class='savetext'>SAVE</span></div>";
       document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Categorie permis:</span><select class='celformat'  id='persona4567231'><option disabled selected value> -- CATEGORE-- </option><option>A1</option><option >A</option><option >B1</option><option >B</option><option >C1</option><option >C</option><option >D1</option><option >D</option><select></br>";
-      document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+      document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+      document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='savepermiss1()'><span class='savetext'>SAVE</span></div>";
+      document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
     }
 
   //  salveaza permisul in baza de date
@@ -819,8 +828,9 @@ function deletestudiu (i,id){
      document.getElementById('edit_total1').innerHTML += "<div id='persona456723' class='colosus1' ><div>";
      document.getElementById('persona456723').innerHTML +="Limba:<input id='persona4567231'  class='celformat' type='text' value=''></br>";
      document.getElementById('persona456723').innerHTML +="<span style='padding-right: 16px;'>Nivel-Limba:</span><select class='celformat'  id='persona4567232'><option disabled selected value> -- LEVEL -- </option><option>Beginer</option><option >Mediu</option><option >Good</option><option >Greate</option><select></br>";
-     document.getElementById('persona456723').innerHTML +="<div class='save_buton' onclick='savelimbi("+i+","+id+","+nivel+")'><span class='savetext'>SAVE</span></div>";
-     document.getElementById('persona456723').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
+     document.getElementById('persona456723').innerHTML +="<div id='butoane'></div>";
+     document.getElementById('butoane').innerHTML +="<div class='save_buton' onclick='savelimbi("+i+","+id+","+nivel+")'><span class='savetext'>SAVE</span></div>";
+     document.getElementById('butoane').innerHTML +="<div class='exit1' onclick='exit0()'></div>";
      var texts=document.getElementById('persona4567231');
      texts.value=document.getElementById("lenguge-name"+i).innerHTML;
      console.log(nivel);
