@@ -19,6 +19,7 @@
 </head>
 <body>
 <div>
+  <h3>Inregistreaza-te aici</h3>
   <form name="signupform" id="signupform" onsubmit="return false;">
     <div>Email:</div>
     <input id="email" type="text" onfocus="emptyElement('status')" onkeyup="restrict('email')" maxlength="88">
