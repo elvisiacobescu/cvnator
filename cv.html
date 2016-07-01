@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>cvnator</title>
+    <link href="style/style-main.css" rel="stylesheet" type="text/css" >
+    <script src = "php_files/js/aja.js"></script>
+    <script src = "php_files/js/first.js"></script>
+
+    <style>
+
+    </style>
+  </head>
+  <body>
+<div class="background-static">
+
+</div>
+<div id="edit_total" class="invizible">
+  <div id="edit_total1" >
+  </div>
+</div>
+<div class="mein-content">
+    <div class="header" >
+      <div class="container">
+	<span id="nume-utilizator-helo"></span>
+	<span id="eror-respoce" style="opacity: 1;"></span>
+			<div id="logout" class="logout">
+
+      <span class="logout-img"><img src="img/door.png" width="25" height="25" alt="nu EXISTA IMAGINEA" /></span ><span class="logout-text">Logout</span>
+      </div>
+      <div id="previev" class="preview">
+        <span class="previev-img"><img src="img/ochi.png" width="25" height="25" alt="nu EXISTA IMAGINEA" /></span ><span class="preview-text">Previev</span>
+        <div class="job dropdaun" onclick='redirectpreviujob()'>
+          <span>
+          Job
+        </span>
+      </div>
+      <div class="voluntar dropdaun" onclick='redirectpreviuvoluntariat()'>
+         <span>
+           Voluntariat
+         </span>
+      </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="main">
+
+     <div id="personaldate">
+      <div id="prezent" class="prezentation">
+        <div id="edit1">
+          <img src="img/edit_ico.png" width="25" height="25" alt="nu EXISTA IMAGINEA" />
+
+        </div>
+<img id="profile_picture" src="img/imgres.jpg" height="150" width="150" alt="no picuture" class="picture" />
+      <div class="sdate">
+        <span class="phname bold">Name : </span><span id="acname"></span><br>
+        <span class="phname bold">Prenume : </span><span id="acprenume"></span><br>
+        <span class="phtel bold">Numar-Telefon : </span><span id="actel"></span><br>
+        <span class="phmail bold">Mail : </span><span id="acmail"></span><br>
+        <span class="phadres bold">Adresa : </span><span id="acadres"></span><br>
+        <span class="phoras bold">Oras : </span><span id="acoras"></span><br>
+        <span class="phsex bold">Sex : </span><span id="acsex"></span><br>
+        <span class="phvarsta bold">Varsta : </span><span id="acvarsta"></span><br>
+        <span class="phsalariu bold">Salariu dorit : </span><span id="acsalariu"></span><br>
+        <span class="phnivel bold">Nivel-Cariera : </span><span id="acnivel"></span><br>
+        <span class="pdomeniu bold">Domeniu-cautat : </span><span id="acadomeniu"></span><br>
+        <span class="posturi bold">Pozitia-cautata : </span><span id="acposturi"></span><br>
+        <span class="tipjob bold">tip-job : </span><span id="actipjob"></span><br>
+        <span class="prelocare bold">Relocare : </span><span id="acrelocare"></span><br>
+        <span class="pobiectiv bold">Obiectiv : </span><span id="acobiectiv"></span><br>
+
+        <form action="php/upload.php" method="post" enctype="multipart/form-data" class="upload">
+          Select image to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload"><br>
+          <input type="submit" value="Upload Image" name="submit" class="upsub">
+      </form>
+
+       </div>
+
+         <div class="clear space"></div>
+      </div>
+     </div>
+     <div id="studii">
+
+      <span class='titlu-general'>Educatie:</span>  <div class='school-ad-new' onclick='addneweducation()'> <span>Add New</span></div>
+     </div>
+
+     <div id="experienta" >
+
+    <div id="addbutonexperienta" >
+      <span class='titlu-general'>Experienta:</span>  <div  class='school-ad-new' onclick='addnewexperienta()'> <span>Add New</span></div>
+    </div>
+
+     </div>
+     <div id="altele" >
+
+    <div id="addbutonaltele" >
+      <span class='titlu-general'>Alte activitati:</span>  <div  class='school-ad-new' onclick='addnewalteactivitati()'> <span>Add New</span></div>
+    </div>
+
+     </div>
+     <div id="skills" >
+
+    <div id="addbutonskills" >
+      <span class='titlu-general'>skills:</span>  <div  class='school-ad-new' onclick='addnewskils()'> <span>Add New</span></div>
+    </div>
+
+     </div>
+    <span class='titlu-general'>Permis:</span>  <div class='school-ad-new' onclick='addnewepermis()'> <span>Add New</span></div>
+    <div id="permis" class="">
+
+    </div>
+
+   <div id="lenguge"  >
+  <div id="addbutonlimba"  >
+    <span class='titlu-general'>Limbi:</span>  <div class='school-ad-new' onclick='addnewelimbi()'> <span>Add New</span></div>
+   </div>
+     <div class="prezentation" id="limbi">
+      </div>
+  </div>
+</div>
+</div>
+   <script src = "js/firstload.js"></script>
+   <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

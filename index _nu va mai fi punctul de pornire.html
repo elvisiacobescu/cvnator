@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login page</title>
+  <link href="style/log-in.css" rel="stylesheet" type="text/css" >
+</head>
+
+<body>
+  <div class="white-opacity">
+
+  </div>
+  <div class="content">
+<div Id="head" class="head" style="height:30px; background-color:#800072">
+  <span class="logopozition"><img src="img/logocvnator.png" alt="logo" height="25" width="53" /></span>
+</div>
+<div class="baground-log">
+<div class="log-in">
+<form action="login.php"  method="post">
+<div class="logopozition2"><img src="img/logocvnator.png" alt="logo" /></div>
+   <p><span class="textitineration">Numele:</span> <input class="cell-format" type="text" name="nume" size="20"
+        placeholder="Numele d-voastra" /><br>
+      <span class="textitineration">Parola:</span> <input class="cell-format" style="margin-left: 10px;" type="text" name="parola" size="20"
+   	    placeholder="Parola d-voastra" /> </p>
+   <!-- <p> -->
+     <!-- <input class="login" type="submit" value="LogIn"
+        title="Apasati butonul pentru a expedia datele spre server" /> </p> -->
+        	<button id="buton_login"  class="login"  onclick="login()" value="Trimite" >Logare</button>
+</form>
+<div id="registeer" class="buton-style buton-position">Register</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

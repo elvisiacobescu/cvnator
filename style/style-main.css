@@ -1,0 +1,520 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.background-static{
+  background-image: url(/cvnator/img/handsake-background.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  width: 100%;
+    height: 100%;
+}
+.container{
+  width: 960px;
+  margin: 0 auto;
+}
+#main{
+ width: 960px;
+ border: solid 1px gray;
+ margin: 0 auto;
+ background-color: rgba(255,255,255,0.90);
+
+  }
+#personaldate{
+  position: relative;
+  display: block;
+  height: auto;
+  overflow:hidden;
+}
+.logopozition2{    margin-left: 27%;}
+.logopozition{    margin-left: 25%;}
+.prezentation{
+  width: 98%;
+  border: solid 1px gray;
+  /*height: 380px;*/
+  position: relative;
+  margin-left: 0.9%;
+  overflow: hidden;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+.bold{
+  font-weight: bold;
+}
+#edit1{
+  height: 35px;
+  width: 35px;
+  background-color: #ADADAD;
+  border-radius: 5px;
+  border-color: grey;
+  position: absolute;
+  z-index: 99;
+  margin: 0% 0% 0% 60%;
+}
+#edit1 img {
+  position: absolute;
+  left:5px;
+  top:5px;
+}
+#edit1:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+#de_editat{
+  position:relative;
+}
+#save1{
+  height: 35px;
+  width: 75px;
+  border:solid gray 1px;
+  border-radius: 5px;
+  background-color: #ADADAD;
+  position :absolute;
+  left: 870px;
+  top: 17px;
+}
+.savetext{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+#save1:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+.micsoreaza{
+animation: out 1s linear 1;
+-webkit-animation:out 1s linear 1 forwards;
+}
+.sdate {
+  position: relative;
+top: 5px;
+left: 25px;
+float: left;
+}
+@keyframes out{
+  0% {height:380px;}
+  100%{height:0px;}
+
+}
+/*@-webkit-keyframes out{
+  0% {height:300px;}
+  100%{height:0px;}
+}*/
+.mareste{
+  animation: back 1s linear 1;
+  -webkit-animation:back 1s linear 1 forwards;
+
+}
+.celformat{
+  border-radius: 5px;
+  height: 20px;
+    margin: 3px 0px;
+}
+@keyframes back{
+  0% {height:0px;}
+  100%{height:auto;}
+
+}
+/*@-webkit-keyframes back{
+  0%  {height:0px;}
+  100%{height:300px;}
+}*/
+
+.preview{
+  position: relative;
+      background-color: white;
+      color: black;
+      width: 83px;
+      border-radius: 5px;
+      float: right;
+      display: inline;
+}
+.preview-text{
+  position: absolute;
+top: 4px;
+left: 29px;
+}
+.previev-img{
+      margin-left: 3px;
+}
+.logout-text{
+  position: absolute;
+top: 4px;
+left: 29px;
+}
+#logout{
+  position: relative;
+    display: inline;
+    float: right;
+    margin: 0 9px;
+    background-color: white;
+    color: black;
+    width: 83px;
+    border-radius: 5px;
+}
+#logout{
+  cursor:pointer;
+}
+.space {
+  padding-bottom: 20px;
+}
+.header{
+  height:50px; color:white; background-color:#800072;
+}
+.titlu-general{
+  color:blue;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 15px;
+  padding-top: 16px;
+    padding-bottom: 16px;
+  font-family: inherit;
+}
+.school-ad-new{
+      border: solid 1px gray;
+      width: 99px;
+      position: relative;
+      height: 30px;
+      float: right;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 7px;
+      display: inline;
+      margin-right: 15%;
+      margin-bottom: 15px;
+      background-color: #ADADAD;
+
+}
+
+.school-ad-new:hover{
+ background-color: gray;
+ cursor: pointer;
+}
+.prezentation-educatie{
+  width: 98%;
+  border: solid 1px gray;
+  /*height: 150px;*/
+  position: relative;
+  margin-left: 0.9%;
+  overflow: hidden;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.time{
+  color: #B3A7A7;
+font-weight: bold;
+opacity: 0.7;
+font-size: 39px;
+z-index: -1;
+}
+ .edit_buton_style{
+   position: absolute;
+   float: right;
+   top: 5px;
+   border: solid 1px gray;
+   background-color: #ADADAD;
+   padding: 5px;
+   border-radius: 5px;
+   z-index: 99;
+   margin: 0% 0% 0% 60%;
+}
+
+  .edit_buton_style:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+.text-margin{
+  margin-left: 15px;
+}
+.clear{
+  clear: both;
+}
+.picture{
+  position: relative;
+  float: left;
+  top: 5px;
+  left: 7px;
+}
+.edit-experienta{
+
+}
+.tag-skil{
+  border-radius: 5px;
+      position: relative;
+      float: left;
+      margin-left: 15px;
+      border: solid 1px gray;
+      overflow: hidden;
+      padding: 5px 27px 5px 10px;
+}
+.delete {
+  font-size: 22px;
+      color: rgba(255, 0, 0, 0.34);
+      background-color: #C7C6C6;
+      border-radius: 4px;
+      top: 0px;
+      right: 0;
+      padding: 2px 2px 4px 4px;
+      height: 23px;
+      position: absolute;
+}
+.delete:hover{
+  background-color: gray;
+  cursor: pointer;
+      color: red;
+}
+.lenguge-lvl{
+  border: 1px solid black;
+width: 80%;
+height: 15px;
+margin-left: 10%;
+margin-top: 15px;
+border-radius: 8px;
+  background-image: url(/cvnator/img/colord_bar.jpg);
+  background-size:contain;
+  overflow: hidden;
+}
+.white-bar{
+  position: relative;
+  float: right;
+  right: 0px;
+  top: 0px;
+  height: 15px;
+  background-color: white;
+
+}
+.bar_poz1{
+  width: 75%;
+}
+.bar_poz2{
+  width: 50%;
+}
+.bar_poz3{
+  width: 25%;
+}
+.bar_poz4{
+  width: 0%;
+}
+.exit{
+  position: relative;
+  right: 5px;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  float: right;
+  border-radius: 5px;
+  background-image: url(/cvnator/img/delete.png);
+  background-size: contain;
+  z-index: 1;
+}
+.exit:hover{
+   cursor: pointer;
+}
+.exit .tooltip-content {
+  display: none;
+  position: absolute;
+  top: -38%;
+  right: 118%;
+}
+.exit:hover .tooltip-content {
+  display: block;
+}
+#edit_total{
+  position: fixed;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(56, 54, 54, 0.62);;
+    z-index: 100;
+}
+#edit_total1{
+position: relative;
+width: 50%;
+height: 400px;
+background-color: white;
+border-radius: 25px;
+margin: 120px auto;
+}
+.invizible{
+  /*display: none;*/
+  opacity: 0.0001;
+  z-index: -1 !important;
+}
+.colosus1{
+  padding-top: 25px;
+  padding-left: 40px;
+}
+.save_buton{
+  height: 35px;
+  width: 75px;
+  border: solid gray 1px;
+  border-radius: 5px;
+  background-color: #ADADAD;
+  position: relative;
+  right: 17%;
+  top: 17px;
+}
+.save_buton:hover{
+  background-color: gray;
+  cursor: pointer;
+}
+.edit_buton_style2{
+  position: relative;
+    left: -133px;
+  float: right;
+  top: 5px;
+  border: solid 1px gray;
+  background-color: #ADADAD;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 99;
+  margin: 0% 0% 0% 60%;
+}
+
+ .edit_buton_style2:hover{
+ background-color: gray;
+ cursor: pointer;
+}
+
+
+
+.dropdaun {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 82px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px 0px;
+    z-index: 100;
+    border: 1px gray solid;
+    text-align: center;
+}
+.preview:hover{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  cursor: pointer;
+      background-color: #C1C1C1;
+  /*border:1px solid gray;*/
+
+}
+.preview:hover .dropdaun {
+    display: block;
+    }
+.voluntar{
+  margin-top: 35px;
+}
+.job{
+      margin-top: 0px;
+}
+.dropdaun:hover{
+    background-color: #C1C1C1;
+    cursor: pointer;
+}
+.upload{
+  font-weight: bold;
+}
+.exit1{
+  position: relative;
+  /* right: 2%; */
+  float: right!important;
+  top: -15px;
+  height: 30px;
+  width: 30px;
+  float: right;
+  border-radius: 5px;
+  background-image: url(/cvnator/img/exit.jpg);
+  background-size: contain;
+  z-index: 1;
+}
+.exit1:hover{
+   cursor: pointer;
+}
+#butoane{
+position: absolute;
+right: 5%;
+top: 5px;
+width: 100px;
+}
+width: 100px;
+}
+@media screen and (max-width:1328px){
+  .background-static{
+    background-repeat: repeat-y;
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 641px){
+  body{
+    background-color: red;
+  }
+  .container{
+    width: 100%;
+    margin:0;
+  }
+  #main{
+    width:100%;
+    margin:0;
+  }
+  .background-static{
+    background-repeat: repeat-y;
+  }
+  .sdate{ font-size: 25px;}
+  #fileToUpload{ font-size: 37px;}
+  .upload{font-size: 37px;}
+  .upsub{font-size: 37px;margin-top: 9px; }
+  .edit_buton_style{       top: 7px;
+    position: absolute;
+    right: 84px;
+    height: 60px;
+    width: 60px;}
+  .exit{  height: 75px;width: 75px;}
+  #edit1{height: 75px;width: 75px;}
+  #edit1 img{  height: 60px;width: 60px;top:5px;left:5px;}
+  .prezentation{
+    font-size: 30px;
+  }
+  .titlu-general{
+    font-size: 37px;
+  }
+  .school-ad-new{font-size: 37px;width: 160px;height: 50px; margin-right: 2%;}
+  .edit_buton_style2{ top: 7px;
+    left: -15px;
+    height: 60px;
+    width: 60px;
+  }
+  #butoane{    position: relative;
+    left: 17px;
+    top: -17px;}
+}
+
+/*//////////////////////////////640/////////////////////////////////*/
+@media  (max-width:640px) and (min-width: 300px){
+  body{background-color: red;}
+  .container{ width: 100%;margin:0;}
+  #main{width:100%;margin:0;}
+  .background-static{background-repeat: repeat-y;}
+  .sdate{ font-size: 25px;}
+  #fileToUpload{ font-size: 37px;}
+  .upload{font-size: 37px;}
+  .upsub{font-size: 37px;margin-top: 9px; }
+  .edit_buton_style{ top: 80px;right: 5px;height: 60px;width: 60px;}
+  .exit{  height: 75px;width: 75px;}
+  #edit1{height: 75px;width: 75px;}
+  #edit1 img{ height: 60px;width: 60px;top:5px;left:5px;}
+  .picture{ width: 98%; height: 98%;}
+  .titlu-general{  font-size: 37px;}
+  .school-ad-new{font-size: 37px;width: 160px;height: 50px; margin-right: 2%; display: block; float: none;    margin-left: 10px;}
+  .edit_buton_style2{ top: 7px;left: -15px;  height: 60px;width: 60px;}
+  #edit1{margin: 57% 0% 0% 86%;}
+  #butoane{    position: relative;
+    left: 17px;
+    top: -17px;}
+}

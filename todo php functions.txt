@@ -1,0 +1,72 @@
+1 logout.php - anuleza sesiunea , invecheste cokieuri si trimite mesajul de succes dupa ce a facut aceste lucruri cu textu "succes" e foarte important sa
+fie textu carre lam pus intre ghilimele NU SE TRIMITE NIMIC DE LA FRONT END
+2* personaldata.php - aduce toate datele din categoria date personale intrun json    NU SE TRIMITE NIMIC DE LA FRONT END
+3* experienta.php -aduce toate datele personale din categoria experienta intr-un json  NU SE TRIMITE NIMIC DE LA FRONT END
+4 educatie.php - aduce toate datele din categoria educatie   intr-un json    NU SE TRIMITE NIMIC DE LA FRONT END
+5 altele.php - aici vreau toate din categoria alte informatii plus daca are carnet si categoriile si limbile straine stiute de acesta  NU SE TRIMITE NIMIC DE LA FRONT END
+
+
+
+
+7 modificadatepersonale
+// astea s-au terminat
+8 creare unui fisier pe care sa il puneti intrun folder resurse care sa contina sv (eu apas pe buton si cer path catre fisier pdf care sa il
+dau sa il vada utilizatoru .trebuie creat si trimis pathu catre mine ca sa pot sa il dau catre vizualizare :))
+9 modificadatepersonale aici e usor doar modifica cele existente. trimit json cu datele.
+10 modifica-experienta aici inafara de date mai trimit si index (aici trebuie sa fiti voi antena sa trimitteti
+la incarcare in ordine datele ca sa nu se intample ceva vudu si sachimabti ce nu trebuie) la fel trimit unjson in care se afla si indexu .
+11 modifica-studiile la fel ca la experienta
+12 modifica-altele
+13 modifica-carnet json
+14 modifica-limbi (ca sa spun cum facem trebuie sa vad cum mi le dati in primu rand da in general cred ca vi le dau pe toate intr-un json)
+15 carnet.php // e nevoie de modificat bd
+16 limbi.php // facut
+17 abilitati.php // facut
+
+//
+09 modifica personaldata, dar trebuie verificat daca functioneaza
+
+18* deletepermis .... de facut stergerea acutuala a datelor din baza de date . am trimis in json doar a cata trebuie eliminata incepand de la 1 (trebuie citite din baza de date toate si vazut ce id are a x-lea element si sters elementu cu idiul respectiv)
+
+
+---to do elvis
+1 first loar-------------------------------------------------------------------------------------
+  *limbi               Done
+  *carnet              Done
+  *skils               Done
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done
+  *inf                 Done
+2 delete----------------------------------------------------------------------------------------
+  *limbi               Done
+  *carnet              Done + am facut si phpul aici si queri sql
+  *skils               Done
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done  + am facut si phpul aici si queri sql
+3 add--------------------------------------------------------------------------------------------
+  *limbi               Done
+  *permis              Done
+  *skils               Done
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done +php
+4 Edit/apdate -----------------------------------------------------------------------------------
+  *limbi               Done
+  *alte activitati     Done
+  *experienta          Done
+  *educatie            Done +revizuire si rescriere php si sql queri
+  *inf`                Done + php
+5 previev
+6 downloade
+7 mobile-respocive
+8 testing-overall
+9 sql injection prevention
+.....
+1.Un raport actualizat – adoptand formatul Scholarly HTML
+2.Ghidul de utilizare a aplicatiei dezvoltate – disponibil ca document HTML5. +Codul-sursa va fi comentat si modularizat
+3.poza in pdf !!! Done
+4. sql injection la toate php-urile
+5. 
+
